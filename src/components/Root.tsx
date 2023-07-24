@@ -37,12 +37,9 @@ const reducer = (state: typeof initialState, action: ActionType) => {
 
 export default function Root() {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
-
-
   useEffect(() => {
     const handleResize = () => {
-      setScreenWidth(window.innerWidth);
-
+      setScreenWidth(window.innerWidth); // for understanding what is the width 
     };
 
     window.addEventListener("resize", handleResize);
@@ -52,7 +49,6 @@ export default function Root() {
     };
   }, []);
   const [state, dispatch] = useReducer(reducer, initialState);
-
   function dispatching(type: string, payload: boolean) {
     dispatch({
       type: type,
@@ -74,13 +70,11 @@ export default function Root() {
         throw new Error("Unknown action type");
     }
   }
-
   return (
     <myContext.Provider
       value={{
         state,
         dispatching,
-      
         screenWidth,
         languageChanger,
       }}
