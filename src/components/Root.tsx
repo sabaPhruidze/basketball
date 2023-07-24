@@ -38,12 +38,12 @@ const reducer = (state: typeof initialState, action: ActionType) => {
 
 export default function Root() {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
-  const [screenHeight, setScreenHeight] = useState(window.innerHeight);
+
 
   useEffect(() => {
     const handleResize = () => {
       setScreenWidth(window.innerWidth);
-      setScreenHeight(window.innerHeight);
+
     };
 
     window.addEventListener("resize", handleResize);
@@ -81,7 +81,7 @@ export default function Root() {
       value={{
         state,
         dispatching,
-        screenHeight,
+      
         screenWidth,
         languageChanger,
       }}

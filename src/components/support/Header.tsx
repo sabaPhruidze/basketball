@@ -17,7 +17,7 @@ import japan from "../../assets/img/japan.png";
 import UK from "../../assets/img/united-kingdom.png";
 export default function Header() {
   const context = useContext(myContext);
-  const { state, dispatching, screenHeight, screenWidth, languageChanger } =
+  const { state, dispatching, screenWidth, languageChanger } =
     context;
   const { navBarToggle, languageToggle } = state;
   const location = useLocation();
