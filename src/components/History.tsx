@@ -8,7 +8,7 @@ import history1Img2 from "../assets/img/history/1.2.jpg";
 export default function History() {
   const context = useContext(myContext);
   const { screenWidth, languageChanger, state } = context;
-  const { languageToggle } = state;
+  const { whichLanguage } = state;
   // variables for text
   const HISTORY_TEXT_ENG = (
     <>
@@ -143,7 +143,7 @@ export default function History() {
             className={style.context}
             style={{
               fontSize:
-                languageToggle === 0 ? 21 : languageToggle === 1 ? 22 : 26,
+                whichLanguage === 0 ? 21 : whichLanguage === 1 ? 22 : 26,
             }}
           >
             {languageChanger(

@@ -18,7 +18,7 @@ import jpnimg4 from "../assets/img/history/jpnIMG4.jpg";
 export default function HistoryInfo() {
   const context = useContext(myContext);
   const { screenWidth, state, languageChanger } = context;
-  const { languageToggle } = state;
+  const { whichLanguage } = state;
   const pagenumber = [1, 2, 3, 4, 5, 6, 7, 8];
   const navigate = useNavigate();
   const location = useLocation();
@@ -58,9 +58,9 @@ export default function HistoryInfo() {
       "FIBA Europe is the administrative body for basketball in Europe, within the International Basketball Federation (FIBA), which includes all 50 national European basketball federations. In reaction to the 2022 Russian invasion of Ukraine, FIBA Europe mandated that no official basketball competitions are to be held in either Russia or Belarus, while the teams of the Russian Basketball Federation and of the Belarusian Basketball Federation are being withdrawn from national team competitions and from the club competition season 2022–23 .  FIBA Europe is one of five Regions of FIBA and is responsible for controlling and developing the sport of basketball in Europe. Among many tasks, this includes promoting, supervising and directing international competition at the club and national team levels, as well as governing and appointing European international referees. FIBA Europe is an international federation whose membership consists of the national basketball federations of Europe, of which there are currently 50 members.[2] The highest decision-making body is the Board of FIBA Europe which consists of 25 persons elected by the National Federations. The Board of FIBA Europe meets twice a year and is the executive body which represents all 50 Federations that make up the membership of FIBA Europe. All 50 federations meet once a year at the General Assembly of FIBA Europe. FIBA has organized a World Championship, now known as World Cup, for men since 1950 and a Women's World Championship, now known as the Women's World Cup, since 1953. From 1986 through 2014, both events were held every four years, alternating with the Olympics. As noted above, the men's World Cup was moved to a new four-year cycle, with tournaments in the year before the Summer Olympics, after 2014. The Federation headquarters moved to Munich in 1956, then returned to Geneva in 2002. In 1991, it founded the FIBA Hall of Fame; the first induction ceremony was held on 12 September 2007, during EuroBasket 2007. During its 81st anniversary in 2013, FIBA moved into its new headquarters, 'The House of Basketball', at Mies. Andreas Zagklis became the Secretary-General of FIBA on 7 December 2018. "
     ) : location.pathname === "/history/7" ? (
       <p>
-        "The Georgia men's national basketball team (Georgian: საქართველოს
+        "The Georgia men's national basketball team (GEO: საქართველოს
         ეროვნული საკალათბურთო ნაკრები) represents the country of Georgia in
-        international basketball matches, and is controlled by the Georgian
+        international basketball matches, and is controlled by the GEO
         Basketball Federation. Georgia became a member of FIBA in 1992, after
         they gained independence from the Soviet Union. The national team played
         their first official match against Poland in 1995. Georgia's
@@ -75,7 +75,7 @@ export default function HistoryInfo() {
         include: Nodar Dzhordzhikiya, Otar Korkia, Guram Minashvili, Vladimer
         Ugrekhelidze, Levan Moseshvili, Zurab Sakandelidze, Mikheil Korkia and
         Nikolay Deryugin. Independent Georgia After gaining independence from
-        the Soviet Union, on several occasions the Georgian national team
+        the Soviet Union, on several occasions the GEO national team
         unsuccessfully tried to qualify for the EuroBasket, Europe's biggest
         basketball competition and major tournament. Although the national team
         did play on the EuroBasket Division B level three times and gained
@@ -106,7 +106,7 @@ export default function HistoryInfo() {
         qualified to EuroBasket for the fourth successive time.[7] Once the
         competition began, the national team got off to a quick start, avenging
         their EuroBasket 2015 knockout stage defeat to Lithuania 79-77.[8] The
-        rest of the group stage didn't go as well for the Georgian side though.
+        rest of the group stage didn't go as well for the GEO side though.
         As the team could only manage to pullout one more victory against
         Israel, before falling to Italy to finish the tournament with an 2-3
         record and being eliminated.[9] EuroBasket 2022 Main article: EuroBasket
@@ -118,7 +118,7 @@ export default function HistoryInfo() {
         national team that has consistently qualified to Europe's biggest
         basketball competition consisted of captain Zaza Pachulia, Viktor
         Sanikidze, Manuchar Markoishvili, Tornike Shengelia, Giorgi Tsintsadze
-        and Giorgi Shermadini. These pioneers in the Georgian basketball
+        and Giorgi Shermadini. These pioneers in the GEO basketball
         community have set the standard for future generations of the national
         team to build upon, and maintain. "
       </p>
@@ -309,13 +309,13 @@ export default function HistoryInfo() {
         >
           <div
             className={
-              languageToggle === 1
+              whichLanguage === 1
                 ? `${style.context} ${style.japanText}`
                 : style.context
             }
             style={{
               fontSize:
-                languageToggle === 0 ? 21 : languageToggle === 1 ? 22 : 26,
+                whichLanguage === 0 ? 21 : whichLanguage === 1 ? 22 : 26,
             }}
           >
             {languageChanger(

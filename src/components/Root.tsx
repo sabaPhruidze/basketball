@@ -1,15 +1,14 @@
-import React, { useReducer, createContext, useEffect, useState } from "react";
+import { useReducer, createContext, useEffect, useState } from "react";
 import Header from "./support/Header";
 import Footer from "./support/Footer";
-import History from "./History";
 import style from "./style.module.css";
 import { Outlet } from "react-router-dom";
 
 export const myContext = createContext<any>("");
 
 const initialState = {
-  navBarToggle: false,
-  languageToggle: 0,
+  navCollapse: false,
+  whichLanguage: 0,
 };
 
 type ActionType = {
@@ -20,14 +19,14 @@ type ActionType = {
 const reducer = (state: typeof initialState, action: ActionType) => {
   const newState = { ...state };
   switch (action.type) {
-    case "showNavBar":
-    case "hideNavBar":
-      newState.navBarToggle = action.payload;
+    case "navShow":
+    case "navHide":
+      newState.navCollapse = action.payload;
       break;
-    case "georgian":
-    case "japanese":
+    case "GEO":
+    case "JPN":
     case "UK":
-      newState.languageToggle = action.payload;
+      newState.whichLanguage = action.payload;
       break;
     default:
       throw new Error("Unknown action type");
@@ -60,13 +59,13 @@ export default function Root() {
       payload: payload,
     });
   }
-  function languageChanger(georgian: string, japanese: string, UK: string) {
-    switch (state.languageToggle) {
+  function languageChanger(GEO: string, JPN: string, UK: string) {
+    switch (state.whichLanguage) {
       case 0:
-        return georgian;
+        return GEO;
         break;
       case 1:
-        return japanese;
+        return JPN;
         break;
       case 2:
         return UK;

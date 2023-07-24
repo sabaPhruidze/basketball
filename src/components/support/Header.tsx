@@ -19,7 +19,7 @@ export default function Header() {
   const context = useContext(myContext);
   const { state, dispatching, screenWidth, languageChanger } =
     context;
-  const { navBarToggle, languageToggle } = state;
+  const { navCollapse, whichLanguage } = state;
   const location = useLocation();
   const pagenumber = [1, 2, 3, 4, 5, 6, 7, 8];
   const LEFT_LIST = [
@@ -103,7 +103,7 @@ export default function Header() {
     <>
       <header>
         {screenWidth < 860 ? (
-          navBarToggle ? (
+          navCollapse ? (
             <div className={style.navbardiv}>
               <div>
                 <img
@@ -111,27 +111,27 @@ export default function Header() {
                   alt="exit"
                   className={style.navbardivExit}
                   onClick={() => {
-                    dispatching("hideNavBar", false);
+                    dispatching("navHide", false);
                   }}
                 />
                 <img
                   src={
-                    languageToggle === 0
+                    whichLanguage === 0
                       ? saqartvelo
-                      : languageToggle === 1
+                      : whichLanguage === 1
                       ? japan
-                      : languageToggle === 2
+                      : whichLanguage === 2
                       ? UK
                       : ""
                   }
                   alt="language"
                   className={style.languageChanger}
                   onClick={() => {
-                    languageToggle === 0
-                      ? dispatching("japanese", 1)
-                      : languageToggle === 1
+                    whichLanguage === 0
+                      ? dispatching("JPN", 1)
+                      : whichLanguage === 1
                       ? dispatching("UK", 2)
-                      : dispatching("georgian", 0);
+                      : dispatching("GEO", 0);
                   }}
                 />
               </div>
@@ -195,7 +195,7 @@ export default function Header() {
                       : 30,
                 }}
                 onClick={() => {
-                  dispatching("showNavBar", true);
+                  dispatching("navShow", true);
                 }}
               />
             </>
@@ -204,22 +204,22 @@ export default function Header() {
           <nav className={style.headerDFlex}>
             <img
               src={
-                languageToggle === 0
+                whichLanguage === 0
                   ? saqartvelo
-                  : languageToggle === 1
+                  : whichLanguage === 1
                   ? japan
-                  : languageToggle === 2
+                  : whichLanguage === 2
                   ? UK
                   : ""
               }
               alt="language"
               className={style.language}
               onClick={() => {
-                languageToggle === 0
-                  ? dispatching("japanese", 1)
-                  : languageToggle === 1
+                whichLanguage === 0
+                  ? dispatching("JPN", 1)
+                  : whichLanguage === 1
                   ? dispatching("UK", 2)
-                  : dispatching("georgian", 0);
+                  : dispatching("GEO", 0);
               }}
             />
             <ul className={style.headerUL}>
@@ -249,22 +249,22 @@ export default function Header() {
           <nav className={`${style.headerDFlexBackground}`}>
             <img
               src={
-                languageToggle === 0
+                whichLanguage === 0
                   ? saqartvelo
-                  : languageToggle === 1
+                  : whichLanguage === 1
                   ? japan
-                  : languageToggle === 2
+                  : whichLanguage === 2
                   ? UK
                   : ""
               }
               alt="language"
               className={style.language}
               onClick={() => {
-                languageToggle === 0
-                  ? dispatching("japanese", 1)
-                  : languageToggle === 1
+                whichLanguage === 0
+                  ? dispatching("JPN", 1)
+                  : whichLanguage === 1
                   ? dispatching("UK", 2)
-                  : dispatching("georgian", 0);
+                  : dispatching("GEO", 0);
               }}
             />
             <ul className={style.headerUL}>
