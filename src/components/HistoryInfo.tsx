@@ -310,7 +310,7 @@ export default function HistoryInfo() {
           <div
             className={
               whichLanguage === 1
-                ? `${style.context} ${style.japanText}`
+                ? `${style.context} ${style.JPNICONText}`
                 : style.context
             }
             style={{

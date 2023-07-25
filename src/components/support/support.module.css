@@ -3,16 +3,53 @@
   src: url(../../assets/font/Caprasimo-Regular.ttf);
 }
 
+/* Common */
+
+/* Common */
+
 /* Header*/
-/* location.pathname === "/" */
 
+/* screenWidth < 860 */
+/* navCollapse */
+.navbardiv {
+  /* NavContainer */
+  width: 200px;
+  height: 100%;
+  position: absolute;
+  z-index: 2;
+  background-color: rgba(255, 136, 0, 0.386);
+  top: 0px;
+  right: 0px;
+  padding: 40px 5px;
 
-/* location.pathname === "/" */
+}
 
+.exitIcon {
+  width: 35px;
+  filter: invert(93%) sepia(95%) saturate(21%) hue-rotate(15deg) brightness(106%) contrast(100%);
+  height: 35px;
+  margin-top: 0;
+  position: absolute;
+  z-index: 3;
+  top: 1px;
+  left: 1px;
+  cursor: pointer;
+}
 
+.languageChanger {
+  /* languageIcon */
+  width: 26px;
+  height: 26px;
+  position: absolute;
+  z-index: 3;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+}
 
+/* navCollapse */
 
-
+/* screenWidth < 860 */
 
 
 
@@ -65,16 +102,7 @@
   justify-content: space-between;
 }
 
-.navbardiv {
-  width: 200px;
-  height: 100%;
-  position: absolute;
-  z-index: 2;
-  background-color: rgba(255, 136, 0, 0.386);
-  top: 0px;
-  right: 0px;
-  padding: 40px 5px;
-}
+
 
 .navbardiv li {
   list-style-type: none;
@@ -88,17 +116,7 @@
 
 }
 
-.navbardivExit {
-  width: 35px;
-  filter: invert(93%) sepia(95%) saturate(21%) hue-rotate(15deg) brightness(106%) contrast(100%);
-  height: 35px;
-  margin-top: 0;
-  position: absolute;
-  z-index: 3;
-  top: 1px;
-  left: 1px;
-  cursor: pointer;
-}
+
 
 .language {
   width: 24px;
@@ -108,16 +126,6 @@
   cursor: pointer;
   right: 20px;
   top: 28px;
-}
-
-.languageChanger {
-  width: 26px;
-  height: 26px;
-  position: absolute;
-  z-index: 3;
-  top: 5px;
-  right: 5px;
-  cursor: pointer;
 }
 
 .headerDFlex {

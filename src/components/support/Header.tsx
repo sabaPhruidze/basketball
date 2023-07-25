@@ -2,18 +2,21 @@ import { Link, useLocation } from "react-router-dom";
 import style from "./support.module.css";
 import { useContext } from "react";
 import { myContext } from "../Root";
-import navbarButton from "../../assets/icon/toggle.png";
-import MainIcon from "../../assets/icon/home.svg";
-import HistoryIcon from "../../assets/icon/history.svg";
-import PracticalIcon from "../../assets/icon/practic.svg";
-import QuestionsIcon from "../../assets/icon/questions.svg";
-import SupportIcon from "../../assets/icon/support.svg";
-import LoginIcon from "../../assets/icon/login.svg";
-import RegisterIcon from "../../assets/icon/register.svg";
-import exit from "../../assets/icon/exit.svg";
-import saqartvelo from "../../assets/img/georgia.png";
-import japan from "../../assets/img/japan.png";
-import UK from "../../assets/img/united-kingdom.png";
+import TOGGLE_ICON from "../../assets/icon/toggle.png";
+
+import HOME_ICON from "../../assets/icon/home.svg";
+import HISTORY_ICON from "../../assets/icon/history.svg";
+import PRACTICAL_ICON from "../../assets/icon/practic.svg";
+import QUESTION_ICON from "../../assets/icon/questions.svg";
+import SUPPORT_ICON from "../../assets/icon/support.svg";
+import LOGIN_ICON from "../../assets/icon/login.svg";
+import REGISTRATION_ICON from "../../assets/icon/register.svg";
+
+import EXIT_ICON from "../../assets/icon/EXIT.svg";
+import GEO_ICON from "../../assets/img/GEO.png";
+import JPN_ICON from "../../assets/img/JPN.png";
+import UK_ICON from "../../assets/img/UK.png";
+
 export default function Header() {
   const context = useContext(myContext);
   const { state, dispatching, screenWidth, languageChanger } =
@@ -61,32 +64,32 @@ export default function Header() {
     {
       content: languageChanger("მთავარი", "メイン", "Main"),
       to: "/",
-      icon: MainIcon,
+      icon: HOME_ICON,
     },
     {
       content: languageChanger("ისტორია", "履歴", "History"),
       to: "/history",
-      icon: HistoryIcon,
+      icon: HISTORY_ICON,
     },
     {
       content: languageChanger("ვარჯიში", "練習", "Practice"),
       to: "/practic",
-      icon: PracticalIcon,
+      icon: PRACTICAL_ICON,
     },
     {
       content: languageChanger("შეკითხვები", "質問", "Questions"),
       to: "/questions",
-      icon: QuestionsIcon,
+      icon: QUESTION_ICON,
     },
     {
       content: languageChanger("დახმარება", "支援", "Support"),
       to: "/support",
-      icon: SupportIcon,
+      icon: SUPPORT_ICON,
     },
     {
       content: languageChanger("შესვლა", "ログイン", "Login"),
       to: "/login",
-      icon: LoginIcon,
+      icon: LOGIN_ICON,
     },
     {
       content: languageChanger(
@@ -95,7 +98,7 @@ export default function Header() {
         "Register"
       ),
       to: "/register",
-      icon: RegisterIcon,
+      icon: REGISTRATION_ICON,
     },
   ];
   return (
@@ -106,9 +109,9 @@ export default function Header() {
             <div className={style.navbardiv}>
               <div>
                 <img
-                  src={exit}
-                  alt="exit"
-                  className={style.navbardivExit}
+                  src={EXIT_ICON}
+                  alt="EXITICON"
+                  className={style.exitIcon}
                   onClick={() => {
                     dispatching("navHide", false);
                   }}
@@ -116,11 +119,11 @@ export default function Header() {
                 <img
                   src={
                     whichLanguage === 0
-                      ? saqartvelo
+                      ? GEO_ICON
                       : whichLanguage === 1
-                      ? japan
+                      ? JPN_ICON
                       : whichLanguage === 2
-                      ? UK
+                      ? UK_ICON
                       : ""
                   }
                   alt="language"
@@ -164,8 +167,8 @@ export default function Header() {
           ) : (
             <>
               <img
-                src={navbarButton}
-                alt="navbarButton"
+                src={TOGGLE_ICON}
+                alt="TOGGLE_ICON"
                 className={style.navbarButton}
                 style={{
                   filter:
@@ -204,11 +207,11 @@ export default function Header() {
             <img
               src={
                 whichLanguage === 0
-                  ? saqartvelo
+                  ? GEO_ICON
                   : whichLanguage === 1
-                  ? japan
+                  ? JPN_ICON
                   : whichLanguage === 2
-                  ? UK
+                  ? UK_ICON
                   : ""
               }
               alt="language"
@@ -249,11 +252,11 @@ export default function Header() {
             <img
               src={
                 whichLanguage === 0
-                  ? saqartvelo
+                  ? GEO_ICON
                   : whichLanguage === 1
-                  ? japan
+                  ? JPN_ICON
                   : whichLanguage === 2
-                  ? UK
+                  ? UK_ICON
                   : ""
               }
               alt="language"
