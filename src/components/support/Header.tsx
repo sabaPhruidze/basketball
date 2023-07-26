@@ -51,9 +51,9 @@ export default function Header() {
     },
     {
       content: languageChanger(
-        "შექმენი ანგარიში",
-        "アカウントを作成",
-        "create accaunt"
+        "რეგისტრაცია",
+        "登録", //とうろく
+        "Register"
       ),
       to: "/register",
     },
@@ -166,7 +166,7 @@ export default function Header() {
               <img
                 src={TOGGLE_ICON}
                 alt="TOGGLE_ICON"
-                className={style.navbarButton}
+                className={style.toggle}
                 style={{
                   filter:
                     screenWidth <= 690 &&
@@ -221,7 +221,7 @@ export default function Header() {
                   : dispatching("GEO", 0);
               }}
             />
-            <ul className={style.headerUL}>
+            <ul className={style.navUL}>
               {LEFT_LIST.map((data, key) => {
                 return (
                   <li key={key}>
@@ -232,7 +232,7 @@ export default function Header() {
                 );
               })}
             </ul>
-            <ul className={style.headerUL}>
+            <ul className={style.navUL}>
               {RIGHT_LIST.map((data, key) => {
                 return (
                   <li key={key}>
