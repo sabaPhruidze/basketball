@@ -3,7 +3,6 @@ import style from "./support.module.css";
 import { useContext } from "react";
 import { myContext } from "../Root";
 import TOGGLE_ICON from "../../assets/icon/toggle.png";
-
 import HOME_ICON from "../../assets/icon/home.svg";
 import HISTORY_ICON from "../../assets/icon/history.svg";
 import PRACTICAL_ICON from "../../assets/icon/practic.svg";
@@ -11,7 +10,6 @@ import QUESTION_ICON from "../../assets/icon/questions.svg";
 import SUPPORT_ICON from "../../assets/icon/support.svg";
 import LOGIN_ICON from "../../assets/icon/login.svg";
 import REGISTRATION_ICON from "../../assets/icon/register.svg";
-
 import EXIT_ICON from "../../assets/icon/EXIT.svg";
 import GEO_ICON from "../../assets/img/GEO.png";
 import JPN_ICON from "../../assets/img/JPN.png";
@@ -101,17 +99,18 @@ export default function Header() {
       icon: REGISTRATION_ICON,
     },
   ];
+  
   return (
     <>
       <header>
         {screenWidth < 860 ? (
           navCollapse ? (
-            <div className={style.navbardiv}>
-              <div>
+            <div className={style.navBackground}>
+              <div className={style.dFlexJCSB}>
                 <img
                   src={EXIT_ICON}
                   alt="EXITICON"
-                  className={style.exitIcon}
+                  className={`${style.exitI} ${style.filterW}`}
                   onClick={() => {
                     dispatching("navHide", false);
                   }}
@@ -127,7 +126,7 @@ export default function Header() {
                       : ""
                   }
                   alt="language"
-                  className={style.languageChanger}
+                  className={style.languageI}
                   onClick={() => {
                     whichLanguage === 0
                       ? dispatching("JPN", 1)
@@ -137,24 +136,22 @@ export default function Header() {
                   }}
                 />
               </div>
-              <nav>
+              <nav className={style.mt20}>
                 <ul>
                   {COMMON_LIST.map((data, key) => {
                     return (
-                      <div key={key} className={style.navbardivContainer}>
+                      <div key={key} className={style.dFlexJCSB} >
                         <Link
                           to={data.to}
-                          className={style.headerLink}
-                          style={{ marginLeft: "0px" }}
                         >
                           <img
                             src={data.icon}
                             alt={data.icon}
-                            className={style.navbardivIcon}
+                            className={`${style.menuIcon} ${style.filterW}`}
                           />
                         </Link>
                         <li>
-                          <Link to={data.to} className={style.headerLink}>
+                          <Link to={data.to} className={style.menuContent}>
                             {data.content}
                           </Link>
                         </li>
@@ -202,53 +199,8 @@ export default function Header() {
               />
             </>
           )
-        ) : location.pathname === "/" ? (
-          <nav className={style.headerDFlex}>
-            <img
-              src={
-                whichLanguage === 0
-                  ? GEO_ICON
-                  : whichLanguage === 1
-                  ? JPN_ICON
-                  : whichLanguage === 2
-                  ? UK_ICON
-                  : ""
-              }
-              alt="language"
-              className={style.language}
-              onClick={() => {
-                whichLanguage === 0
-                  ? dispatching("JPN", 1)
-                  : whichLanguage === 1
-                  ? dispatching("UK", 2)
-                  : dispatching("GEO", 0);
-              }}
-            />
-            <ul className={style.headerUL}>
-              {LEFT_LIST.map((data, key) => {
-                return (
-                  <li key={key}>
-                    <Link to={data.to} className={style.headerLink}>
-                      {data.content}
-                    </Link>
-                  </li>
-                );
-              })}
-            </ul>
-            <ul className={style.headerUL}>
-              {RIGHT_LIST.map((data, key) => {
-                return (
-                  <li key={key}>
-                    <Link to={data.to} className={style.headerLink}>
-                      {data.content}
-                    </Link>
-                  </li>
-                );
-              })}
-            </ul>
-          </nav>
         ) : (
-          <nav className={`${style.headerDFlexBackground}`}>
+          <nav className={location.pathname === "/" ? style.navNBK : style.navWBK}>
             <img
               src={
                 whichLanguage === 0
@@ -273,7 +225,7 @@ export default function Header() {
               {LEFT_LIST.map((data, key) => {
                 return (
                   <li key={key}>
-                    <Link to={data.to} className={style.headerLink}>
+                    <Link to={data.to} className={style.menuContent}>
                       {data.content}
                     </Link>
                   </li>
@@ -284,7 +236,7 @@ export default function Header() {
               {RIGHT_LIST.map((data, key) => {
                 return (
                   <li key={key}>
-                    <Link to={data.to} className={style.headerLink}>
+                    <Link to={data.to} className={style.menuContent}>
                       {data.content}
                     </Link>
                   </li>
