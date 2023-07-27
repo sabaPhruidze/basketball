@@ -40,16 +40,15 @@ export default function History() {
           }}
         >
           <div className={style.dFlexRow}>
-         {data.map((data) => (
-            <div className={style.dFlexColumn} key={data.name}>
-              <img src={data.img} alt="img" className={style.dataImage} onClick={() => {
-                data.img === GEOM ? navigation('/history/8') : data.img === USAM  ? navigation('/history/4') : data.img === JPNM ? navigation('/history/1') : ""
-                 
-              }}
-              />
-              <p className={style.dataName}>{data.name}</p>
-            </div>
-         )) }
+            {data.map((data) => (
+                <div className={style.dFlexColumn} key={data.name}>
+                  <img src={data.img} alt="img" className={style.dataImage} onClick={() => {
+                    data.img === GEOM ? navigation('/history/8') : data.img === USAM  ? navigation('/history/4') : data.img === JPNM ? navigation('/history/1') : ""
+                  }}
+                  />
+                  <p className={style.dataName}>{data.name}</p>
+                </div>
+            )) }
          </div>
         </div>
         <Pag />
