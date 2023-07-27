@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
-import style from "./style.module.css";
+import style from "./home.module.css";
 
 import facebook from "../assets/icon/facebook.svg";
 import instagram from "../assets/icon/instagram.svg";
@@ -18,17 +18,17 @@ export default function Home() {
   const ICONS_DATA = [
     {
       source: facebook,
-      class: `${style.iconSize} ${style.iconF}`,
+      class: `${style.FITIcon} ${style.iconF}`,
       link: "https://www.facebook.com/",
     },
     {
       source: instagram,
-      class: `${style.iconSize} ${style.iconI}`,
+      class: `${style.FITIcon} ${style.iconI}`,
       link: "https://www.instagram.com/",
     },
     {
       source: twitter,
-      class: `${style.iconSize} ${style.iconT}`,
+      class: `${style.FITIcon} ${style.iconT}`,
       link: "https://twitter.com/i/flow/login?redirect_after_login=%2F",
     },
   ];
@@ -44,7 +44,6 @@ export default function Home() {
           autoPlay
           src={screenWidth <= 580 ? mainVideoMobile : mainVideoForWeb}
         />
-        {/* autoPlay after I am done this page  */}
       </div>
       {ICONS_DATA.map((data, idx) => {
         return (

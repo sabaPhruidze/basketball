@@ -1,7 +1,7 @@
 import { useReducer, createContext, useEffect, useState } from "react";
 import Header from "./support/Header";
 import Footer from "./support/Footer";
-import style from "./style.module.css";
+import style from "./home.module.css";
 import { Outlet } from "react-router-dom";
 
 export const myContext = createContext<any>("");
@@ -79,7 +79,7 @@ export default function Root() {
         languageChanger,
       }}
     >
-      <div className={style.container}>
+      <div className={style.DFlexColumn100}>
         <Header />
         <Outlet />
         <Footer />
