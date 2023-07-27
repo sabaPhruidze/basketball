@@ -4,7 +4,7 @@ import styles from "./accordion.module.css";
 import ChildAccordionCard from "./ChildAccordionCard";
 import { useState } from "react";
 import style from "./questions.module.css";
-import img from "../assets/img/NBA_BACKGROUND.jpg";
+
 export default function Questions() {
   const [arrowClick, setArrowClick] = useState<number | null>(null);
   function showHideNumberChange(number: number | null) {
@@ -55,7 +55,7 @@ export default function Questions() {
       <div className={style.background} />
       <div className={style.wrapper}>
         <div className={style.container}>
-          <img src={img} className={style.img} />
+          {/* <img src={img} className={style.img} /> */}
           <div className={style.questionsContainer}>
             {DATA.map((item) => (
               <ChildAccordionCard

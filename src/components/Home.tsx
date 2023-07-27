@@ -5,8 +5,7 @@ import style from "./home.module.css";
 import facebook from "../assets/icon/facebook.svg";
 import instagram from "../assets/icon/instagram.svg";
 import twitter from "../assets/icon/twitter.svg";
-// import NBA_BACKGROUND from "../assets/img/NBA_BACKGROUND.jpg";
-// import NBA_BACKGROUNDICON from "../assets/icon/basketball court-amico.svg";
+
 import mainVideoMobile from "../assets/video/mainVideomobile.mp4";
 import mainVideoForWeb from "../assets/video/mainVideoForWeb (2).mp4";
 import { useContext } from "react";
