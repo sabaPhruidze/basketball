@@ -1,66 +1,70 @@
-@font-face {
-    font-family: OpenSansLight;
-    src: url(../fonts/OpenSans-Light.ttf);
-  }
-
-
 /* image part */
 .dash {
-    width:964px;
-    height:568px;
+    width: 964px;
+    height: 568px;
     position: absolute;
-    top:160px;
-    right:45px;
+    top: 160px;
+    right: 45px;
     transform: rotate(-3deg);
 }
+
 /* image part */
 /* FAQ part */
 .card {
     width: 100%;
 }
+
 .cardActive {
     margin-bottom: 30px;
 }
+
 .questions h1 {
-    
-    height:20px;
+
+    height: 20px;
     font-size: 40px;
-    margin-top:65px;
+    margin-top: 65px;
     display: flex;
     text-align: center;
     align-items: center;
     margin-bottom: 45px;
 }
+
 .questions p {
     font-size: 14px;
 }
+
 .pActive {
     font-weight: 700;
 }
+
 .content {
     font-size: 12px;
-    margin-bottom:30px;
-    font-family: OpenSansLight;
+    margin-bottom: 30px;
+
 }
+
 .arrow {
-    width:30px;
-    height:30px;
+    width: 30px;
+    height: 30px;
     cursor: pointer;
     filter: invert(66%) sepia(64%) saturate(2532%) hue-rotate(324deg) brightness(98%) contrast(94%);
 }
+
 .active {
     transform: rotate(180deg);
 }
+
 .dFlexRow {
-    width:100%;
-    height:35px;
+    width: 100%;
+    height: 35px;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content:space-between;
+    justify-content: space-between;
 }
+
 hr {
-    margin:16px 0 -5px 0;
+    margin: 16px 0 -5px 0;
 }
 
 /* Responsive min width 312px and max width:412 */
@@ -100,4 +104,3 @@ hr {
         margin-right: 30px;
     }
   } */
-  

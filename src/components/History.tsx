@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { myContext } from "./Root";
 import style from "./history.module.css";
@@ -8,21 +9,22 @@ import USAM from "../assets/img/USA4.jpg"
 
 
 export default function History() {
+  const navigation = useNavigate();
   const context = useContext(myContext);
   const { screenWidth, languageChanger, state } = context;
   const { whichLanguage } = state;
   const data = [
     {
       img:GEOM,
-      name:languageChanger('საქართველო','Georgia','ジョージア')
+      name:languageChanger('საქართველო','ジョージア','Georgia')
     },
     {
       img:JPNM,
-      name:languageChanger('იაპონია','Japan','日本')
+      name:languageChanger('იაპონია','日本','Japan')
     },
     {
       img:USAM,
-      name:languageChanger('ამერიკა','USA','アメリカ')
+      name:languageChanger('ამერიკა','アメリカ','USA')
     }
   ]
   return (
@@ -39,12 +41,14 @@ export default function History() {
         >
           <div className={style.dFlexRow}>
          {data.map((data) => (
-          
-            <div className={style.dFlexColumn}>
-            <img src={data.img} alt="img" className={style.dataImage}/>
-            <p className={style.dataName}>{data.name}</p>
+            <div className={style.dFlexColumn} key={data.name}>
+              <img src={data.img} alt="img" className={style.dataImage} onClick={() => {
+                data.img === GEOM ? navigation('/history/8') : data.img === USAM  ? navigation('/history/4') : data.img === JPNM ? navigation('/history/1') : ""
+                 
+              }}
+              />
+              <p className={style.dataName}>{data.name}</p>
             </div>
-          
          )) }
          </div>
         </div>

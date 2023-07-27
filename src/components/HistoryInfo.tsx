@@ -137,7 +137,7 @@ export default function HistoryInfo() {
       ""
     );
   const HISTORY_TEXT_GEO =
-  location.pathname === "/history/2" ? (
+  location.pathname === "/history/1" ? (
     <>
      კალათბურთი არის გუნდური სპორტი, რომელშიც ორი გუნდი, უმეტესად ხუთი
       მოთამაშისგან შემდგარი, მართკუთხა მოედანზე ერთმანეთს უპირისპირდება,

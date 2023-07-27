@@ -152,7 +152,7 @@ I means icon
   align-items: center;
   background-color: rgba(255, 166, 0, 0.844);
   color: white;
-  font-family: Caprasimo, Arial, sans-serif;
+  font-family: Caprasimo;
   border-radius: 10px;
   position: absolute;
   bottom: 20px;
@@ -196,10 +196,6 @@ I means icon
   height: 15px;
   filter: invert(99%) sepia(1%) saturate(5211%) hue-rotate(159deg) brightness(131%) contrast(100%);
 
-}
-
-.footerButton {
-  background-color: none;
 }
 
 b {

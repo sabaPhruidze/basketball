@@ -19,6 +19,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: space-around;
 }
 
 .dFlexColumn {
@@ -30,12 +31,13 @@
 }
 
 .dataImage {
-  width: 300px;
+  width: calc(100% - 100px);
   height: calc(100% - 100px);
   object-fit: cover;
-  object-position: center;
+
   border: 8px solid #ffa600;
   border-radius: 15px;
+  cursor: pointer;
 }
 
 .dataName {
