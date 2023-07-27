@@ -3,18 +3,6 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { myContext } from "./Root";
 import style from "./history.module.css";
 import Pag from "./support/Pag";
-import euroBasket from "../assets/img/4.1.png";
-import georgiaBasket from "../assets/img/5.1.jpg";
-import georgiaBasket1 from "../assets/img/5.6.jpg";
-import georgiaBasket2 from "../assets/img/5.7.jpg";
-import NBA1 from "../assets/img/history 2.1.jpg";
-import historyImg from "../assets/img/history/2.1.jpg";
-import georgiaTurkey from "../assets/img/history/7.4.jpg";
-import NBA2 from "../assets/img/history 2.2 nba.jpg";
-import jpnimg from "../assets/img/history/jpnIMG.jpg";
-import jpnimg2 from "../assets/img/history/jpnIMG2.jpg";
-import jpnimg3 from "../assets/img/history/jpnIMG3.jpg";
-import jpnimg4 from "../assets/img/history/jpnIMG4.jpg";
 export default function HistoryInfo() {
   const context = useContext(myContext);
   const { screenWidth, state, languageChanger } = context;
@@ -67,7 +55,7 @@ export default function HistoryInfo() {
       has evolved to become one of the world's most popular and widely viewed
       sports
     </>
-  ) :location.pathname === "/history/2" ? (
+  ) : location.pathname === "/history/2" ? (
       "In December 1891, James Naismith, a Canadian-American professor of physical education and instructor at the International Young Men's Christian Association Training School (now Springfield College) in Springfield, Massachusetts,[5] was trying to keep his gym class active on a rainy day.[6]  He sought a vigorous indoor game to keep his students occupied and at proper levels of fitness during the long New England winters. After rejecting other ideas as either too rough or poorly suited to walled-in gymnasiums, he invented a new game in which players would pass a ball to teammates and try to score points by tossing the ball into a basket mounted on a wall. Naismith wrote the basic rules and nailed a peach basket onto an elevated track. Naismith initially set up the peach basket with its bottom intact, which meant that the ball had to be retrieved manually after each 'basket' or point scored. This quickly proved tedious, so Naismith removed the bottom of the basket to allow the balls to be poked out with a long dowel after each scored basket.Basketball was originally played with a soccer ball. These round balls from 'association football' were made, at the time, with a set of laces to close off the hole needed for inserting the inflatable bladder after the other sewn-together segments of the ball's cover had been flipped outside-in.[7][8] These laces could cause bounce passes and dribbling to be unpredictable.[9] Eventually a lace-free ball construction method was invented, and this change to the game was endorsed by Naismith (whereas in American football, the lace construction proved to be advantageous for gripping and remains to this day). The first balls made specifically for basketball were brown, and it was only in the late 1950s that Tony Hinkle, searching for a ball that would be more visible to players and spectators alike, introduced the orange ball that is now in common use. Dribbling was not part of the original game except for the 'bounce pass' to teammates. Passing the ball was the primary means of ball movement. Dribbling was eventually introduced but limited by the asymmetric shape of early balls.[dubious – discuss] Dribbling was common by 1896, with a rule against the double dribble by 1898.[10] "
     ) : location.pathname === "/history/3" ? (
       "The peach baskets were used until 1906 when they were finally replaced by metal hoops with backboards. A further change was soon made, so the ball merely passed through. Whenever a person got the ball in the basket, his team would gain a point. Whichever team got the most points won the game.[11] The baskets were originally nailed to the mezzanine balcony of the playing court, but this proved impractical when spectators in the balcony began to interfere with shots. The backboard was introduced to prevent this interference; it had the additional effect of allowing rebound shots.[12] Naismith's handwritten diaries, discovered by his granddaughter in early 2006, indicate that he was nervous about the new game he had invented, which incorporated rules from a children's game called duck on a rock, as many had failed before it.[13] Frank Mahan, one of the players from the original first game, approached Naismith after the Christmas break, in early 1892, asking him what he intended to call his new game. Naismith replied that he hadn't thought of it because he had been focused on just getting the game started. Mahan suggested that it be called 'Naismith ball', at which he laughed, saying that a name like that would kill any game. Mahan then said, 'Why not call it basketball?' Naismith replied, 'We have a basket and a ball, and it seems to me that would be a good name for it.'[14][15] The first official game was played in the YMCA gymnasium in Albany, New York, on January 20, 1892, with nine players. The game ended at 1–0; the shot was made from 25 feet (7.6 m), on a court just half the size of a present-day Streetball or National Basketball Association (NBA) court. At the time, soccer was being played with 10 to a team (which was increased to 11). When winter weather got too icy to play soccer, teams were taken indoors, and it was convenient to have them split in half and play basketball with five on each side. By 1897–98, teams of five became standard. "
