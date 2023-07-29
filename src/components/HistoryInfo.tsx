@@ -400,11 +400,7 @@ export default function HistoryInfo() {
           }}
         >
           <div
-            className={
-              whichLanguage === 1
-                ? `${style.context} ${style.JPNICONText}`
-                : style.context
-            }
+            className={style.context}
             style={{
               fontSize:
                 whichLanguage === 0 ? 21 : whichLanguage === 1 ? 22 : 26,
