@@ -118,6 +118,7 @@
   border: 2px solid rgb(65, 62, 53);
   float: left;
   margin-right: 5px;
+  margin-bottom: 5px;
 }
 
 .HICommonVB {
@@ -128,8 +129,7 @@
   border-radius: 20px;
   border: 2px solid rgb(65, 62, 53);
   float: right;
-  margin-left: 5px;
-
+  margin: 5px 0 5px 5px;
 }
 
 .JPNICONText {
