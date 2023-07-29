@@ -6,7 +6,7 @@ import Pag from "./support/Pag";
 import GEOM from "../assets/img/GEOM.jpg"
 import JPNM  from "../assets/img/JPNM.jpg"
 import USAM from "../assets/img/USA4.jpg"
-
+import GEOMCH from "../assets/img/GEO1.jpg"
 
 export default function History() {
   const navigation = useNavigate();
@@ -15,7 +15,7 @@ export default function History() {
   const { whichLanguage } = state;
   const data = [
     {
-      img:GEOM,
+      img:screenWidth <= 1250 ? GEOMCH : GEOM,
       name:languageChanger('საქართველო','ジョージア','Georgia')
     },
     {
@@ -45,7 +45,7 @@ export default function History() {
                   <img src={data.img} alt="img" className={style.dataImage} onClick={() => {
                     data.img === GEOM ? navigation('/history/8') : data.img === USAM  ? navigation('/history/4') : data.img === JPNM ? navigation('/history/1') : ""
                   }}
-                  style={{width:screenWidth <= 450 ? "80%" : "85%",height:screenWidth <= 450 ? "80%":"90%",objectPosition:screenWidth <=1200 ? "calc(100% - 30%)": "center"}}
+                  style={{width:screenWidth <= 450 ? "80%" : "85%",height:screenWidth <= 450 ? "80%":"90%",objectPosition:screenWidth <=1250 ? "calc(100% - 30%)": "center"}}
                   />
                   <p className={style.dataName}>{data.name}</p>
                 </div>
