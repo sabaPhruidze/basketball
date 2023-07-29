@@ -3,6 +3,23 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { myContext } from "./Root";
 import style from "./history.module.css";
 import Pag from "./support/Pag";
+import GEO2 from "../assets/img/GEO2.jpg"
+import GEO3 from "../assets/img/GEO3.jpg"
+import GEO4 from "../assets/img/GEO4.jpg"
+
+import CCCP from "../assets/img/CCCP.jpg"
+
+import USA1 from "../assets/img/USA1.jpg"
+import USA2 from "../assets/img/USA2.jpg"
+import USA3 from "../assets/img/USA3.jpg"
+import USA4 from "../assets/img/USA4.jpg"
+import USA5 from "../assets/img/USA5.jpg"
+import USA6 from "../assets/img/USA6.jpg"
+
+import JPN1 from "../assets/img/JPN1.jpg"
+import JPN2 from "../assets/img/JPN2.jpg"
+import JPN3 from "../assets/img/JPN3.jpg"
+
 export default function HistoryInfo() {
   const context = useContext(myContext);
   const { screenWidth, state, languageChanger } = context;
@@ -10,7 +27,7 @@ export default function HistoryInfo() {
   const pagenumber = [1, 2, 3, 4, 5, 6, 7, 8];
   const navigate = useNavigate();
   const location = useLocation();
- 
+
   useEffect(() => {
     if (
       !pagenumber.some((page) => location.pathname.endsWith(`/history/${page}`))
@@ -21,6 +38,7 @@ export default function HistoryInfo() {
   const HISTORY_TEXT_ENG =
   location.pathname === "/history/1" ? (
     <>
+    <img src={USA1} alt="usa1" className={style.HICommonVA} />
       Basketball is a team sport in which two teams, most commonly of five
       players each, opposing one another on a rectangular court, compete with
       the primary objective of shooting a basketball (approximately 9.4 inches
@@ -36,7 +54,7 @@ export default function HistoryInfo() {
       Players advance the ball by bouncing it while walking or running
       (dribbling) or by passing it to a teammate, both of which require
       considerable skill.
-      
+      <img src={USA2} alt="usa2" className={style.HICommonVB} />
       On offense, players may use a variety of shots – the layup, the jump shot,
       or a dunk; on defense, they may steal the ball from a dribbler, intercept
       passes, or block shots; either offense or defense may collect a rebound,
@@ -56,7 +74,9 @@ export default function HistoryInfo() {
       sports
     </>
   ) : location.pathname === "/history/2" ? (
-      "In December 1891, James Naismith, a Canadian-American professor of physical education and instructor at the International Young Men's Christian Association Training School (now Springfield College) in Springfield, Massachusetts,[5] was trying to keep his gym class active on a rainy day.[6]  He sought a vigorous indoor game to keep his students occupied and at proper levels of fitness during the long New England winters. After rejecting other ideas as either too rough or poorly suited to walled-in gymnasiums, he invented a new game in which players would pass a ball to teammates and try to score points by tossing the ball into a basket mounted on a wall. Naismith wrote the basic rules and nailed a peach basket onto an elevated track. Naismith initially set up the peach basket with its bottom intact, which meant that the ball had to be retrieved manually after each 'basket' or point scored. This quickly proved tedious, so Naismith removed the bottom of the basket to allow the balls to be poked out with a long dowel after each scored basket.Basketball was originally played with a soccer ball. These round balls from 'association football' were made, at the time, with a set of laces to close off the hole needed for inserting the inflatable bladder after the other sewn-together segments of the ball's cover had been flipped outside-in.[7][8] These laces could cause bounce passes and dribbling to be unpredictable.[9] Eventually a lace-free ball construction method was invented, and this change to the game was endorsed by Naismith (whereas in American football, the lace construction proved to be advantageous for gripping and remains to this day). The first balls made specifically for basketball were brown, and it was only in the late 1950s that Tony Hinkle, searching for a ball that would be more visible to players and spectators alike, introduced the orange ball that is now in common use. Dribbling was not part of the original game except for the 'bounce pass' to teammates. Passing the ball was the primary means of ball movement. Dribbling was eventually introduced but limited by the asymmetric shape of early balls.[dubious – discuss] Dribbling was common by 1896, with a rule against the double dribble by 1898.[10] "
+      <>
+      In December 1891, James Naismith, a Canadian-American professor of physical education and instructor at the International Young Men's Christian Association Training School (now Springfield College) <img src={USA6} alt="usa4" className={style.HICommonVB} /> in Springfield, Massachusetts,[5] was trying to keep his gym class active on a rainy day.[6]  He sought a vigorous indoor game to keep his students occupied and at proper levels of fitness during the long New England winters. After rejecting other ideas as either too rough or poorly suited to walled-in gymnasiums, he invented a new game in which players would pass a ball to teammates and try to score points by tossing the ball into a basket mounted on a wall. Naismith wrote the basic rules and nailed a peach basket onto an elevated track. Naismith initially set up the peach basket with its bottom intact, which meant that the ball had to be retrieved manually after each 'basket' or point scored. This quickly proved tedious, so Naismith removed the bottom of the basket to allow the balls to be poked out with a long dowel after each scored basket.Basketball was originally played with a soccer ball. These round balls from 'association football' were made, at the time, with a set of laces to close off the hole needed for inserting the inflatable bladder after the other sewn-together segments of the ball's cover had been flipped outside-in.[7][8] These laces could cause bounce passes and dribbling to be unpredictable.[9] Eventually a lace-free ball construction method was invented, and this change to the game was endorsed by Naismith (whereas in American football, the lace construction proved to be advantageous for gripping and remains to this day). The first balls made specifically for basketball were brown, and it was only in the late 1950s that Tony Hinkle, searching for a ball that would be more visible to players and spectators alike, introduced the orange ball that is now in common use. Dribbling was not part of the original game except for the 'bounce pass' to teammates. Passing the ball was the primary means of ball movement. Dribbling was eventually introduced but limited by the asymmetric shape of early balls.[dubious – discuss] Dribbling was common by 1896, with a rule against the double dribble by 1898.[10] 
+      </>
     ) : location.pathname === "/history/3" ? (
       "The peach baskets were used until 1906 when they were finally replaced by metal hoops with backboards. A further change was soon made, so the ball merely passed through. Whenever a person got the ball in the basket, his team would gain a point. Whichever team got the most points won the game.[11] The baskets were originally nailed to the mezzanine balcony of the playing court, but this proved impractical when spectators in the balcony began to interfere with shots. The backboard was introduced to prevent this interference; it had the additional effect of allowing rebound shots.[12] Naismith's handwritten diaries, discovered by his granddaughter in early 2006, indicate that he was nervous about the new game he had invented, which incorporated rules from a children's game called duck on a rock, as many had failed before it.[13] Frank Mahan, one of the players from the original first game, approached Naismith after the Christmas break, in early 1892, asking him what he intended to call his new game. Naismith replied that he hadn't thought of it because he had been focused on just getting the game started. Mahan suggested that it be called 'Naismith ball', at which he laughed, saying that a name like that would kill any game. Mahan then said, 'Why not call it basketball?' Naismith replied, 'We have a basket and a ball, and it seems to me that would be a good name for it.'[14][15] The first official game was played in the YMCA gymnasium in Albany, New York, on January 20, 1892, with nine players. The game ended at 1–0; the shot was made from 25 feet (7.6 m), on a court just half the size of a present-day Streetball or National Basketball Association (NBA) court. At the time, soccer was being played with 10 to a team (which was increased to 11). When winter weather got too icy to play soccer, teams were taken indoors, and it was convenient to have them split in half and play basketball with five on each side. By 1897–98, teams of five became standard. "
     ) : location.pathname === "/history/4" ? (
@@ -69,7 +89,7 @@ export default function HistoryInfo() {
       "FIBA Europe is the administrative body for basketball in Europe, within the International Basketball Federation (FIBA), which includes all 50 national European basketball federations. In reaction to the 2022 Russian invasion of Ukraine, FIBA Europe mandated that no official basketball competitions are to be held in either Russia or Belarus, while the teams of the Russian Basketball Federation and of the Belarusian Basketball Federation are being withdrawn from national team competitions and from the club competition season 2022–23 .  FIBA Europe is one of five Regions of FIBA and is responsible for controlling and developing the sport of basketball in Europe. Among many tasks, this includes promoting, supervising and directing international competition at the club and national team levels, as well as governing and appointing European international referees. FIBA Europe is an international federation whose membership consists of the national basketball federations of Europe, of which there are currently 50 members.[2] The highest decision-making body is the Board of FIBA Europe which consists of 25 persons elected by the National Federations. The Board of FIBA Europe meets twice a year and is the executive body which represents all 50 Federations that make up the membership of FIBA Europe. All 50 federations meet once a year at the General Assembly of FIBA Europe. FIBA has organized a World Championship, now known as World Cup, for men since 1950 and a Women's World Championship, now known as the Women's World Cup, since 1953. From 1986 through 2014, both events were held every four years, alternating with the Olympics. As noted above, the men's World Cup was moved to a new four-year cycle, with tournaments in the year before the Summer Olympics, after 2014. The Federation headquarters moved to Munich in 1956, then returned to Geneva in 2002. In 1991, it founded the FIBA Hall of Fame; the first induction ceremony was held on 12 September 2007, during EuroBasket 2007. During its 81st anniversary in 2013, FIBA moved into its new headquarters, 'The House of Basketball', at Mies. Andreas Zagklis became the Secretary-General of FIBA on 7 December 2018. "
     ) : location.pathname === "/history/8" ? (
       <p>
-        "The Georgia men's national basketball team (GEO: საქართველოს
+        <img src={GEO2} alt="GEO2" className={style.HICommonVA} />"The Georgia men's national basketball team (GEO: საქართველოს
         ეროვნული საკალათბურთო ნაკრები) represents the country of Georgia in
         international basketball matches, and is controlled by the GEO
         Basketball Federation. Georgia became a member of FIBA in 1992, after
@@ -97,7 +117,7 @@ export default function HistoryInfo() {
         Group D. They finished their preliminary group with an 2-3 record, with
         wins against Belgium and Ukraine, to advance. In their second round
         group phase, Georgia lost all five of their matches to finish their
-        maiden voyage to the EuroBasket in 11th place.[3] EuroBasket 2013 Main
+        maiden voyage to the EuroBasket in 11th place.[3] <img src={GEO4} alt="GEO4" className={style.HICommonVB} />EuroBasket 2013 Main
         article: EuroBasket 2013 After finishing second in qualifying group,
         Georgia qualified for its second EuroBasket tournament. After a
         comfortable 84–67 victory in the opening match over Poland, Georgia lost
@@ -111,7 +131,7 @@ export default function HistoryInfo() {
         victory to end the opening phase of the event against Croatia, 71–58[5]
         to move on to the knockout stages for the first time. There they
         suffered a narrow hard fought defeat to the tournament favourites, and
-        eventual silver medalist Lithuania 81–85.[6] EuroBasket 2017 Main
+        eventual silver medalist Lithuania 81–85.<img src={GEO3} alt="GEO3" className={style.HICommonVA} style={{height:"500px",width:screenWidth >=1000 ? "700px" : "380px"}}/>[6] EuroBasket 2017 Main
         article: EuroBasket 2017 During the EuroBasket 2017 qualification
         Georgia topped its group after an 90–84 victory over Montenegro, and
         qualified to EuroBasket for the fourth successive time.[7] Once the
@@ -139,6 +159,7 @@ export default function HistoryInfo() {
   const HISTORY_TEXT_GEO =
   location.pathname === "/history/1" ? (
     <>
+    <img src={USA1} alt="usa1" className={style.HICommonVA} />
      კალათბურთი არის გუნდური სპორტი, რომელშიც ორი გუნდი, უმეტესად ხუთი
       მოთამაშისგან შემდგარი, მართკუთხა მოედანზე ერთმანეთს უპირისპირდება,
       ეჯიბრება კალათბურთის (დაახლოებით 9,4 ინჩი (24 სმ) დიამეტრის) სროლას
@@ -155,7 +176,7 @@ export default function HistoryInfo() {
       სირბილის დროს (დრიბლინგის) გადაცემით ან თანაგუნდელისთვის გადაცემით, რაც
       ორივე დიდ უნარს მოითხოვს. შეტევისას მოთამაშეებს შეუძლიათ გამოიყენონ
       სხვადასხვა დარტყმები - ლეიაპ, ნახტომი ან დუნკი;
-      
+      <img src={USA2} alt="usa2" className={style.HICommonVB} />
       დაცვაში მათ შეუძლიათ მოპარონ ბურთი დრიბლერს, ჩაჭრათ პასები ან დაბლოკონ
       დარტყმები; შეტევამ ან დაცვამ შეიძლება შეაგროვოს მოხსნა, ანუ გაშვებული
       დარტყმა, რომელიც გადმოხტება რგოლიდან, ან დარღვევაა საყრდენი ფეხის აწევა ან
@@ -173,7 +194,7 @@ export default function HistoryInfo() {
       ყველაზე პოპულარული და ფართოდ სანახავი სპორტი მსოფლიოში.
     </>
   ) :location.pathname === "/history/2" ? (
-      "1891 წლის დეკემბერში ჯეიმს ნეისმიტი, კანადელ-ამერიკელი ფიზკულტურის პროფესორი და ინსტრუქტორი ახალგაზრდა მამაკაცთა საერთაშორისო ქრისტიანული ასოციაციის სასწავლო სკოლაში (ამჟამად სპრინგფილდის კოლეჯი) სპრინგფილდში, მასაჩუსეტსი, [5] ცდილობდა, სპორტული დარბაზი აქტიური ყოფილიყო. წვიმიანი დღე [6] ის ცდილობდა ენერგიულ შიდა თამაშს, რათა თავისი სტუდენტები დაკავებულები და ფიტნესის სათანადო დონეზე ყოფილიყო გრძელი ახალი ინგლისის ზამთარში. მას შემდეგ რაც უარყო სხვა იდეები, როგორც ძალიან უხეში ან ცუდად მორგებული კედლით შემოსილი გიმნაზიებისთვის, მან გამოიგონა ახალი თამაში, რომელშიც მოთამაშეები გადასცემდნენ ბურთს თანაგუნდელებს და ცდილობდნენ ქულების მოპოვებას ბურთის კედელზე დამაგრებულ კალათში ჩაგდებით. ნეისმიტმა დაწერა ძირითადი წესები და ატმის კალათა შემაღლებულ ტრასაზე დაამაგრა. თავდაპირველად ნეისმიტმა შექმნა ატმის კალათა. მისი ქვედა ნაწილი ხელუხლებელი იყო, რაც იმას ნიშნავდა, რომ ბურთი ხელით უნდა ამოეღო ყოველი 'კალათის' ან ქულის გატანის შემდეგ. ეს სწრაფად დამღლელი აღმოჩნდა, ამიტომ ნეისმიტმა კალათის ქვედა ნაწილი ამოიღო, რათა ბურთები გრძელი დუბლით ამოეტანა. თითოეულმა გაიტანა კალათა.კალათბურთს თავდაპირველად ფეხბურთის ბურთით თამაშობდნენ. ეს მრგვალი ბურთები 'ასოციაციური ფეხბურთიდან' იმ დროს გაკეთდა თასმების ნაკრებით გასაბერი ბუშტის ჩასართავად საჭირო ხვრელის დასახურავად მას შემდეგ, რაც ბურთის საფარის სხვა შეკერილი სეგმენტები გარედან შემობრუნებული იყო.[ 7][8] ამ თასმებმა შეიძლება გამოიწვიოს პასების და დრიბლინგის არაპროგნოზირებადი ქცევა.[9] საბოლოოდ გამოიგონეს მაქმანის გარეშე ბურთის აგების მეთოდი და თამაშის ეს ცვლილება მოიწონა ნეისმიტმა (მაშინ, როცა ამერიკულ ფეხბურთში მაქმანებიანი კონსტრუქცია მომგებიანი აღმოჩნდა დაჭერისთვის და დღემდე რჩება). სპეციალურად კალათბურთისთვის დამზადებული პირველი ბურთები ყავისფერი იყო და მხოლოდ 1950-იანი წლების ბოლოს ტონი ჰინკლმა, ეძებს ბურთის, რომელიც უფრო თვალსაჩინო იქნებოდა როგორც მოთამაშეებისთვის, ასევე მაყურებლისთვის, შემოიტანა ნარინჯისფერი ბურთი, რომელიც ახლა გამოიყენება. დრიბლინგი არ იყო თავდაპირველი თამაშის ნაწილი, გარდა თანაგუნდელებისთვის „გადაშვების“. ბურთის გადაცემა ბურთის გადაადგილების მთავარი საშუალება იყო. დრიბლინგი საბოლოოდ დაინერგა, მაგრამ შემოიფარგლება ადრეული ბურთების ასიმეტრიული ფორმით. დრიბლინგი გავრცელებული იყო 1896 წლისთვის, ორმაგი დრიბლინგის წინააღმდეგ 1898 წლისთვის.[10] "
+      <>1891 წლის დეკემბერში ჯეიმს ნეისმიტი, კანადელ-ამერიკელი ფიზკულტურის პროფესორი და ინსტრუქტორი ახალგაზრდა მამაკაცთა საერთაშორისო ქრისტიანული ასოციაციის სასწავლო სკოლაში (ამჟამად სპრინგფილდის კოლეჯი) სპრინგფილდში, მასაჩუსეტსი, <img src={USA6} alt="usa4" className={style.HICommonVB} />[5] ცდილობდა, სპორტული დარბაზი აქტიური ყოფილიყო. წვიმიანი დღე [6] ის ცდილობდა ენერგიულ შიდა თამაშს, რათა თავისი სტუდენტები დაკავებულები და ფიტნესის სათანადო დონეზე ყოფილიყო გრძელი ახალი ინგლისის ზამთარში. მას შემდეგ რაც უარყო სხვა იდეები, როგორც ძალიან უხეში ან ცუდად მორგებული კედლით შემოსილი გიმნაზიებისთვის, მან გამოიგონა ახალი თამაში, რომელშიც მოთამაშეები გადასცემდნენ ბურთს თანაგუნდელებს და ცდილობდნენ ქულების მოპოვებას ბურთის კედელზე დამაგრებულ კალათში ჩაგდებით. ნეისმიტმა დაწერა ძირითადი წესები და ატმის კალათა შემაღლებულ ტრასაზე დაამაგრა. თავდაპირველად ნეისმიტმა შექმნა ატმის კალათა. მისი ქვედა ნაწილი ხელუხლებელი იყო, რაც იმას ნიშნავდა, რომ ბურთი ხელით უნდა ამოეღო ყოველი 'კალათის' ან ქულის გატანის შემდეგ. ეს სწრაფად დამღლელი აღმოჩნდა, ამიტომ ნეისმიტმა კალათის ქვედა ნაწილი ამოიღო, რათა ბურთები გრძელი დუბლით ამოეტანა. თითოეულმა გაიტანა კალათა.კალათბურთს თავდაპირველად ფეხბურთის ბურთით თამაშობდნენ. ეს მრგვალი ბურთები 'ასოციაციური ფეხბურთიდან' იმ დროს გაკეთდა თასმების ნაკრებით გასაბერი ბუშტის ჩასართავად საჭირო ხვრელის დასახურავად მას შემდეგ, რაც ბურთის საფარის სხვა შეკერილი სეგმენტები გარედან შემობრუნებული იყო.[ 7][8] ამ თასმებმა შეიძლება გამოიწვიოს პასების და დრიბლინგის არაპროგნოზირებადი ქცევა.[9] საბოლოოდ გამოიგონეს მაქმანის გარეშე ბურთის აგების მეთოდი და თამაშის ეს ცვლილება მოიწონა ნეისმიტმა (მაშინ, როცა ამერიკულ ფეხბურთში მაქმანებიანი კონსტრუქცია მომგებიანი აღმოჩნდა დაჭერისთვის და დღემდე რჩება). სპეციალურად კალათბურთისთვის დამზადებული პირველი ბურთები ყავისფერი იყო და მხოლოდ 1950-იანი წლების ბოლოს ტონი ჰინკლმა, ეძებს ბურთის, რომელიც უფრო თვალსაჩინო იქნებოდა როგორც მოთამაშეებისთვის, ასევე მაყურებლისთვის, შემოიტანა ნარინჯისფერი ბურთი, რომელიც ახლა გამოიყენება. დრიბლინგი არ იყო თავდაპირველი თამაშის ნაწილი, გარდა თანაგუნდელებისთვის „გადაშვების“. ბურთის გადაცემა ბურთის გადაადგილების მთავარი საშუალება იყო. დრიბლინგი საბოლოოდ დაინერგა, მაგრამ შემოიფარგლება ადრეული ბურთების ასიმეტრიული ფორმით. დრიბლინგი გავრცელებული იყო 1896 წლისთვის, ორმაგი დრიბლინგის წინააღმდეგ 1898 წლისთვის.[10]</>
     ) : location.pathname === "/history/3" ? (
       "ატმის კალათები გამოიყენებოდა 1906 წლამდე, როდესაც ისინი საბოლოოდ შეცვალეს ლითონის რგოლებით დაფებით. მალე განხორციელდა შემდგომი ცვლილება, ასე რომ, ბურთი უბრალოდ გადიოდა. როდესაც ადამიანი კალათში მოხვდებოდა, მისი გუნდი აგროვებდა ქულას. რომელმა გუნდმა მიიღო ყველაზე მეტი ქულა, მოიგო თამაში.[11] კალათები თავდაპირველად იყო მიმაგრებული სათამაშო მოედანის ანტრესოლით აივანზე, მაგრამ ეს არაპრაქტიკული აღმოჩნდა, როდესაც აივანზე მყოფმა მაყურებლებმა დაიწყეს ჩარევა დარტყმებში. დაფა შემოიღეს ამ ჩარევის თავიდან ასაცილებლად. ნაისმიტის ხელნაწერი დღიურები, რომლებიც აღმოაჩინა მისმა შვილიშვილმა 2006 წლის დასაწყისში, მიუთითებს იმაზე, რომ ის ნერვიულობდა მის მიერ გამოგონილ ახალ თამაშზე, რომელიც აერთიანებდა წესებს საბავშვო თამაშიდან, სახელად იხვი. როკი, როგორც ბევრი წარუმატებელი იყო მანამდე.[13] ფრენკ მაჰანი, ერთ-ერთი მოთამაშე თავდაპირველი პირველი თამაშიდან, მიუახლოვდა ნეისმიტს საშობაო შესვენების შემდეგ, 1892 წლის დასაწყისში და ჰკითხა, რა ერქვა ახალ თამაშს. ნეისმიტმა უპასუხა, რომ მას არ უფიქრია, რადგან ის მხოლოდ თამაშის დაწყებაზე იყო ორიენტირებული. მაჰანმა შესთავაზა მას 'ნაისმიტის ბურთი' დაერქვა, რაზეც მან გაიცინა და თქვა, რომ ასეთი სახელი ნებისმიერ თამაშს მოკლავს. შემდეგ მაჰანმა თქვა: 'რატომ არ ეძახით ამას კალათბურთი?'' ნეისმიტმა უპასუხა: „ჩვენ გვაქვს კალათა და ბურთი და მეჩვენება, რომ ეს კარგი სახელი იქნება ამისთვის“. 1892 წლის 20 იანვარი, ცხრა მოთამაშით. თამაში დასრულდა 1-0; დარტყმა შესრულდა 25 ფუტიდან (7,6 მ), დღევანდელი სტრიტბოლის ან ნაციონალური საკალათბურთო ასოციაციის (NBA) მოედნის ზომის ნახევარზე. იმ დროს ფეხბურთს გუნდში 10-ით თამაშობდნენ (რომელიც 11-მდე გაიზარდა). როდესაც ზამთრის ამინდი ფეხბურთის სათამაშოდ ძალიან ყინვაგამძლე იყო, გუნდები გადაიყვანეს შენობაში და მოსახერხებელი იყო მათი გაყოფა და კალათბურთის თამაში თითო მხარეს ხუთით. 1897–98 წლებში ხუთკაციანი გუნდი გახდა სტანდარტული. "
     ) : location.pathname === "/history/4" ? (
@@ -186,7 +207,7 @@ export default function HistoryInfo() {
       "FIBA Europe არის კალათბურთის ადმინისტრაციული ორგანო ევროპაში, კალათბურთის საერთაშორისო ფედერაციის (FIBA) ფარგლებში, რომელიც მოიცავს ევროპის 50-ვე ეროვნულ კალათბურთის ფედერაციას. 2022 წელს უკრაინაში რუსეთის შეჭრის საპასუხოდ, FIBA Europe-მა დაავალა, რომ არ იყოს ოფიციალური კალათბურთის შეჯიბრებები. ჩატარდება რუსეთში ან ბელორუსში, ხოლო რუსეთის კალათბურთის ფედერაციის და ბელორუსის კალათბურთის ფედერაციის გუნდები ამოღებულნი არიან ეროვნული ნაკრების შეჯიბრებიდან და საკლუბო შეჯიბრების სეზონიდან 2022–23. FIBA Europe არის FIBA-ს ხუთი რეგიონიდან ერთ-ერთი და არის პასუხისმგებელია ევროპაში კალათბურთის სპორტის კონტროლსა და განვითარებაზე. მრავალ ამოცანას შორის, ეს მოიცავს საერთაშორისო შეჯიბრების ხელშეწყობას, ზედამხედველობასა და ხელმძღვანელობას საკლუბო და სანაკრებო დონეზე, ასევე ევროპული საერთაშორისო მსაჯების მართვასა და დანიშვნაზე. FIBA Europe არის საერთაშორისო ფედერაცია, რომლის წევრობა შედგება ევროპის ნაციონალური კალათბურთის ფედერაციებისაგან, რომელთაგან ამჟამად 50 წევრია. FIBA Europe-ის საბჭო იკრიბება წელიწადში ორჯერ და არის აღმასრულებელი ორგანო, რომელიც წარმოადგენს FIBA Europe-ის წევრ 50-ვე ფედერაციას. 50-ვე ფედერაცია იკრიბება წელიწადში ერთხელ ფიბა ევროპის გენერალურ ასამბლეაზე. FIBA-მ მოაწყო მსოფლიო ჩემპიონატი, რომელიც ახლა ცნობილია როგორც მსოფლიო ჩემპიონატი, მამაკაცებისთვის 1950 წლიდან და ქალთა მსოფლიო ჩემპიონატი, რომელიც ახლა ცნობილია როგორც ქალთა მსოფლიო თასი, 1953 წლიდან. 1986 წლიდან 2014 წლამდე, ორივე ღონისძიება ტარდებოდა ყოველ ოთხ წელიწადში ერთხელ, მონაცვლეობით. ოლიმპიადა. როგორც ზემოთ აღინიშნა, მამაკაცთა მსოფლიო ჩემპიონატი გადავიდა ახალ ოთხწლიან ციკლში, ტურნირებით ზაფხულის ოლიმპიადის წინა წელს, 2014 წლის შემდეგ. ფედერაციის შტაბ-ბინა გადავიდა მიუნხენში 1956 წელს, შემდეგ დაბრუნდა ჟენევაში 2002 წელს. 1991 წელს, დააარსა ფიბას დიდების დარბაზი; პირველი შესვლის ცერემონია გაიმართა 2007 წლის 12 სექტემბერს, 2007 წლის ევრობასკეტის დროს. 2013 წელს, 81 წლის იუბილეზე, FIBA გადავიდა თავის ახალ შტაბ-ბინაში, კალათბურთის სახლში, მიესში. ანდრეას ზაგკლისი FIBA-ს გენერალური მდივანი გახდა 2018 წლის 7 დეკემბერს."
     ) : location.pathname === "/history/8" ? (
       <p>
-        „საქართველოს კალათბურთის ვაჟთა ეროვნული ნაკრები (ქართული: საქართველოს
+        <img src={GEO2} alt="GEO2" className={style.HICommonVA} />„საქართველოს კალათბურთის ვაჟთა ეროვნული ნაკრები (ქართული: საქართველოს
         ეროვნული საკალათბურთო ნაკრები) წარმოადგენს საქართველოს ქვეყანას ქ
         საერთაშორისო კალათბურთის მატჩებს და აკონტროლებს ქართველი კალათბურთის
         ფედერაცია. საქართველო FIBA-ს წევრი 1992 წელს, მას შემდეგ გახდა მათ
@@ -202,7 +223,7 @@ export default function HistoryInfo() {
         დაბადებული გამორჩეული ფეხბურთელები, რომლებიც საბჭოთა კავშირის
         შემადგენლობაში თამაშობდნენ კავშირი და მოიპოვა მედლები ოლიმპიურ
         თამაშებზე, FIBA მსოფლიო თასზე და ევრობასკეტზე მათ შორის: ნოდარ ჯორჯიკია,
-        ოთარ ქორქია, გურამ მინაშვილი, ვლადიმერი უგრეხელიძე, ლევან მოსეშვილი,
+        ოთარ ქორქია, გურამ მინაშვილი, <img src={GEO4} alt="GEO4" className={style.HICommonVB} />ვლადიმერი უგრეხელიძე, ლევან მოსეშვილი,
         ზურაბ საკანდელიძე, მიხეილ ქორქია და ნიკოლაი დერიუგინი. დამოუკიდებელი
         საქართველო დამოუკიდებლობის მოპოვების შემდეგ საბჭოთა კავშირში,
         რამდენჯერმე საქართველოს ნაკრებში წარუმატებლად ცდილობდა ევროპის უდიდეს
@@ -228,7 +249,7 @@ export default function HistoryInfo() {
         ხორვატიასთან შეხვედრის გახსნის ფაზის დასასრულებლად, 71–58[5] რომ
         პირველად გადავიდეს ნოკაუტ ეტაპებზე. იქ ისინი ვიწრო მძიმე ბრძოლაში მარცხი
         განიცადა ტურნირის ფავორიტებთან და საბოლოო ვერცხლის მედალოსანი ლიტვა
-        81–85.[6] ევრობასკეტი 2017 მთავარი სტატია: ევრობასკეტი 2017 ევრობასკეტი
+        81–85.[6] ევრობასკეტი 2017 მთავარი სტატია: <img src={GEO3} alt="GEO3" className={style.HICommonVA} style={{height:"500px",width:screenWidth >=1000 ? "700px" : "380px"}}/>ევრობასკეტი 2017 ევრობასკეტი
         2017 კვალიფიკაციის დროს საქართველო თავის ჯგუფში ლიდერობდა მონტენეგროსთან
         90-84 გამარჯვების შემდეგ და ზედიზედ მეოთხედ კვალიფიცირდება
         ევრობასკეტზე.[7] Ერთხელ დაიწყო შეჯიბრი, ეროვნული ნაკრები სწრაფად დაიწყო,
@@ -255,6 +276,7 @@ export default function HistoryInfo() {
   const HISTORY_TEXT_JPN =
   location.pathname === "/history/1" ? (
     <>
+    <img src={USA1} alt="usa1" className={style.HICommonVA} />
      バスケットボールは、長方形のコート上で互いに対峙する 2 つのチーム
       (最も一般的にはそれぞれ 5 人のプレーヤーで構成されます)
       が、ディフェンダーのフープにバスケットボール (直径約 9.4 インチ (24 cm))
@@ -266,7 +288,7 @@ export default function HistoryInfo() {
       ゲーム終了時に最も多くのポイントを獲得したチームが勝利しますが、同点で規定のプレーが終了した場合は、追加のプレー時間（延長戦）が義務付けられます。
       プレーヤーは、歩いたり走ったり（ドリブル）しながらボールをバウンドさせたり、味方にパスしたりすることでボールを進めますが、どちらもかなりのスキルが必要です。
       オフェンスでは、プレーヤーはレイアップ、ジャンプショット、ダンクなど、さまざまなショットを使用できます。
-     
+      <img src={USA2} alt="usa2" className={style.HICommonVB} />
       守備では、ドリブラーからボールを奪ったり、パスをインターセプトしたり、ショットをブロックしたりすることがあります。
       オフェンスまたはディフェンスのいずれかがリバウンド、つまりリムから跳ね返ったミスショットを回収することができます。または、ボールをドリブルせずに軸足を持ち上げたり引きずったり、ボールを運んだり、両手でボールを保持してから再開したりすることは違反です。
       ドリブル。 両サイドの 5 人のプレーヤーは 5 つのポジションに分かれます。
@@ -279,7 +301,7 @@ export default function HistoryInfo() {
       1 つへと進化しました。
     </>
   ) : location.pathname === "/history/2" ? (
-      "1891年12月、カナダ系アメリカ人の体育教授であり、マサチューセッツ州スプリングフィールドにある国際青年キリスト教協会訓練学校（現在のスプリングフィールド大学）の講師でもあるジェームス・ネイスミスは、体育の授業を日中も活発に続けようとしていた。 [6] 彼は、ニューイングランドの長い冬の間、生徒たちを夢中にさせ、適切なレベルの体力を維持させるために、活発な屋内ゲームを模索しました。他のアイデアが荒すぎるか、壁に囲まれた体育館には適さないとして拒否した後、彼は、 プレーヤーがチームメイトにボールをパスし、壁に取り付けられたバスケットにボールを投げ入れて得点を狙う新しいゲームです。ネイスミスは基本的なルールを書き、高架のトラックに桃のバスケットを釘付けしました。ネイスミスは最初に桃のバスケットを設置しました これは、「バスケット」または得点が入るたびにボールを手動で回収する必要があることを意味していましたが、これはすぐに退屈であることが判明したため、ネイスミスはバスケットの底を取り外し、ゴール後に長いダボでボールを突き出せるようにしました。 バスケットボールはもともとサッカー ボールを使ってプレーされました。 「協会フットボール」のこれらの丸いボールは、当時、ボールのカバーの他の縫い合わされた部分が外側から内側にひっくり返された後、膨張可能な袋を挿入するために必要な穴を閉じるために一組のひもで作られていました。 7][8] これらの靴ひもにより、バウンスパスやドリブルが予測不能になる可能性があります。[9] 最終的に、レースのないボールの構造方法が発明され、このゲームへの変更はネイスミスによって支持されました（一方、アメリカンフットボールでは、レース構造がグリップに有利であることが証明され、今日まで残っています）。 バスケットボール専用に作られた最初のボールは茶色で、選手にも観客にもより目立つボールを探していたトニー ヒンクルが、現在一般的に使用されているオレンジ色のボールを導入したのは 1950 年代後半になってからでした。 ドリブルはチームメイトへの「バウンスパス」を除いて、元のゲームの一部ではありませんでした。 ボールをパスすることがボールを動かす主な手段でした。 ドリブルは最終的に導入されましたが、初期のボールの非対称な形状によって制限されました。[疑わしい - 議論] ドリブルは 1896 年までに一般的となり、1898 年までにダブル ドリブルに対する規則が制定されました。[10] "
+      <>1891年12月、カナダ系アメリカ人の体育教授であり、マサチューセッツ州スプリングフィールドにある国際青年キリスト教協会訓練学校（現在のスプリングフィールド大学）の講師でもあるジェームス・ネイスミスは、<img src={USA6} alt="usa4" className={style.HICommonVB} /> 体育の授業を日中も活発に続けようとしていた。 [6] 彼は、ニューイングランドの長い冬の間、生徒たちを夢中にさせ、適切なレベルの体力を維持させるために、活発な屋内ゲームを模索しました。他のアイデアが荒すぎるか、壁に囲まれた体育館には適さないとして拒否した後、彼は、 プレーヤーがチームメイトにボールをパスし、壁に取り付けられたバスケットにボールを投げ入れて得点を狙う新しいゲームです。ネイスミスは基本的なルールを書き、高架のトラックに桃のバスケットを釘付けしました。ネイスミスは最初に桃のバスケットを設置しました これは、「バスケット」または得点が入るたびにボールを手動で回収する必要があることを意味していましたが、これはすぐに退屈であることが判明したため、ネイスミスはバスケットの底を取り外し、ゴール後に長いダボでボールを突き出せるようにしました。 バスケットボールはもともとサッカー ボールを使ってプレーされました。 「協会フットボール」のこれらの丸いボールは、当時、ボールのカバーの他の縫い合わされた部分が外側から内側にひっくり返された後、膨張可能な袋を挿入するために必要な穴を閉じるために一組のひもで作られていました。 7][8] これらの靴ひもにより、バウンスパスやドリブルが予測不能になる可能性があります。[9] 最終的に、レースのないボールの構造方法が発明され、このゲームへの変更はネイスミスによって支持されました（一方、アメリカンフットボールでは、レース構造がグリップに有利であることが証明され、今日まで残っています）。 バスケットボール専用に作られた最初のボールは茶色で、選手にも観客にもより目立つボールを探していたトニー ヒンクルが、現在一般的に使用されているオレンジ色のボールを導入したのは 1950 年代後半になってからでした。 ドリブルはチームメイトへの「バウンスパス」を除いて、元のゲームの一部ではありませんでした。 ボールをパスすることがボールを動かす主な手段でした。 ドリブルは最終的に導入されましたが、初期のボールの非対称な形状によって制限されました。[疑わしい - 議論] ドリブルは 1896 年までに一般的となり、1898 年までにダブル ドリブルに対する規則が制定されました。[10] </>
     ) : location.pathname === "/history/3" ? (
       "桃のバスケットは 1906 年まで使用され、最終的にバックボード付きの金属製フープに置き換えられました。すぐにさらなる変更が加えられ、ボールは単に通過するだけでした。誰かがボールをバスケットに入れるたびに、そのチームはポイントを獲得しました。」 [11] バスケットは当初、競技場の中 2 階のバルコニーに釘付けされていましたが、バルコニーにいる観客がショットの邪魔をし始めたため、これは実用的ではないことがわかり、この干渉を防ぐためにバックボードが導入されました。 [12] 2006 年初頭に孫娘が発見したネイスミスの手書きの日記には、彼が発明した新しいゲームに不安を感じていたことが示されており、それはアヒル・オン・ザ・アヒルという子供の遊びのルールを取り入れたものだった。 [13] オリジナルの最初のゲームのプレイヤーの 1 人であるフランク・マーハンは、クリスマス休暇後の 1892 年の初めにネイスミスに近づき、新しいゲームを何と呼ぶつもりか尋ねました。 ネイスミスは、ゲームを開始することだけに集中していたため、そのことは考えていないと答えた。 マハンはそれを「ネイスミス・ボール」と呼ぶよう提案したが、マハンはそのような名前ではどんなゲームも台無しになると笑って言った。 するとマハンは「それをバスケットボールと呼んではどうだろうか？」と言いました。 ネイスミスは「我々にはバスケットとボールがある。それにはそれが良い名前だと思う」と答えた[14][15]。最初の公式戦は19日にニューヨーク州アルバニーのYMCA体育館で行われた。 1892年1月20日、9人のプレイヤー。 試合は1-0で終了。 ショットは 25 フィート (7.6 m) の距離から行われ、現在のストリートボール コートや全米バスケットボール協会 (NBA) のコートのちょうど半分の大きさのコートで行われました。 当時、サッカーは1チーム10人でプレーされていました（11人に増加）。 冬の天候が寒すぎてサッカーができないときは、チームは屋内に連れて行かれ、チームを半分に分けて各側5人でバスケットボールをするのが便利でした。 1897 年から 1898 年までに、5 人チームが標準になりました。"
     ) : location.pathname === "/history/4" ? (
@@ -292,7 +314,7 @@ export default function HistoryInfo() {
       "FIBAヨーロッパは、ヨーロッパの全50国内バスケットボール連盟を含む国際バスケットボール連盟（FIBA）内のヨーロッパにおけるバスケットボールの管理団体である。2022年のロシアによるウクライナ侵攻に反応し、FIBAヨーロッパは公式バスケットボール競技会を禁止することを義務付けた。 FIBAヨーロッパはFIBAの5つの地域のうちの1つであり、ロシアバスケットボール連盟とベラルーシバスケットボール連盟のチームは代表チームの大会とクラブ大会の2022-23シーズンから撤退している。 FIBA ヨーロッパはヨーロッパにおけるバスケットボール スポーツの管理と発展に責任を負い、その中にはクラブおよび代表チーム レベルでの国際競技の促進、監督、指導、ヨーロッパの国際審判員の管理と任命などが含まれます。 メンバーはヨーロッパの国内バスケットボール連盟で構成されており、現在その会員数は 50 名です。[2] 最高意思決定機関は、各国連盟によって選出された 25 名で構成される FIBA ヨーロッパ理事会です。 FIBA ヨーロッパ理事会は年に 2 回開催され、FIBA ヨーロッパの会員を構成する 50 の連盟すべてを代表する執行機関です。 50 の連盟すべてが年に 1 回、FIBA ヨーロッパの総会に集まります。 FIBA は 1950 年から男子の世界選手権（現在はワールドカップとして知られています）を、1953 年からは女子の世界選手権（現在は女子ワールドカップとして知られています）を主催してきました。1986 年から 2014 年まで、両方の大会は 4 年ごとに交互に開催されました。 オリンピック。 上で述べたように、男子ワールドカップは 2014 年以降、夏季オリンピックの前年にトーナメントが開催される新しい 4 年サイクルに移行しました。連盟の本部は 1956 年にミュンヘンに移転し、その後 2002 年にジュネーブに戻りました。 FIBA殿堂を設立しました。 最初の入会式は、ユーロバスケット 2007 開催中の 2007 年 9 月 12 日に開催されました。2013 年の創立 81 周年にあたり、FIBA はミースの新本部「バスケットボールの家」に移転しました。 アンドレアス・ザグクリスは2018年12月7日にFIBAの事務総長に就任した。"
     ) : location.pathname === "/history/8" ? (
       <p>
-        「ジョージア州男子バスケットボール代表チーム (グルジア語: საქართველოს)
+        <img src={GEO2} alt="GEO2" className={style.HICommonVA} />「ジョージア州男子バスケットボール代表チーム (グルジア語: საქართველოს)
         ეროვნული საკალათბურთო ნაკრები) はジョージアという国を表します。
         バスケットボールの国際試合を主催しており、ジョージアのサッカー協会によって管理されています。
         バスケットボール連盟。 ジョージア州は 1992 年に FIBA
@@ -302,7 +324,7 @@ export default function HistoryInfo() {
         欧州バスケットボール選手権への出場権を5回獲得。 彼らの
         最高の結果は、2011 年のトーナメントへのデビュー旅行で得られました。2023
         年には、 ジョージア州が世界最高峰の大会への初出場資格を獲得
-        FIBAワールドカップで。 ソ連時代 1991
+        FIBAワールドカップで。<img src={GEO4} alt="GEO4" className={style.HICommonVB} /> ソ連時代 1991
         年まで、ジョージアはソ連の一部でした。
         ソ連、ジョージア生まれの選手がソ連でプレー ナショナルチーム。
         ジョージア生まれでソ連代表として活躍した著名な選手
@@ -337,7 +359,7 @@ export default function HistoryInfo() {
         クロアチアに対して71対58で勝利し、イベントの序盤を終了した[5]
         初めてノックアウトステージに進出する。 そこで彼らは
         大会優勝候補相手に僅差の激戦で敗れ、
-        最終的に銀メダルを獲得したリトアニア 81–85。[6] ユーロバスケット 2017
+        <img src={GEO3} alt="GEO3" className={style.HICommonVA} style={{height:"500px",width:screenWidth >=1000 ? "700px" : "380px"}}/>最終的に銀メダルを獲得したリトアニア 81–85。[6] ユーロバスケット 2017
         メイン 記事: EuroBasket 2017 EuroBasket 2017 予選中
         ジョージアはモンテネグロに90対84で勝利しグループ首位に立った。
         4回連続でユーロバスケット出場権を獲得した[7]。 一度
