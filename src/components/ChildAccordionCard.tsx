@@ -1,5 +1,7 @@
-import styles from "./accordion.module.css";
+// I decided to use both useContext and props it's kinda new experience for me . of course I know that both do the 
+//same job and useContext is much more convenient but even through it would be better to try it
 
+import styles from "./accordion.module.css";
 export default function ChildAccordionCard(props: {
   arrowClick: number | null;
   showHideNumberChange: any;
@@ -10,9 +12,10 @@ export default function ChildAccordionCard(props: {
 }) {
   const { arrowClick, showHideNumberChange, arrow, number, title, content } =
     props;
+  
   return (
     <>
-      <div className={styles.card}>
+      <div className={styles.card} >
         <div className={styles.dFlexRow}>
           <p className={arrowClick === number ? `${styles.pActive}` : ""}>
             {title}

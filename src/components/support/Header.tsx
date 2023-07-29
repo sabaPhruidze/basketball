@@ -169,11 +169,11 @@ export default function Header() {
                 className={style.toggle}
                 style={{
                   filter:
-                    screenWidth <= 690 &&
+                  (screenWidth <= 690 &&
                     (location.pathname === "/history" ||
                       pagenumber.some((page) =>
                         location.pathname.endsWith(`/history/${page}`)
-                      ))
+                      ))) || (screenWidth <= 860 && location.pathname === "/questions")
                       ? "invert(62%) sepia(46%) saturate(1989%) hue-rotate(1deg) brightness(105%) contrast(105%)"
                       : undefined,
                   top:

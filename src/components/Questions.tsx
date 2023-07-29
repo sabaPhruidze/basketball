@@ -1,3 +1,5 @@
+import { useContext } from "react";
+import { myContext } from "./Root";
 import arrow from "../assets/icon/arrow.svg";
 import ChildAccordionCard from "./ChildAccordionCard";
 import { useState } from "react";
@@ -5,6 +7,8 @@ import style from "./questions.module.css";
 import QLB from "../assets/img/QLB.jpg";
 import QLS from "../assets/img/QLS.jfif";
 export default function Questions() {
+  const context = useContext(myContext);
+  const {screenWidth}= context;
   const [arrowClick, setArrowClick] = useState<number | null>(null);
   function showHideNumberChange(number: number | null) {
     if (arrowClick === number) {
@@ -53,8 +57,8 @@ export default function Questions() {
     <>
       <div className={style.background} />
       <div className={style.wrapper}>
-        <div className={style.container}>
-          <img src={QLB} className={style.img} />
+        <div className={style.container} style={{marginTop: screenWidth < 860 ? 40 : 0}}>
+          <img src={screenWidth < 1200 ? QLB : QLS } className={style.img} style={{objectPosition:innerWidth < 600 ? "calc(100% - 80%)" : innerWidth <1200 ? "calc(100% - 85%)" : "center"}}/>
           <div className={style.questionsContainer}>
             {DATA.map((item) => (
               <ChildAccordionCard
