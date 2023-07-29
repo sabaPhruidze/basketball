@@ -15,7 +15,7 @@ export default function ChildAccordionCard(props: {
   
   return (
     <>
-      <div className={styles.card} >
+      <div className={styles.card}>
         <div className={styles.dFlexRow}>
           <p className={arrowClick === number ? `${styles.pActive}` : ""}>
             {title}
@@ -36,7 +36,7 @@ export default function ChildAccordionCard(props: {
         {arrowClick === number ? (
           <span className={styles.content}>{content}</span>
         ) : null}
-        <hr></hr>
+        
       </div>
     </>
   );
