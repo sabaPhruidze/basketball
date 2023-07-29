@@ -45,6 +45,7 @@ export default function History() {
                   <img src={data.img} alt="img" className={style.dataImage} onClick={() => {
                     data.img === GEOM ? navigation('/history/8') : data.img === USAM  ? navigation('/history/4') : data.img === JPNM ? navigation('/history/1') : ""
                   }}
+                  style={{width:screenWidth <= 450 ? "80%" : "85%",height:screenWidth <= 450 ? "80%":"90%",objectPosition:screenWidth <=1200 ? "calc(100% - 30%)": "center"}}
                   />
                   <p className={style.dataName}>{data.name}</p>
                 </div>
