@@ -6,9 +6,14 @@ import { Outlet } from "react-router-dom";
 
 export const myContext = createContext<any>("");
 
-const initialState = {
+const initialState : {
+  navCollapse: boolean;
+  whichLanguage: number;
+  arrowClick: null|number;
+} = {
   navCollapse: false,
   whichLanguage: 0,
+  arrowClick:null,
 };
 
 type ActionType = {
@@ -28,6 +33,8 @@ const reducer = (state: typeof initialState, action: ActionType) => {
     case "UK":
       newState.whichLanguage = action.payload;
       break;
+    case "arrowClick":
+      newState.arrowClick = action.payload;
     default:
       throw new Error("Unknown action type");
   }
@@ -77,6 +84,7 @@ export default function Root() {
         dispatching,
         screenWidth,
         languageChanger,
+        
       }}
     >
       <div className={style.DFlexColumn100}>

@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext,createContext } from "react";
 import { myContext } from "./Root";
 import arrow from "../assets/icon/arrow.svg";
 import ChildAccordionCard from "./ChildAccordionCard";
@@ -6,6 +6,9 @@ import { useState } from "react";
 import style from "./questions.module.css";
 import QLB from "../assets/img/QLB.jpg";
 import QLS from "../assets/img/QLS.jfif";
+
+export const questionsContext = createContext<any>("");
+
 export default function Questions() {
   const context = useContext(myContext);
   const {screenWidth,languageChanger}= context;
@@ -74,14 +77,9 @@ export default function Questions() {
           <img src={screenWidth < 1200 ? QLB : QLS } className={style.img} style={{objectPosition:innerWidth < 600 ? "calc(100% - 80%)" : innerWidth <1200 ? "calc(100% - 85%)" : "center"}}/>
           <div className={style.questionsContainer}>
             {DATA.map((item) => (
-              <ChildAccordionCard
-                arrowClick={arrowClick}
-                showHideNumberChange={showHideNumberChange}
-                arrow={arrow}
-                number={item.number}
-                title={item.title}
-                content={item.content}
-              />
+              <questionsContext.Provider value={{item,arrowClick,showHideNumberChange,arrow}} key={item.number}>
+              <ChildAccordionCard  />
+              </questionsContext.Provider>
             ))}
           </div>
         </div>
@@ -89,3 +87,9 @@ export default function Questions() {
     </>
   );
 }
+// arrowClick={arrowClick}
+// showHideNumberChange={showHideNumberChange}
+// arrow={arrow}
+// number={item.number}
+// title={item.title}
+// content={item.content}
