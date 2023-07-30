@@ -5,10 +5,10 @@ import { questionsContext } from "./Questions";
 import styles from "./accordion.module.css";
 export default function ChildAccordionCard() {
   const context = useContext(questionsContext);
-  const { item,arrowClick,showHideNumberChange,arrow } =
+  const { item,arrowClick,showHideNumberChange,arrow,screenWidth } =
     context;
     const {number,title,content} = item
-  
+    // console.log(screenWidth)
   return (
     <>
       <div className={styles.card}>
@@ -37,11 +37,3 @@ export default function ChildAccordionCard() {
     </>
   );
 }
-// props: {
-//   arrowClick: number | null;
-//   showHideNumberChange: any;
-//   arrow: any;
-//   number: number;
-//   title: string;
-//   content: string;
-// }
