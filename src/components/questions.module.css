@@ -40,13 +40,14 @@
 }
 
 .imgSmall {
-  width: 40%;
+  width: 30%;
   height: 20%;
   border: white 5px solid;
+  object-position: center;
   border-radius: 50%;
   position: absolute;
   z-index: 1;
-  top: 10px;
+  top: 4px;
   left: 30%;
   /* I used a math in order to make it center */
   object-fit: cover;

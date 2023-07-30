@@ -5,7 +5,7 @@ import ChildAccordionCard from "./ChildAccordionCard";
 import style from "./questions.module.css";
 import QLB from "../assets/img/QLB.jpg";
 import QLS from "../assets/img/QLS.jfif";
-import QB660 from "../assets/img/QB660.jpg"
+import BB from "../assets/img/BB.jpg"
 export const questionsContext = createContext<any>("");
 
 export default function Questions() {
@@ -73,11 +73,11 @@ export default function Questions() {
     <>
       <div className={style.background} />
       <div className={style.wrapper}>
-        {screenWidth < 659 ? <img src={QB660} alt="QB" className={style.imgSmall} /> : null}
+        {screenWidth < 659 ? <img src={BB} alt="BB" className={style.imgSmall} /> : null}
         <div className={style.container} style={{marginTop:screenWidth < 660 ? 140 : screenWidth < 860 ? 40 : 0 , width: screenWidth < 659 ? "calc(100% - 20px)" :  "calc(100% - 100px)",
   height:screenWidth < 659 ? 520 : 580,}}>
-         {screenWidth < 659 ? null :  <img src={screenWidth < 1200 ? QLB : QLS } className={style.imgBig} style={{objectPosition:innerWidth < 600 ? "calc(100% - 80%)" : innerWidth <1200 ? "calc(100% - 85%)" : "center"}}/>}
-          <div className={style.questionsContainer} style={{width: screenWidth < 660 ? "100%" :"calc(100% / 3 * 2 - 50px)", padding:screenWidth <659 ? "0" : "10px 0",
+         {screenWidth < 659 ? null :  <img src={screenWidth < 1200 ? QLB : QLS } className={style.imgBig} style={{objectPosition:innerWidth < 600 ? "calc(100% - 80%)" : innerWidth <1200 ? "calc(100% - 90%)" : "calc(100% - 55%)"}}/>}
+          <div className={style.questionsContainer} style={{width: screenWidth < 660 ? "100%" :"calc(100% / 3 * 2 - 100px)", padding:screenWidth <659 ? "0" : "10px 0",
   margin: screenWidth < 660 ? "0 15px" : "0 25px"}}>
             {DATA.map((item) => (
               <questionsContext.Provider value={{item,arrowClick,showHideNumberChange,arrow,screenWidth}} key={item.number}>
