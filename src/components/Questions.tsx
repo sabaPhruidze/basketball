@@ -11,13 +11,14 @@ export const questionsContext = createContext<any>("");
 
 export default function Questions() {
   const context = useContext(myContext);
-  const {screenWidth,languageChanger}= context;
-  const [arrowClick, setArrowClick] = useState<number | null>(null);
+  const {screenWidth,languageChanger, state,dispatching}= context;
+  const {arrowClick} = state
+  // const [arrowClick, setArrowClick] = useState<number | null>(null);
   function showHideNumberChange(number: number | null) {
     if (arrowClick === number) {
-      setArrowClick(null);
+      dispatching("arrowClick",null);
     } else {
-      setArrowClick(number);
+      dispatching("arrowClick",number);
     }
   }
   const DATA: {

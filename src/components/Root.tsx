@@ -35,6 +35,7 @@ const reducer = (state: typeof initialState, action: ActionType) => {
       break;
     case "arrowClick":
       newState.arrowClick = action.payload;
+      break;
     default:
       throw new Error("Unknown action type");
   }
