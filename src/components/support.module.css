@@ -1,0 +1,30 @@
+@font-face {
+    font-family: Roboto;
+    src: url(../assets/font/Roboto-Regular.ttf);
+}
+
+
+
+.img,
+.BGColor {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    z-index: -2;
+}
+
+.BGColor {
+    z-index: -1;
+    background-color: #ffa60062;
+}
+
+form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
