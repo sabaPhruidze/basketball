@@ -48,7 +48,7 @@
   position: absolute;
   z-index: 1;
   top: 4px;
-  left: 30%;
+  left: 35%;
   /* I used a math in order to make it center */
   object-fit: cover;
   object-position: left;
