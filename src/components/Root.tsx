@@ -14,6 +14,7 @@ interface InitialState {
   emailFS:string;
   textFS:string;
   regexFS:number;
+  sendFS:boolean;
 }
 const initialState : InitialState  = {
   navCollapse: false,
@@ -23,6 +24,7 @@ const initialState : InitialState  = {
   emailFS:"",
   textFS:"",
   regexFS:0,
+  sendFS:false
 };
 
 type ActionType = {
@@ -57,6 +59,9 @@ const reducer = (state: typeof initialState, action: ActionType) => {
     case "regexForSupport":
       newState.regexFS = action.payload;
       break;
+    case "sendForSupport":
+      newState.sendFS = action.payload;
+      break
     default:
       throw new Error("Unknown action type");
   }
