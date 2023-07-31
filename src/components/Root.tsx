@@ -6,14 +6,23 @@ import { Outlet } from "react-router-dom";
 
 export const myContext = createContext<any>("");
 
-const initialState : {
+interface InitialState {
   navCollapse: boolean;
   whichLanguage: number;
   arrowClick: null|number;
-} = {
+  nameFS:string;//for support
+  emailFS:string;
+  textFS:string;
+  regexFS:number;
+}
+const initialState : InitialState  = {
   navCollapse: false,
   whichLanguage: 0,
   arrowClick:null,
+  nameFS:"",
+  emailFS:"",
+  textFS:"",
+  regexFS:0,
 };
 
 type ActionType = {
@@ -35,6 +44,18 @@ const reducer = (state: typeof initialState, action: ActionType) => {
       break;
     case "arrowClick":
       newState.arrowClick = action.payload;
+      break;
+    case "nameForSupport":
+      newState.nameFS = action.payload;
+      break;
+    case "emailForSupport":
+      newState.emailFS = action.payload;
+      break;
+    case "textForSupport":
+      newState.textFS = action.payload;
+      break;
+    case "regexForSupport":
+      newState.regexFS = action.payload;
       break;
     default:
       throw new Error("Unknown action type");
@@ -85,7 +106,6 @@ export default function Root() {
         dispatching,
         screenWidth,
         languageChanger,
-        
       }}
     >
       <div className={style.DFlexColumn100}>

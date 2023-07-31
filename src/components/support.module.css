@@ -3,6 +3,10 @@
     src: url(../assets/font/Roboto-Regular.ttf);
 }
 
+@font-face {
+    font-family: capramiso;
+    src: url(../assets/font/Caprasimo-Regular.ttf);
+}
 
 
 .img,
@@ -14,11 +18,13 @@
     left: 0;
     object-fit: cover;
     z-index: -2;
+    filter: blur(5px);
 }
 
 .BGColor {
     z-index: -1;
     background-color: #ffa60062;
+
 }
 
 form {
@@ -27,4 +33,37 @@ form {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.sendedOrNot {
+    width: 300px;
+    height: 150px;
+    position: absolute;
+    top: calc(50% - 150px);
+    left: calc(50% - 200px);
+    background-color: #ffa60080;
+    color: white;
+    font-family: capramiso;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 1;
+    border: 3px solid #ffa600;
+    border-radius: 15px;
+}
+
+.EXIT {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    filter: invert(100%) sepia(0%) saturate(25%) hue-rotate(70deg) brightness(108%) contrast(108%);
+    cursor: pointer;
+    transition: 0.7s;
+}
+
+.EXIT:hover {
+    transform: scale(1.4) rotate(30deg);
 }
