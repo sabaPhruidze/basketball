@@ -14,8 +14,8 @@ import SC5 from "../assets/img/SC5.jpg"
 
 export default function ContactForm() {
   const context = useContext(myContext);
-  const { dispatching, state, languageChanger } = context;
-
+  const {  languageChanger, screenWidth } = context;
+  console.log(screenWidth)
   const nameRef = useRef<any>("");
   const emailRef = useRef<any>("");
   const textRef = useRef<any>("");
@@ -73,11 +73,11 @@ export default function ContactForm() {
     <div>
       <img src={BGFS} alt="BGIMG" className={style.img} />
       <div className={style.BGColor} />
-      <div className={style.dFlex}>
+      <div className={style.dFlex} style={{padding:screenWidth < 1260 ? "0 30px 0 30px" : "0 30px 0 120px",justifyContent: screenWidth < 870 ? "center" : "space-between"}}>
         <form onSubmit={handleSubmit} >
           <div>
             <label htmlFor="name" >{languageChanger('სახელი','名前','Name')}</label>
-            <input id="name" type="text" ref={nameRef} pattern=".{3,}" placeholder={languageChanger('გთხოვთ მიუთითოთ თქვენი სახელი',"あなたの名前を入力してください",'Please enter your name')} />
+            <input id="name" type="text" ref={nameRef} minLength={3} placeholder={languageChanger('გთხოვთ მიუთითოთ თქვენი სახელი',"あなたの名前を入力してください",'Please enter your name')} />
           </div>
           <div>
             <label htmlFor="email">{languageChanger('ელ-ფოსტა','メール','Email')}</label>
@@ -89,13 +89,15 @@ export default function ContactForm() {
           </div>
           <button type="submit">{languageChanger('გაგზავნა',"送信する","Submit")}</button>
         </form>
-          <Carousel className={style.carusel}>
+        {screenWidth < 870 ? null :
+          <Carousel className={screenWidth < 1170 ? style.caruselS  : style.caruselB}>
             {caruselData.map((data, index) => (
               <Carousel.Item key={index}>
-                <img src={data.img} alt={data.alt} className={style.caruselImg} />
+                 <img src={data.img} alt={data.alt} className={screenWidth < 1170 ? style.caruselImgS : style.caruselImgB} />
               </Carousel.Item>
             ))}
           </Carousel>
+          }
       </div>
     </div>
   );

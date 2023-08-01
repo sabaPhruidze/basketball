@@ -10,9 +10,6 @@ interface InitialState {
   navCollapse: boolean;
   whichLanguage: number;
   arrowClick: null|number;
-  nameFS:string;//for support
-  emailFS:string;
-  textFS:string;
   regexFS:number;
   sendFS:boolean;
 }
@@ -20,9 +17,6 @@ const initialState : InitialState  = {
   navCollapse: false,
   whichLanguage: 0,
   arrowClick:null,
-  nameFS:"",
-  emailFS:"",
-  textFS:"",
   regexFS:0,
   sendFS:false
 };
@@ -46,15 +40,6 @@ const reducer = (state: typeof initialState, action: ActionType) => {
       break;
     case "arrowClick":
       newState.arrowClick = action.payload;
-      break;
-    case "nameForSupport":
-      newState.nameFS = action.payload;
-      break;
-    case "emailForSupport":
-      newState.emailFS = action.payload;
-      break;
-    case "textForSupport":
-      newState.textFS = action.payload;
       break;
     case "regexForSupport":
       newState.regexFS = action.payload;

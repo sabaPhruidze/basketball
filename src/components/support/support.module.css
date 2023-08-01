@@ -105,7 +105,7 @@ I means icon
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  margin: 0 50px;
+  margin: 0 -30 0 30px;
 }
 
 .navWBK {
@@ -118,7 +118,7 @@ I means icon
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 7px;
+  margin-bottom: 25px;
 }
 
 .navUL {
