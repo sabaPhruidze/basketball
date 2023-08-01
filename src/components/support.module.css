@@ -28,55 +28,16 @@
 }
 
 form {
-    width: 100%;
-    height: 100%;
+    width: 400px;
+    height: 400px;
     display: flex;
     flex-direction: column;
     align-items: center;
     font-family: capramiso;
 }
 
-.sendedOrNot {
-    width: 300px;
-    height: 150px;
-    position: absolute;
-    top: calc(50% - 150px);
-    left: calc(50% - 200px);
-    background-color: #ffa60080;
-    color: white;
-    font-family: capramiso;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    z-index: 1;
-    border: 3px solid #ffa600;
-    border-radius: 15px;
-}
 
-.EXIT {
-    width: 25px;
-    height: 25px;
-    position: absolute;
-    top: 5px;
-    right: 5px;
-    filter: invert(100%) sepia(0%) saturate(25%) hue-rotate(70deg) brightness(108%) contrast(108%);
-    cursor: pointer;
-    transition: 0.7s;
-}
 
-.EXIT:hover {
-    transform: scale(1.4) rotate(30deg);
-}
-
-.form {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-}
 
 label {
     font-family: Roboto;
@@ -84,6 +45,8 @@ label {
     color: white;
     display: block;
     margin: 5px 0;
+    cursor: pointer;
+    transition: 0.5s;
 }
 
 input,
@@ -127,7 +90,35 @@ button {
     transition: 0.5s;
 }
 
-button:hover {
+button:hover,
+label:hover {
     transform: scale(1.30);
+}
 
+button:hover {
+    border: 3px solid white;
+}
+
+.dFlex {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px 0 120px;
+}
+
+.carusel {
+    height: 500px;
+    width: 700px;
+    border-radius: 100px;
+
+}
+
+.caruselImg {
+    height: 500px;
+    width: 700px;
+    object-fit: cover;
+    border-radius: 100px;
+    border: 3px solid #ffa600;
 }
