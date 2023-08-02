@@ -12,7 +12,7 @@ let searchName = name?.map((item) => ({value:item, label:item}));
         className={style.selectP}
  />
     <div className={style.videoContainerP}>
-      <iframe width="250px" height="180px" src="https://www.youtube.com/embed/VIDEO_ID" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
+      {/* <iframe width="250px" height="180px" src="https://www.youtube.com/embed/VIDEO_ID" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe> */}
     </div>
     </div>
   );
