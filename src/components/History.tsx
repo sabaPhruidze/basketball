@@ -11,7 +11,7 @@ import GEOMCH from "../assets/img/GEO1.jpg"
 export default function History() {
   const navigation = useNavigate();
   const context = useContext(myContext);
-  const { screenWidth, languageChanger, state } = context;
+  const { screenWidth, languageChanger} = context;
   const data = [
     {
       img:screenWidth <= 1250 ? GEOMCH : GEOM,
