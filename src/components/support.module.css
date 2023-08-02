@@ -90,9 +90,16 @@ button {
     transition: 0.5s;
 }
 
-button:hover,
-label:hover {
+button:hover {
     transform: scale(1.30);
+}
+
+.labelSScale:hover {
+    transform: scale(1.05);
+}
+
+.labelBScale:hover {
+    transform: scale(1.20);
 }
 
 button:hover {

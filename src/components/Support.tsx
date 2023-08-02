@@ -76,15 +76,15 @@ export default function ContactForm() {
       <div className={style.dFlex} style={{padding:screenWidth < 1260 ? "0 30px 0 30px" : "0 30px 0 120px",justifyContent: screenWidth < 870 ? "center" : "space-between"}}>
         <form onSubmit={handleSubmit} >
           <div>
-            <label htmlFor="name" >{languageChanger('სახელი','名前','Name')}</label>
+            <label htmlFor="name"  className={screenWidth < 1250 ? style.labelSScale : style.labelBScale}>{languageChanger('სახელი','名前','Name')}</label>
             <input id="name" type="text" ref={nameRef} minLength={3} placeholder={languageChanger('გთხოვთ მიუთითოთ თქვენი სახელი',"あなたの名前を入力してください",'Please enter your name')} />
           </div>
           <div>
-            <label htmlFor="email">{languageChanger('ელ-ფოსტა','メール','Email')}</label>
+            <label htmlFor="email" className={screenWidth < 1250 ? style.labelSScale : style.labelBScale}>{languageChanger('ელ-ფოსტა','メール','Email')}</label>
             <input id="email" type="email" ref={emailRef} pattern="^[a-zA-Z0-9._%+-]+@gmail\.com$" placeholder={languageChanger('გთხოვთ მიუთითოთ თქვენი ელ-ფოსტა',"メールアドレスを入力してください",'Please enteryour e-mail address')} />
           </div>
           <div>
-            <label htmlFor="text">{languageChanger('შეტყობინება',"メッセージ","Message")}</label>
+            <label htmlFor="text" className={screenWidth < 1250 ? style.labelSScale : style.labelBScale}>{languageChanger('შეტყობინება',"メッセージ","Message")}</label>
             <textarea id="text" minLength={10} ref={textRef} placeholder={languageChanger('გთხოვთ ჩაწეროთ თქვენი შეკითხვა',"質問を入力してください",'Please enter your question')} />
           </div>
           <button type="submit">{languageChanger("გაგზავნა","送信する","Submit")}</button>
