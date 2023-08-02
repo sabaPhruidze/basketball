@@ -99,7 +99,7 @@ export default function Header() {
       icon: REGISTRATION_ICON,
     },
   ];
-  console.log(screenWidth)
+
   return (
     <>
       <header>

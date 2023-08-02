@@ -113,4 +113,41 @@
   font-family: Roboto;
 }
 
+.containerForSupport {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.63);
+  position: absolute;
+  z-index: 3;
+}
+
+.supportSuccess {
+  width: 250px;
+  height: 120px;
+  position: absolute;
+  background-color: #ff7b00;
+  color: white;
+  top: calc(50% - 60px);
+  left: calc(50% - 125px);
+  z-index: 4;
+  font-size: larger;
+  padding: 0 10px;
+  border-radius: 20px;
+}
+
+.exitI {
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(63deg) brightness(105%) contrast(107%);
+  transition: 0.5s;
+}
+
+.exitI:hover {
+  transform: scale(1.30);
+}
+
 /* Home */

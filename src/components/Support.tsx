@@ -1,10 +1,10 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from "axios";
 import { useRef, useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import { myContext } from "./Root";
 import Carousel from 'react-bootstrap/Carousel';
 import style from "./support.module.css";
-import EXIT from "../assets/icon/EXIT.svg"
 import BGFS from "../assets/img/BGFS.jpg";
 import SC1 from "../assets/img/SC1.jpg"
 import SC2 from "../assets/img/SC2.jpg"
@@ -14,8 +14,8 @@ import SC5 from "../assets/img/SC5.jpg"
 
 export default function ContactForm() {
   const context = useContext(myContext);
-  const {  languageChanger, screenWidth } = context;
-  console.log(screenWidth)
+  const {  languageChanger, screenWidth,dispatching } = context;
+  const navigate = useNavigate();
   const nameRef = useRef<any>("");
   const emailRef = useRef<any>("");
   const textRef = useRef<any>("");
@@ -34,15 +34,15 @@ export default function ContactForm() {
       nameRef.current.value = "";
       emailRef.current.value = "";
       textRef.current.value = "";
+      dispatching("sendForSupport",true);
+      navigate('/');
 
-      console.log("Response:", response.data);
-      // Do something with the response if needed
     } catch (error) {
       console.error("Error:", error);
       // Handle the error if needed
     }
   };
-
+  
   const caruselData: {
     img: string;
     alt: string;

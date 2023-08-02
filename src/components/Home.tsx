@@ -5,7 +5,7 @@ import style from "./home.module.css";
 import facebook from "../assets/icon/facebook.svg";
 import instagram from "../assets/icon/instagram.svg";
 import twitter from "../assets/icon/twitter.svg";
-
+import EXIT from "../assets/icon/EXIT.svg"
 import mainVideoMobile from "../assets/video/mainVideomobile.mp4";
 import mainVideoForWeb from "../assets/video/mainVideoForWeb (2).mp4";
 import { useContext } from "react";
@@ -13,7 +13,8 @@ import { myContext } from "./Root";
 
 export default function Home() {
   const context = useContext(myContext);
-  const { screenWidth, languageChanger } = context;
+  const { screenWidth, languageChanger,state,dispatching } = context;
+  const {sendFS} = state;
   const ICONS_DATA = [
     {
       source: facebook,
@@ -36,6 +37,14 @@ export default function Home() {
   return (
     <>
       <div className={style.orangeCover}></div>
+      {sendFS ? (
+        <div className={style.containerForSupport}>
+          <div className={style.supportSuccess}>
+            <img src={EXIT} alt="exit" className={style.exitI} onClick={() => dispatching("sendForSupport",false)}/>
+            <p>{languageChanger("გილოცავთ! თქვენი შეტყობინება წარმატებით გაიგზავნა","おめでとう！ メッセージは正常に送信されました","congratulations! Your message has been successfully sent ")}</p>
+          </div>
+      </div>
+      ) : null}
       <div className={style.mainVideoBackground}>
         <video
           loop

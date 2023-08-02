@@ -8,7 +8,7 @@ export default function ChildAccordionCard() {
   const { item,arrowClick,showHideNumberChange,arrow,screenWidth } =
     context;
     const {number,title,content} = item
-    // console.log(screenWidth)
+
   return (
     <>
       <div className={styles.card}>

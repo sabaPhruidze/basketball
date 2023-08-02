@@ -10,15 +10,13 @@ interface InitialState {
   navCollapse: boolean;
   whichLanguage: number;
   arrowClick: null|number;
-  regexFS:number;
   sendFS:boolean;
 }
 const initialState : InitialState  = {
   navCollapse: false,
   whichLanguage: 0,
   arrowClick:null,
-  regexFS:0,
-  sendFS:false
+  sendFS:false,
 };
 
 type ActionType = {
@@ -40,9 +38,6 @@ const reducer = (state: typeof initialState, action: ActionType) => {
       break;
     case "arrowClick":
       newState.arrowClick = action.payload;
-      break;
-    case "regexForSupport":
-      newState.regexFS = action.payload;
       break;
     case "sendForSupport":
       newState.sendFS = action.payload;
