@@ -12,7 +12,6 @@ export default function History() {
   const navigation = useNavigate();
   const context = useContext(myContext);
   const { screenWidth, languageChanger, state } = context;
-  const { whichLanguage } = state;
   const data = [
     {
       img:screenWidth <= 1250 ? GEOMCH : GEOM,
@@ -34,7 +33,7 @@ export default function History() {
         <div
           className={style.container}
           style={{
-            margin: screenWidth <= 860 ? "50px auto" : "0px auto",
+            margin: screenWidth <= 860 ? "50px auto" : "-20px auto",
             width:
               screenWidth <= 690 ? "calc(100% - 30px)" : "calc(100% - 200px)",
           }}
