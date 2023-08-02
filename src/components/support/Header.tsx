@@ -99,7 +99,7 @@ export default function Header() {
       icon: REGISTRATION_ICON,
     },
   ];
-  
+  console.log(screenWidth)
   return (
     <>
       <header>
@@ -221,7 +221,7 @@ export default function Header() {
                   : dispatching("GEO", 0);
               }}
             />
-            <ul className={style.navUL}>
+            <ul className={screenWidth < 930 ? `${style.ml50} ${style.navUL}` : style.navUL} >
               {LEFT_LIST.map((data, key) => {
                 return (
                   <li key={key}>

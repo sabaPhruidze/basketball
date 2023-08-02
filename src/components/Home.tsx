@@ -54,13 +54,13 @@ export default function Home() {
       <div
         style={{
           margin:
-            screenWidth < 850 ? "35px 0px 0px 50px" : "160px 0px 0px 75px",
+            screenWidth < 850 ? "0px 0px 150px 50px" : "0px 0px 50px 75px",
         }}
       >
         <div
           className={style.homeText}
           style={{
-            width: screenWidth <= 520 ? 250 : screenWidth <= 770 ? 400 : 650,
+            width: screenWidth <= 520 ? 250 : screenWidth <= 770 ? 400 : 720,
           }}
         >
           <h1>
@@ -77,7 +77,7 @@ export default function Home() {
               "your ultimate destination for everything hoops-related!"
             )}
           </h2>
-          <h3 style={{ width: screenWidth <= 580 ? 290 : 330 }}>
+          <h3 style={{ width: screenWidth <= 580 ? 290 : 380 }}>
             {languageChanger(
               "თუ ხართ მოყვარული გულშემა- ტკივარი, მოთამაშე, რომელიც ცდილობს გაიუმჯობესოს თავისი უნარები, ან უბრალოდ გსურთ დატკბეთ თამაშის ყურებით, თქვენ სწორ ადგილას მოხვედით.",
               "熱心なファンでも、スキルを向上させたい選手でも、単純にゲームの興奮を楽しむ人でも、あなたは正しい場所に来ました。",

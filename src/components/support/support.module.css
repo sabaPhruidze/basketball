@@ -80,7 +80,7 @@ I means icon
 .menuIcon {
   width: 20px;
   height: 20px;
-  margin-left: 7px;
+  margin-left: -25px;
 }
 
 /* navCollapse */
@@ -105,7 +105,7 @@ I means icon
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  margin: 0 -30 0 30px;
+  margin: 0 -30px 0 30px;
 }
 
 .navWBK {
@@ -134,8 +134,12 @@ I means icon
   position: absolute;
   z-index: 3;
   cursor: pointer;
-  right: 20px;
-  top: 28px;
+  right: 15px;
+  top: 22px;
+}
+
+.ml50 {
+  margin-left: -90px;
 }
 
 /* navNotCollapse */

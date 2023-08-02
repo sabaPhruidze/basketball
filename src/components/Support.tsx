@@ -87,7 +87,7 @@ export default function ContactForm() {
             <label htmlFor="text">{languageChanger('შეტყობინება',"メッセージ","Message")}</label>
             <textarea id="text" minLength={10} ref={textRef} placeholder={languageChanger('გთხოვთ ჩაწეროთ თქვენი შეკითხვა',"質問を入力してください",'Please enter your question')} />
           </div>
-          <button type="submit">{languageChanger('გაგზავნა',"送信する","Submit")}</button>
+          <button type="submit">{languageChanger("გაგზავნა","送信する","Submit")}</button>
         </form>
         {screenWidth < 870 ? null :
           <Carousel className={screenWidth < 1170 ? style.caruselS  : style.caruselB}>
