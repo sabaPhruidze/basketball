@@ -5,7 +5,7 @@ import style from "./home.module.css";
 import facebook from "../assets/icon/facebook.svg";
 import instagram from "../assets/icon/instagram.svg";
 import twitter from "../assets/icon/twitter.svg";
-import EXIT from "../assets/icon/EXIT.svg";
+import EXIT from "/assets/icon/EXIT.svg";
 import mainVideoMobile from "../assets/video/mainVideomobile.mp4";
 import mainVideoForWeb from "../assets/video/mainVideoForWeb (2).mp4";
 import { useContext } from "react";
