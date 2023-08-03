@@ -5,7 +5,7 @@ import { questionsContext } from "./Questions";
 import styles from "./accordion.module.css";
 export default function ChildAccordionCard() {
   const context = useContext(questionsContext);
-  const { item,arrowClick,showHideNumberChange,arrow,screenWidth } =
+  const { item,arrowClick,showHideNumberChange,arrow} =
     context;
     const {number,title,content} = item
 

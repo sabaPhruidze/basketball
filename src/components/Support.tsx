@@ -31,6 +31,7 @@ export default function ContactForm() {
           text: textRef.current.value,
         }
       );
+      console.log(response);
       nameRef.current.value = "";
       emailRef.current.value = "";
       textRef.current.value = "";
