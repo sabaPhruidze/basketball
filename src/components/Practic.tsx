@@ -1,4 +1,5 @@
 import { useState,useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { myContext } from './Root';
 import Select from 'react-select';
 import style from "./practic.module.css";
@@ -22,7 +23,7 @@ interface IframeData {
 export default function Practic() {
   const context = useContext(myContext);
   const {languageChanger} = context;
-
+  const navigate = useNavigate();
   const iframeData1: IframeData[] = [
     {
       number:1,
@@ -120,7 +121,7 @@ export default function Practic() {
     : iframeData2;
 
   return (
-    <div>
+    <div className={style.containerP}>
       <div className={style.backgroundP}></div>
         <Select
           options={nameOptions}
@@ -154,8 +155,12 @@ export default function Practic() {
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               ></iframe>
               <p className={style.videoName}>{data.names[0]}</p>
-            </div>
+          </div>
           ))}
+      </div>
+      <div className={style.dFlexRow}>
+        <button className={style.btnP} onClick={() => {navigate('/practic/basic')}}>{languageChanger('დამწყებისთვის','初心者向け',"For beginners")}</button>
+        <button className={style.btnP} onClick={() => {navigate('/practic/intermedate')}}>{languageChanger('გამოცდილისთვის','経験者向け','For the experienced')}</button>
       </div>
     </div>
   );
