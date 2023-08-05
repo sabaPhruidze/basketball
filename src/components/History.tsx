@@ -33,7 +33,7 @@ export default function History() {
         <div
           className={style.container}
           style={{
-            margin: screenWidth <= 860 ? "50px auto" : "-20px auto",
+            margin: screenWidth <= 860 ? "50px auto" : "10px auto",
             width:
               screenWidth <= 690 ? "calc(100% - 30px)" : "calc(100% - 200px)",
           }}

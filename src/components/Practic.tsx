@@ -122,7 +122,7 @@ export default function Practic() {
 
   return (
     <div className={style.containerP}>
-      <div className={style.backgroundP}></div>
+      <div className={style.background}></div>
         <Select
           options={nameOptions}
           value={selectedOption}

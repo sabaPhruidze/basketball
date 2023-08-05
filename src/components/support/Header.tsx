@@ -102,7 +102,7 @@ export default function Header() {
 
   return (
     <>
-      <header>
+      <header style={{height: 80}}>
         {screenWidth < 860 ? (
           navCollapse ? (
             <div className={style.navBackground}>

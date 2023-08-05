@@ -10,7 +10,7 @@ interface IframeData {
 
 const Basic = () => {
   const context = useContext(myContext);
-  const {languageChanger} = context
+  const {languageChanger,screenWidth} = context
   const iframeData: IframeData[] = [
     {
       number:1,
@@ -42,7 +42,36 @@ const Basic = () => {
       names: [languageChanger("მეხუთე მოძრაობა","第五楽章","Fifth move"),languageChanger("მეხუთე მოძრაობა დამწყებთათვის","初心者向けの第五楽章","Fifth movement for beginners"),],
       src: "https://www.youtube.com/embed/4GKsOX-UmA0?list=PLWgKm7kgxzCuaTMjQ0mYmOgsh62LPcq5O",
     },
-    
+    {
+      number:7,
+      names: [languageChanger("მეექვსე მოძრაობა","第六楽章","Sixth move")],
+      src: "https://www.youtube.com/embed/GYGzu9afduQ?list=PLWgKm7kgxzCuaTMjQ0mYmOgsh62LPcq5O",
+    },
+    {
+      number:8,
+      names: [languageChanger("მეშვიდე მოძრაობა","第七楽章","Seventh move")],
+      src: "https://www.youtube.com/embed/XbtmGKif7Ck?list=PLWgKm7kgxzCuaTMjQ0mYmOgsh62LPcq5O",
+    },
+    {
+      number:9,
+      names: [languageChanger("მერვე მოძრაობა","第八楽章","Eight move")],
+      src: "https://www.youtube.com/embed/dV-jZKwQHjA?list=PLWgKm7kgxzCuaTMjQ0mYmOgsh62LPcq5O",
+    },
+    {
+      number:10,
+      names: [languageChanger("მეცხრე მოძრაობა","第九楽章","Ninth move")],
+      src: "https://www.youtube.com/embed/-I7hpepS5e4?list=PLWgKm7kgxzCuaTMjQ0mYmOgsh62LPcq5O",
+    },
+    {
+      number:11,
+      names: [languageChanger("მეათე მოძრაობა","第十楽章","Tenth move")],
+      src: "https://www.youtube.com/embed/cGXFXEJUEpI?list=PLWgKm7kgxzCuaTMjQ0mYmOgsh62LPcq5O",
+    },
+    {
+      number:12,
+      names: [languageChanger("მეთერთმეტე მოძრაობა","第十一楽章","Eleventh move")],
+      src: "https://www.youtube.com/embed/4GKsOX-UmA0?list=PLWgKm7kgxzCuaTMjQ0mYmOgsh62LPcq5O",
+    },
   ];
   const [searchTerm, setSearchTerm] = useState("");
   const [filteredVideos, setFilteredVideos] = useState(iframeData);
@@ -65,11 +94,13 @@ const Basic = () => {
 
   return (
     <div className={style.containerB}>
+      <div className={style.background}></div>
       <input 
         type="text"
         onChange={handleChange} 
         value={searchTerm}  
         className={style.search}
+        style={{width: screenWidth < 550 ? 350 : 500}}
       />    
     <div className={style.videoOutside}>
       {filteredVideos.map((video) => {
@@ -82,6 +113,7 @@ const Basic = () => {
                   title={video.names[0]}
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   className={style.video}
+                  
                 ></iframe>
                 <p>{video.names[0]}</p>
             </div>
