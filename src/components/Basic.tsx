@@ -64,27 +64,30 @@ const Basic = () => {
   };
 
   return (
-    <div>
+    <div className={style.containerB}>
       <input 
         type="text"
         onChange={handleChange} 
         value={searchTerm}  
-        className=""
+        className={style.search}
       />    
+    <div className={style.videoOutside}>
       {filteredVideos.map((video) => {
-        return ( 
-          <div key={video.number}>
-             <iframe
-                width="200"
-                height="180"
-                src={video.src}
-                title={video.names[0]}
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              ></iframe>
-              <p>{video.names[0]}</p>
-          </div>
-        );    
-      })}         
+          return ( 
+            <div key={video.number} className={style.videoinside}>
+              <iframe
+                  width="300"
+                  height="220"
+                  src={video.src}
+                  title={video.names[0]}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  className={style.video}
+                ></iframe>
+                <p>{video.names[0]}</p>
+            </div>
+          );    
+        })}         
+    </div>
     </div>
   );
 };
