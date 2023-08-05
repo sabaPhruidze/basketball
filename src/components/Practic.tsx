@@ -158,7 +158,7 @@ export default function Practic() {
           </div>
           ))}
       </div>
-      <div className={style.dFlexRow}>
+      <div className={style.dFlexRowForButtonsP} >
         <button className={style.btnP} onClick={() => {navigate('/practic/basic')}}>{languageChanger('დამწყებისთვის','初心者向け',"For beginners")}</button>
         <button className={style.btnP} onClick={() => {navigate('/practic/intermedate')}}>{languageChanger('გამოცდილისთვის','経験者向け','For the experienced')}</button>
       </div>

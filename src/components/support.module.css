@@ -76,7 +76,7 @@ textarea {
     padding: 10px 20px;
 }
 
-button {
+.btnS {
     width: 120px;
     height: 45px;
     font-family: capramiso;
@@ -90,7 +90,7 @@ button {
     transition: 0.5s;
 }
 
-button:hover {
+.btnS:hover {
     transform: scale(1.30);
 }
 

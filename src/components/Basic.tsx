@@ -1,5 +1,6 @@
 import { useState, useEffect,useContext } from "react";
 import { myContext } from "./Root";
+import style from './practic.module.css'
 interface IframeData {
   number: number;
   names: string[];  
@@ -68,6 +69,7 @@ const Basic = () => {
         type="text"
         onChange={handleChange} 
         value={searchTerm}  
+        className=""
       />    
       {filteredVideos.map((video) => {
         return ( 
