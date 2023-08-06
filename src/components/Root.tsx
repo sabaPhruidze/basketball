@@ -11,12 +11,14 @@ interface InitialState {
   whichLanguage: number;
   arrowClick: null|number;
   sendFS:boolean;
+  intermedateButton:boolean;
 }
 const initialState : InitialState  = {
   navCollapse: false,
   whichLanguage: 0,
   arrowClick:null,
   sendFS:false,
+  intermedateButton:false,
 };
 
 type ActionType = {
@@ -41,6 +43,9 @@ const reducer = (state: typeof initialState, action: ActionType) => {
       break;
     case "sendForSupport":
       newState.sendFS = action.payload;
+      break
+    case "intermedateButton":
+      newState.intermedateButton =action.payload;
       break
     default:
       throw new Error("Unknown action type");
