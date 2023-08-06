@@ -8,7 +8,7 @@ export const myContext = createContext<any>("");
 // for Register
 interface User { 
   name: string;
-  surname: string;
+  lastname: string;
   nickname: string;
   birthday: string; 
   email: string;
@@ -24,6 +24,8 @@ interface InitialState {
   intermedateButton:boolean;
   register:User;
   registerLocalStorage:User[];
+  postLS:string;                   //post local storage
+  submit:boolean;
 }
 const initialState : InitialState  = {
   navCollapse: false,
@@ -33,13 +35,15 @@ const initialState : InitialState  = {
   intermedateButton:false,
   register:{
     name: '',
-    surname: '',
+    lastname: '',
     nickname:'',
     birthday:'',
     email: '',
     password:'',
   },
   registerLocalStorage:[],
+  postLS:'',
+  submit:false,
 };
 
 type ActionType = {
@@ -71,8 +75,8 @@ const reducer = (state: typeof initialState, action: ActionType) => {
     case "registerName":
       newState.register.name =action.payload;
       break
-    case "registerSurname":
-      newState.register.surname =action.payload;
+    case "registerLastname":
+      newState.register.lastname =action.payload;
       break
     case "registerNickname":
       newState.register.nickname =action.payload;
@@ -85,6 +89,13 @@ const reducer = (state: typeof initialState, action: ActionType) => {
       break
     case "registerPassword":
       newState.register.password =action.payload;
+      break;
+    case "postSuccess":
+    case "postFailure":
+      newState.postLS =action.type;
+      break;
+    case 'submit':
+      newState.submit = action.payload;
       break
     default:
       throw new Error("Unknown action type");
