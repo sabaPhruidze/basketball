@@ -5,6 +5,16 @@ import style from "./home.module.css";
 import { Outlet } from "react-router-dom";
 
 export const myContext = createContext<any>("");
+// for Register
+interface User { 
+  name: string;
+  surname: string;
+  nickname: string;
+  birthday: string; 
+  email: string;
+  password: string;
+}
+// for Register
 
 interface InitialState {
   navCollapse: boolean;
@@ -12,6 +22,8 @@ interface InitialState {
   arrowClick: null|number;
   sendFS:boolean;
   intermedateButton:boolean;
+  register:User;
+  registerLocalStorage:User[];
 }
 const initialState : InitialState  = {
   navCollapse: false,
@@ -19,6 +31,15 @@ const initialState : InitialState  = {
   arrowClick:null,
   sendFS:false,
   intermedateButton:false,
+  register:{
+    name: '',
+    surname: '',
+    nickname:'',
+    birthday:'',
+    email: '',
+    password:'',
+  },
+  registerLocalStorage:[],
 };
 
 type ActionType = {
@@ -47,11 +68,29 @@ const reducer = (state: typeof initialState, action: ActionType) => {
     case "intermedateButton":
       newState.intermedateButton =action.payload;
       break
+    case "registerName":
+      newState.register.name =action.payload;
+      break
+    case "registerSurname":
+      newState.register.surname =action.payload;
+      break
+    case "registerNickname":
+      newState.register.nickname =action.payload;
+      break
+    case "registerEmail":
+      newState.register.email =action.payload;
+      break
+    case "registerBirthday":
+      newState.register.birthday =action.payload;
+      break
+    case "registerPassword":
+      newState.register.password =action.payload;
+      break
     default:
       throw new Error("Unknown action type");
   }
 
-  return newState; // Return the updated state
+  return newState; 
 };
 
 export default function Root() {
