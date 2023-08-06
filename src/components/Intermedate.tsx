@@ -103,7 +103,7 @@ const Intermedate = () => {
           onChange={handleChange} 
           value={searchTerm}  
           className={style.search}
-          style={{width: screenWidth < 550 ? 350 : 500}}
+          style={{width: screenWidth < 620 ? 300 : 500}}
         />    
         <button className={style.searchIBTN}>
           <img src={SEARCH} alt="SEARCH" className={style.searchI} onClick={() => dispatching('intermedateButton',!intermedateButton)}/>

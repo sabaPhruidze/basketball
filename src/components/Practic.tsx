@@ -22,7 +22,8 @@ interface IframeData {
 
 export default function Practic() {
   const context = useContext(myContext);
-  const {languageChanger} = context;
+  const {languageChanger,screenWidth} = context;
+
   const navigate = useNavigate();
   const iframeData1: IframeData[] = [
     {
@@ -91,7 +92,7 @@ export default function Practic() {
     },
   ];
 
-
+  console.log(screenWidth);
 
 
   const [selectedOption, setSelectedOption] = useState<Option | null>(null);
