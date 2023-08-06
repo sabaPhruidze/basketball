@@ -14,12 +14,18 @@ import SC5 from "../assets/img/SC5.jpg"
 
 export default function ContactForm() {
   const context = useContext(myContext);
-  const {  languageChanger, screenWidth,dispatching } = context;
+  const {  languageChanger, screenWidth,dispatching,state } = context;
+  const {whichLanguage} =state
   const navigate = useNavigate();
   const nameRef = useRef<any>("");
   const emailRef = useRef<any>("");
   const textRef = useRef<any>("");
-
+  
+  const link = (
+    <>
+    <a href="https://coding-world.com/fake-contact/" className={style.ALink}>{languageChanger('ლინკზე','リンク','Link')}</a>
+    </>
+  )
   const handleSubmit = async (e: any) => {
     e.preventDefault();
     try {
@@ -89,6 +95,7 @@ export default function ContactForm() {
             <textarea className={screenWidth < 600 ? style.inputSSize : style.inputBSize} id="text" minLength={10} ref={textRef} placeholder={languageChanger('გთხოვთ ჩაწეროთ თქვენი შეკითხვა',"質問を入力してください",'Please enter your question')} />
           </div>
           <button type="submit" className={style.btnS}>{languageChanger("გაგზავნა","送信する","Submit")}</button>
+          <div className={style.warning} style={{marginTop:whichLanguage === 1 ? 30 : 15}}>{languageChanger(<>გთხოვთ, თავი შეიკავოთ ზუსტი პერსონალური ინფორმაციისგან, როგორიცაა თქვენი სახელი, ელფოსტა ან ნებისმიერი სხვა ტექსტი, რადგან ის გადაიცემა შემდეგ {link} . გმადლობთ გაგებისთვის.</>,<>お名前、メールアドレス、その他のテキストなどの正確な個人情報は、次の {link} 。 ご理解のほどよろしくお願いいたします。</>,<>We kindly request that you refrain from providing accurate personal information, such as your name, email, or any other text, as it will be transmitted on the final page of the following {link} . Thank you for your understanding.</>)}</div>
         </form>
         {screenWidth < 870 ? null :
           <Carousel className={screenWidth < 1170 ? style.caruselS  : style.caruselB}>
