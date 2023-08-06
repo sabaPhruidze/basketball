@@ -78,15 +78,15 @@ export default function ContactForm() {
         <form onSubmit={handleSubmit} >
           <div>
             <label htmlFor="name"  className={screenWidth < 1250 ? style.labelSScale : style.labelBScale}>{languageChanger('სახელი','名前','Name')}</label>
-            <input id="name" type="text" ref={nameRef} minLength={3} placeholder={languageChanger('გთხოვთ მიუთითოთ თქვენი სახელი',"あなたの名前を入力してください",'Please enter your name')} />
+            <input className={screenWidth < 600 ? style.inputSSize : style.inputBSize} id="name" type="text" ref={nameRef} minLength={3} placeholder={languageChanger('გთხოვთ მიუთითოთ თქვენი სახელი',"あなたの名前を入力してください",'Please enter your name')} />
           </div>
           <div>
             <label htmlFor="email" className={screenWidth < 1250 ? style.labelSScale : style.labelBScale}>{languageChanger('ელ-ფოსტა','メール','Email')}</label>
-            <input id="email" type="email" ref={emailRef} pattern="^[a-zA-Z0-9._%+-]+@gmail\.com$" placeholder={languageChanger('გთხოვთ მიუთითოთ თქვენი ელ-ფოსტა',"メールアドレスを入力してください",'Please enteryour e-mail address')} />
+            <input className={screenWidth < 600 ? style.inputSSize : style.inputBSize} id="email" type="email" ref={emailRef} pattern="^[a-zA-Z0-9._%+-]+@gmail\.com$" placeholder={languageChanger('გთხოვთ მიუთითოთ თქვენი ელ-ფოსტა',"メールアドレスを入力してください",'Please enteryour e-mail address')} />
           </div>
           <div>
             <label htmlFor="text" className={screenWidth < 1250 ? style.labelSScale : style.labelBScale}>{languageChanger('შეტყობინება',"メッセージ","Message")}</label>
-            <textarea id="text" minLength={10} ref={textRef} placeholder={languageChanger('გთხოვთ ჩაწეროთ თქვენი შეკითხვა',"質問を入力してください",'Please enter your question')} />
+            <textarea className={screenWidth < 600 ? style.inputSSize : style.inputBSize} id="text" minLength={10} ref={textRef} placeholder={languageChanger('გთხოვთ ჩაწეროთ თქვენი შეკითხვა',"質問を入力してください",'Please enter your question')} />
           </div>
           <button type="submit" className={style.btnS}>{languageChanger("გაგზავნა","送信する","Submit")}</button>
         </form>
