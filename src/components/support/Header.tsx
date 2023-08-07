@@ -112,7 +112,7 @@ export default function Header() {
                   alt="EXITICON"
                   className={`${style.exitI} ${style.filterW}`}
                   onClick={() => {
-                    dispatching("navHide", false);
+                    dispatching("N_HIDE", false);
                   }}
                 />
                 <img
@@ -194,7 +194,7 @@ export default function Header() {
                       : 30,
                 }}
                 onClick={() => {
-                  dispatching("navShow", true);
+                  dispatching("N_SHOW", true);
                 }}
               />
             </>

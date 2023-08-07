@@ -15,9 +15,9 @@ export default function Questions() {
   
   function showHideNumberChange(number: number | null) {
     if (arrowClicK === number) {
-      dispatching("arrow",null);
+      dispatching("ARROW",null);
     } else {
-      dispatching("arrow",number);
+      dispatching("ARROW",number);
     }
   }
   const DATA: {

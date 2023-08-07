@@ -34,14 +34,14 @@ export default function Home() {
     },
   ];
   const navigation = useNavigate();
-  useLayoutEffect(() => dispatching('CANNOTLOGIN'),[]);
+  useLayoutEffect(() => dispatching('CAN_NOT_LOGIN'),[]);
   return (
     <>
       <div className={style.orangeCover}></div>
       {sendFS ? (
         <div className={style.containerForSupport}>
           <div className={style.supportSuccess}>
-            <img src={EXIT} alt="exit" className={style.exitI} onClick={() => dispatching("sendForSupport",false)}/>
+            <img src={EXIT} alt="exit" className={style.exitI} onClick={() => dispatching("SEND_FOR_SUPPORT",false)}/>
             <p>{languageChanger("გილოცავთ! თქვენი შეტყობინება წარმატებით გაიგზავნა","おめでとう！ メッセージは正常に送信されました","congratulations! Your message has been successfully sent ")}</p>
           </div>
       </div>

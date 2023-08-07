@@ -106,7 +106,7 @@ const Intermedate = () => {
           style={{width: screenWidth < 620 ? 300 : 500}}
         />    
         <button className={style.searchIBTN}>
-          <img src={SEARCH} alt="SEARCH" className={style.searchI} onClick={() => dispatching('intermedatebutton',!IbuttoN)}/>
+          <img src={SEARCH} alt="SEARCH" className={style.searchI} onClick={() => dispatching('INTERMEDATE_BTN',!IbuttoN)}/>
         </button>
       </div>
     <div className={style.videoOutside}>

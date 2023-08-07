@@ -17,7 +17,7 @@ export default function Register() {
       labelContext:languageChanger('სახელი',"名前",'Name'),
       type:'text',
       value:register.name || '',
-      onChange:(e:any) => {dispatching('registerName',e.target.value)}
+      onChange:(e:any) => {dispatching('REGISTER_NAME',e.target.value)}
     },
     {
       key:1,
@@ -25,7 +25,7 @@ export default function Register() {
       labelContext:languageChanger('გვარი',"苗字",'lastname'),
       type:'text',
       value:register.lastname || '',
-      onChange:(e:any) => dispatching('registerLastname',e.target.value),
+      onChange:(e:any) => dispatching('REGISTER_LASTNAME',e.target.value),
     },
     {
       key:2,
@@ -33,7 +33,7 @@ export default function Register() {
       labelContext:languageChanger('მეტსახელი',"異名",'nickname'),
       type:'text',
       value:register.nickname || '',
-      onChange:(e:any) => dispatching('registerNickname',e.target.value),
+      onChange:(e:any) => dispatching('REGISTER_NICKNAME',e.target.value),
     },
     {
       key:3,
@@ -41,7 +41,7 @@ export default function Register() {
       labelContext:languageChanger('ელ-ფოსტა',"メール",'Email'),
       type:'email',
       value:register.email || '',
-      onChange:(e:any) => dispatching('registerEmail',e.target.value),
+      onChange:(e:any) => dispatching('REGISTER_EMAIL',e.target.value),
     },
     {
       key:4,
@@ -49,7 +49,7 @@ export default function Register() {
       labelContext:languageChanger('დაბადების თარიღი',"誕生日",'Birthday'),
       type:'date',
       value:register.birthday || '',
-      onChange:(e:any) => dispatching('registerBirthday',e.target.value),
+      onChange:(e:any) => dispatching('REGISTER_BIRTHDAY',e.target.value),
     },
     {
       key:5,
@@ -57,7 +57,7 @@ export default function Register() {
       labelContext:languageChanger('პაროლი',"パスワード",'Password'),
       type:'password',
       value:register.password || '',
-      onChange:(e:any) => dispatching('registerPassword',e.target.value),
+      onChange:(e:any) => dispatching('REGISTER_PASSWORD',e.target.value),
     },
   ];
  
@@ -75,7 +75,7 @@ let password = register.password.length > 5 && hasLetterAndNumber;
 
 useEffect(() => {
   if(submitR && name && lastname && nickname && email && birthday && password) {
-      dispatching('postSuccess');
+      dispatching('POST_SUCCESS');
       
       // Retrieve existing users
       const existingUsers = JSON.parse(localStorage.getItem('user') || "[]");
@@ -86,33 +86,33 @@ useEffect(() => {
       // Save all users back to local storage
       localStorage.setItem('user', JSON.stringify(existingUsers));
       
-      dispatching('submit',false);
+      dispatching("SUBMIT_R",false);
       dispatchingFree();
       navigate('/login');
     } else {
-      dispatching('postFailure');  
+      dispatching('POST_FAILURE');  
     }
 },[submitR]);
 // for validation
 
 
 const dispatchingFree = () => {
-  dispatching('registerName','');
-      dispatching('registerLastname','');
-      dispatching('registerNickname','');
-      dispatching('registerEmail','');
-      dispatching('registerBirthday','');
-      dispatching('registerPassword','');
+  dispatching('REGISTER_NAME','');
+      dispatching('REGISTER_LASTNAME','');
+      dispatching('REGISTER_NICKNAME','');
+      dispatching('REGISTER_EMAIL','');
+      dispatching('REGISTER_BIRTHDAY','');
+      dispatching('REGISTER_PASSWORD','');
 }
 return (
   <>
   <div className={style.background}></div>
   <div className={style.wrapper}>
-  {postLS === 'postFailure' ? (
+  {postLS === 'POST_FAILURE' ? (
         <div className={style.containerForSupport}>
           <div className={style.supportSuccess}>
             <img src={BGFORREGISTERICON} alt="BGFORREGISTERICON" className={style.BGFORREGISTERICON}/>
-            <img src={EXIT} alt="exit" className={style.exitI} onClick={() => dispatching("postZero")}/>
+            <img src={EXIT} alt="exit" className={style.exitI} onClick={() => dispatching("POST_ZERO")}/>
             <p>{languageChanger(<>
               დარწმუნდით, რომ შესრულებულია შემდეგი პირობები გამონაკლისის გარეშე:
 
@@ -152,7 +152,7 @@ Password must contain a minimum of five characters, including at least one lette
       <input type={data.type} name={data.id} id={data.id} value={data.value} onChange={data.onChange}/>
     </div>
     ))}
-    <button className={style.btnR} onClick={() => dispatching('submit',!submitR)}>{languageChanger("გაგზავნა","送信する","Submit")}</button>
+    <button className={style.btnR} onClick={() => dispatching("SUBMIT_R",!submitR)}>{languageChanger("გაგზავნა","送信する","Submit")}</button>
   </div>
   </>
 );

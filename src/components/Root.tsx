@@ -68,8 +68,8 @@ type ActionType = {
 const reducer = (state: typeof initialState, action: ActionType) => {
   const newState = { ...state };
   switch (action.type) {
-    case "navShow":
-    case "navHide":
+    case "N_SHOW":
+    case "N_HIDE":
       newState.navCollapsE = action.payload;
       break;
     case "GEO":
@@ -77,69 +77,68 @@ const reducer = (state: typeof initialState, action: ActionType) => {
     case "UK":
       newState.languagE = action.payload;
       break;
-    case "arrow":
+    case "ARROW":
       newState.arrowClicK = action.payload;
       break;
-    case "sendForSupport":
+    case "SEND_FOR_SUPPORT":
       newState.sendFS = action.payload;
       break
-    case "intermedatebutton":
+    case 'INTERMEDATE_BTN':
       newState.IbuttoN =action.payload;
       break
-    case "registerName":
+    case "REGISTER_NAME":
       newState.register.name =action.payload;
       break
-    case "registerLastname":
+    case "REGISTER_LASTNAME":
       newState.register.lastname =action.payload;
       break
-    case "registerNickname":
+    case "REGISTER_NICKNAME":
       newState.register.nickname =action.payload;
       break
-    case "registerEmail":
+    case "REGISTER_EMAIL":
       newState.register.email =action.payload;
       break
-    case "registerBirthday":
+    case "REGISTER_BIRTHDAY":
       newState.register.birthday =action.payload;
       break
-    case "registerPassword":
+    case "REGISTER_PASSWORD":
       newState.register.password =action.payload;
       break;
-    case "postSuccess":
-    case "postFailure":
-    case "postZero":
+    case "POST_SUCCESS":
+    case "POST_FAILURE":
+    case "POST_ZERO":
       newState.postLS =action.type;
       break;
-    case 'submit':
+    case "SUBMIT_R":
       newState.submitR= action.payload;
       break
-    case "loginName":
+    case "LOGIN_NAME":
       newState.login.name =action.payload;
       break
-    case "loginLastname":
+    case "LOGIN_LASTNAME":
       newState.login.lastname =action.payload;
       break
-    case "loginNickname":
+    case "LOGIN_NICKNAME":
       newState.login.nickname =action.payload;
       break
-    case "loginEmail":
+    case "LOGIN_EMAIL":
       newState.login.email =action.payload;
       break
-    case "loginBirthday":
+    case "LOGIN_BIRTHDAY":
       newState.login.birthday =action.payload;
       break
-    case "loginPassword":
+    case "LOGIN_PASSWORD":
         newState.login.password =action.payload;
         break;
-    case "submitL":
+    case "SUBMIT_L":
       newState.submitL =action.payload;
       break;
     case "LOGIN":
-    case "CANNOTLOGIN":
-    case "BEFORETRYINGLOGIN":
+    case "CAN_NOT_LOGIN":
+    case "BEFORE_TRYING_LOGIN":
       newState.loginLS = action.type;
       break;
-    
-        default:
+    default:
       throw new Error("Unknown action type");
   }
 
@@ -150,13 +149,11 @@ export default function Root() {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   useEffect(() => {
     const handleResize = () => {
-      setScreenWidth(window.innerWidth); // for understanding what is the width 
+      setScreenWidth(window.innerWidth); // width of brower
     };
-
-    window.addEventListener("resize", handleResize);
-
+    window.addEventListener("resize", handleResize);//before
     return () => {
-      window.removeEventListener("resize", handleResize);
+      window.removeEventListener("resize", handleResize);//after
     };
   }, []);
   const [state, dispatch] = useReducer(reducer, initialState);
@@ -190,7 +187,7 @@ export default function Root() {
         languageChanger,
       }}
     >
-      <div className={style.DFlexColumn100}>
+      <div className={style.root}>
         <Header />
         <Outlet />
         <Footer />

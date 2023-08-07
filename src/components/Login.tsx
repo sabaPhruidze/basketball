@@ -23,7 +23,7 @@ export default function Login() {
       labelContext:languageChanger('ელ-ფოსტა',"メール",'Email'),
       type:'email',
       value:login.email || '',
-      onChange:(e:any) => dispatching('loginEmail',e.target.value),
+      onChange:(e:any) => dispatching('LOGIN_EMAIL',e.target.value),
     },
     {
       key:1,
@@ -31,7 +31,7 @@ export default function Login() {
       labelContext:languageChanger('პაროლი',"パスワード",'Password'),
       type:'password',
       value:login.password || '',
-      onChange:(e:any) => dispatching('loginPassword',e.target.value),
+      onChange:(e:any) => dispatching('LOGIN_PASSWORD',e.target.value),
     },
   ];
  const navigate = useNavigate();
@@ -41,20 +41,20 @@ export default function Login() {
       if (user) {  
         dispatching('LOGIN');
         navigate('/');
-        dispatching('loginEmail','');
-        dispatching('loginPassword','');
+        dispatching('LOGIN_EMAIL','');
+        dispatching('LOGIN_PASSWORD','');
       } else {
-        dispatching('CANNOTLOGIN');
+        dispatching('CAN_NOT_LOGIN');
       }  
 
   }, [submitL]);
   return (
     <>
     <div className={style.background}></div>
-    {loginLS === 'CANNOTLOGIN' ? (
+    {loginLS === 'CAN_NOT_LOGIN' ? (
      <div className={style.containerForSupport}>
      <div className={style.supportSuccess}>
-       <img src={EXIT} alt="exit" className={style.exitI} onClick={() => dispatching('BEFORETRYINGLOGIN')}/>
+       <img src={EXIT} alt="exit" className={style.exitI} onClick={() => dispatching('BEFORE_TRYING_LOGIN')}/>
        <p>{languageChanger('ცადეთ ხელახლა','再試行する','Try again')}</p>
      </div>
  </div>
@@ -66,7 +66,7 @@ export default function Login() {
         <input type={data.type} name={data.id} id={data.id} value={data.value} onChange={data.onChange}/>
       </div>
       ))}
-      <button className={style.btnR} onClick={() => dispatching('submitL',!submitL)}>{languageChanger("შესვლა","ログイン","Log in")}</button>
+      <button className={style.btnR} onClick={() => dispatching("SUBMIT_L",!submitL)}>{languageChanger("შესვლა","ログイン","Log in")}</button>
     </div> 
     </>
   );

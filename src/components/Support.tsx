@@ -41,7 +41,7 @@ export default function ContactForm() {
       nameRef.current.value = "";
       emailRef.current.value = "";
       textRef.current.value = "";
-      dispatching("sendForSupport",true);
+      dispatching("SEND_FOR_SUPPORT",true);
       navigate('/');
 
     } catch (error) {
