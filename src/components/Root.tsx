@@ -37,6 +37,7 @@ interface InitialState {
   postLS:string;                   //post local storage
   submit:boolean;
   loginSubmit:boolean;
+  loginCondition:number;
 }
 const initialState : InitialState  = {
   navCollapse: false,
@@ -64,6 +65,7 @@ const initialState : InitialState  = {
   postLS:'',
   submit:false,
   loginSubmit:false,
+  loginCondition:0,
 };
 
 type ActionType = {
@@ -133,10 +135,17 @@ const reducer = (state: typeof initialState, action: ActionType) => {
     case "loginBirthday":
       newState.login.birthday =action.payload;
       break
-      case "loginPassword":
+    case "loginPassword":
         newState.login.password =action.payload;
         break;
-    default:
+    case "loginSubmit":
+      newState.loginSubmit =action.payload;
+      break;
+    case "LOGIN":
+    case "CANNOTLOGIN":
+      newState.loginCondition = action.payload;
+      break;
+        default:
       throw new Error("Unknown action type");
   }
 

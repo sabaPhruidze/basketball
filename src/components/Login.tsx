@@ -1,13 +1,20 @@
-import { useContext } from "react";
+import { useContext,useEffect } from "react";
 import { myContext } from "./Root";
 import style from './login.module.css';
 import EXIT from '../assets/icon/EXIT.svg'
 export default function Login() {
   const context = useContext(myContext);
   const {state, languageChanger,dispatching} = context
-  const {postLS,login,loginSubmit} = state;
+  const {postLS,login,loginSubmit,loginCondition} = state;
   // const {name, lastname,nickname, birthday,email, password} = login;
-  
+  interface UserLogin { 
+    name: string;
+    lastname: string;
+    nickname: string;
+    birthday: string; 
+    email: string;
+    password: string;
+  }
   const DATA = [
     {
       key:0,
@@ -26,6 +33,21 @@ export default function Login() {
       onChange:(e:any) => dispatching('loginPassword',e.target.value),
     },
   ];
+ 
+  useEffect(() => {  
+    if (loginSubmit) {
+      const users = JSON.parse(localStorage.getItem('user') || "[]") as UserLogin[];
+  
+      const user = users.find(u => u.email === login.email && u.password === login.password);
+      
+      if (user) {  
+        alert('email or password!');
+      } else {
+        alert('Invalid email or password!');
+      }  
+    }
+  }, [loginSubmit]);
+   
   return (
     <>
     <div className={style.background}></div>
@@ -37,7 +59,7 @@ export default function Login() {
           </div>
       </div>
       ) : null}
-    {postLS === "postZero" ?
+    
      <div className={style.whole}>
       {DATA.map((data) => (
       <div key={data.key} className={style.container}>
@@ -45,8 +67,8 @@ export default function Login() {
         <input type={data.type} name={data.id} id={data.id} value={data.value} onChange={data.onChange}/>
       </div>
       ))}
-      <button className={style.btnR} onClick={() => dispatching('submit',!loginSubmit)}>{languageChanger("შესვლა","ログイン","Log in")}</button>
-    </div> : null}
+      <button className={style.btnR} onClick={() => dispatching('loginSubmit',!loginSubmit)}>{languageChanger("შესვლა","ログイン","Log in")}</button>
+    </div> 
     </>
   );
 }
