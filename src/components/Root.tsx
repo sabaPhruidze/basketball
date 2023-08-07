@@ -3,7 +3,7 @@ import Header from "./support/Header";
 import Footer from "./support/Footer";
 import style from "./home.module.css";
 import { Outlet } from "react-router-dom";
-
+import EXIT from "../assets/icon/EXIT.svg"; // I am not going to use it here but I am using in many other components So I will try to make it less written
 export const myContext = createContext<any>("");
 // for Register & login
 
@@ -15,7 +15,6 @@ interface User {
   email: string;
   password: string;
 }
-
 // for Register & login
 
 // all state must have last letter written big
@@ -185,6 +184,7 @@ export default function Root() {
         dispatching,
         screenWidth,
         languageChanger,
+        EXIT
       }}
     >
       <div className={style.root}>

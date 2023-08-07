@@ -2,10 +2,10 @@ import { useNavigate } from "react-router-dom";
 import {useLayoutEffect} from "react";
 import style from "./home.module.css";
 
-import facebook from "../assets/icon/facebook.svg";
-import instagram from "../assets/icon/instagram.svg";
-import twitter from "../assets/icon/twitter.svg";
-import EXIT from "../assets/icon/EXIT.svg";
+import FACEBOOK_I from "../assets/icon/facebook.svg";
+import INSTAGRAM_I from "../assets/icon/instagram.svg";
+import TWITTER_I from "../assets/icon/twitter.svg";
+
 import mainVideoMobile from "../assets/video/mainVideomobile.mp4";
 import mainVideoForWeb from "../assets/video/mainVideoForWeb (2).mp4";
 import { useContext } from "react";
@@ -14,21 +14,21 @@ import { myContext } from "./Root";
 
 export default function Home() {
   const context = useContext(myContext);
-  const { screenWidth, languageChanger,state,dispatching } = context;
+  const { screenWidth, languageChanger,state,dispatching,EXIT} = context;
   const {sendFS} = state;
   const ICONS_DATA = [
     {
-      source: facebook,
+      source: FACEBOOK_I,
       class: `${style.FITIcon} ${style.iconF}`,
       link: "https://www.facebook.com/",
     },
     {
-      source: instagram,
+      source: INSTAGRAM_I,
       class: `${style.FITIcon} ${style.iconI}`,
       link: "https://www.instagram.com/",
     },
     {
-      source: twitter,
+      source: TWITTER_I,
       class: `${style.FITIcon} ${style.iconT}`,
       link: "https://twitter.com/i/flow/login?redirect_after_login=%2F",
     },
