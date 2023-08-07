@@ -6,7 +6,7 @@ import EXIT from '../assets/icon/EXIT.svg'
 export default function Login() {
   const context = useContext(myContext);
   const {state, languageChanger,dispatching} = context
-  const {login,loginSubmit,loginCondition} = state;
+  const {login,submitL,loginLS} = state;
   // const {name, lastname,nickname, birthday,email, password} = login;
   interface UserLogin { 
     name: string;
@@ -47,11 +47,11 @@ export default function Login() {
         dispatching('CANNOTLOGIN');
       }  
 
-  }, [loginSubmit]);
+  }, [submitL]);
   return (
     <>
     <div className={style.background}></div>
-    {loginCondition === 'CANNOTLOGIN' ? (
+    {loginLS === 'CANNOTLOGIN' ? (
      <div className={style.containerForSupport}>
      <div className={style.supportSuccess}>
        <img src={EXIT} alt="exit" className={style.exitI} onClick={() => dispatching('BEFORETRYINGLOGIN')}/>
@@ -66,7 +66,7 @@ export default function Login() {
         <input type={data.type} name={data.id} id={data.id} value={data.value} onChange={data.onChange}/>
       </div>
       ))}
-      <button className={style.btnR} onClick={() => dispatching('loginSubmit',!loginSubmit)}>{languageChanger("შესვლა","ログイン","Log in")}</button>
+      <button className={style.btnR} onClick={() => dispatching('submitL',!submitL)}>{languageChanger("შესვლა","ログイン","Log in")}</button>
     </div> 
     </>
   );

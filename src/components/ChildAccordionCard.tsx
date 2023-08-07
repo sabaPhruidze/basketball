@@ -5,7 +5,7 @@ import { questionsContext } from "./Questions";
 import styles from "./accordion.module.css";
 export default function ChildAccordionCard() {
   const context = useContext(questionsContext);
-  const { item,arrowClick,showHideNumberChange,arrow} =
+  const { item,arrowClicK,showHideNumberChange,arrow} =
     context;
     const {number,title,content} = item
 
@@ -13,12 +13,12 @@ export default function ChildAccordionCard() {
     <>
       <div className={styles.card}>
         <div className={styles.dFlexRow}>
-          <p className={arrowClick === number ? `${styles.pActive}` : ""}>
+          <p className={arrowClicK === number ? `${styles.pActive}` : ""}>
             {title}
           </p>
           <img
             className={
-              arrowClick === number
+              arrowClicK === number
                 ? `${styles.arrow} ${styles.active}`
                 : `${styles.arrow}`
             }
@@ -29,7 +29,7 @@ export default function ChildAccordionCard() {
             }}
           />
         </div>
-        {arrowClick === number ? (
+        {arrowClicK === number ? (
           <span className={styles.content}>{content}</span>
         ) : null}
         

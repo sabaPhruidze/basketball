@@ -7,7 +7,7 @@ import BGFORREGISTERICON from '../assets/img/BGFORREGISTER.jpg'
 export default function Register() {
   const context = useContext(myContext);
   const {languageChanger,state,dispatching} = context;
-  const {register,submit,postLS} = state;
+  const {register,submitR,postLS} = state;
   const navigate = useNavigate();
   
   const DATA = [
@@ -74,7 +74,7 @@ let hasLetterAndNumber = /^(?=.*[a-zA-Z])(?=.*[0-9]).+$/.test(register.password)
 let password = register.password.length > 5 && hasLetterAndNumber;
 
 useEffect(() => {
-  if(submit && name && lastname && nickname && email && birthday && password) {
+  if(submitR && name && lastname && nickname && email && birthday && password) {
       dispatching('postSuccess');
       
       // Retrieve existing users
@@ -92,7 +92,7 @@ useEffect(() => {
     } else {
       dispatching('postFailure');  
     }
-},[submit]);
+},[submitR]);
 // for validation
 
 
@@ -152,7 +152,7 @@ Password must contain a minimum of five characters, including at least one lette
       <input type={data.type} name={data.id} id={data.id} value={data.value} onChange={data.onChange}/>
     </div>
     ))}
-    <button className={style.btnR} onClick={() => dispatching('submit',!submit)}>{languageChanger("გაგზავნა","送信する","Submit")}</button>
+    <button className={style.btnR} onClick={() => dispatching('submit',!submitR)}>{languageChanger("გაგზავნა","送信する","Submit")}</button>
   </div>
   </>
 );

@@ -12,7 +12,7 @@ interface IframeData {
 const Intermedate = () => {
   const context = useContext(myContext);
   const {languageChanger,screenWidth,state,dispatching} = context
-  const {intermedateButton} = state;
+  const {IbuttoN} = state;
   const iframeData: IframeData[] = [
     {
       number:1,
@@ -79,7 +79,7 @@ const Intermedate = () => {
   const [filteredVideos, setFilteredVideos] = useState(iframeData);
   useEffect(() => {
     filterVideos();  
-  }, [intermedateButton]);
+  }, [IbuttoN]);
 
   const filterVideos = () => {
     const filtered = iframeData.filter((video) => {
@@ -106,7 +106,7 @@ const Intermedate = () => {
           style={{width: screenWidth < 620 ? 300 : 500}}
         />    
         <button className={style.searchIBTN}>
-          <img src={SEARCH} alt="SEARCH" className={style.searchI} onClick={() => dispatching('intermedateButton',!intermedateButton)}/>
+          <img src={SEARCH} alt="SEARCH" className={style.searchI} onClick={() => dispatching('intermedatebutton',!IbuttoN)}/>
         </button>
       </div>
     <div className={style.videoOutside}>

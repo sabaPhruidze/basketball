@@ -22,7 +22,7 @@ import JPN2 from "../assets/img/JPN2.jpg"
 export default function HistoryInfo() {
   const context = useContext(myContext);
   const { screenWidth, state, languageChanger } = context;
-  const { whichLanguage } = state;
+  const { languagE } = state;
   const pagenumber = [1, 2, 3, 4, 5, 6, 7, 8];
   const navigate = useNavigate();
   const location = useLocation();
@@ -403,7 +403,7 @@ export default function HistoryInfo() {
             className={style.context}
             style={{
               fontSize:
-                whichLanguage === 0 ? 21 : whichLanguage === 1 ? 22 : 26,
+                languagE === 0 ? 21 : languagE === 1 ? 22 : 26,
             }}
           >
             {languageChanger(

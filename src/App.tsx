@@ -17,7 +17,6 @@ import Questions from "./components/Questions";
 import Support from "./components/Support";
 import Login from "./components/Login";
 import Register from "./components/Register";
-import Forgot from "./components/Forgot";
 function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
@@ -34,7 +33,6 @@ function App() {
         <Route path="/support" element={<Support />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/forgot" element={<Forgot />} />
       </Route>
     )
   );

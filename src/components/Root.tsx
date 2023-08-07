@@ -5,7 +5,8 @@ import style from "./home.module.css";
 import { Outlet } from "react-router-dom";
 
 export const myContext = createContext<any>("");
-// for Register
+// for Register & login
+
 interface User { 
   name: string;
   lastname: string;
@@ -14,38 +15,29 @@ interface User {
   email: string;
   password: string;
 }
-// for Register
-// for login
-interface UserLogin { 
-  name: string;
-  lastname: string;
-  nickname: string;
-  birthday: string; 
-  email: string;
-  password: string;
-}
-// for login
+
+// for Register & login
+
+// all state must have last letter written big
 interface InitialState {
-  navCollapse: boolean;
-  whichLanguage: number;
-  arrowClick: null|number;
-  sendFS:boolean;
-  intermedateButton:boolean;
-  register:User;
-  registerLocalStorage:User[];
-  login:UserLogin;
-  postLS:string;                   //post local storage
-  submit:boolean;
-  loginSubmit:boolean;
-  loginCondition:string;
-  loginFirst:string;
+  navCollapsE: boolean;
+  languagE: number;
+  arrowClicK: null|number;
+  sendFS:boolean; //sendForSupport
+  IbuttoN:boolean;// button in intermedate for searching
+  register:User; // this two are very much used and I am not going to change it
+  login:User; // this two are very much used and I am not going to change it
+  postLS:string; //register warning                  
+  submitR:boolean; //submit for register
+  submitL:boolean;// submit for login
+  loginLS:string;
 }
 const initialState : InitialState  = {
-  navCollapse: false,
-  whichLanguage: 0,
-  arrowClick:null,
+  navCollapsE: false,
+  languagE: 0,
+  arrowClicK:null,
   sendFS:false,
-  intermedateButton:false,
+  IbuttoN:false,
   register:{
     name: '',
     lastname: '',
@@ -62,12 +54,10 @@ const initialState : InitialState  = {
   email: '',
   password: '',
   },
-  registerLocalStorage:[],
   postLS:'',
-  submit:false,
-  loginSubmit:false,
-  loginCondition:'',
-  loginFirst:'',
+  submitR:false,
+  submitL:false,
+  loginLS:'',
 };
 
 type ActionType = {
@@ -80,21 +70,21 @@ const reducer = (state: typeof initialState, action: ActionType) => {
   switch (action.type) {
     case "navShow":
     case "navHide":
-      newState.navCollapse = action.payload;
+      newState.navCollapsE = action.payload;
       break;
     case "GEO":
     case "JPN":
     case "UK":
-      newState.whichLanguage = action.payload;
+      newState.languagE = action.payload;
       break;
-    case "arrowClick":
-      newState.arrowClick = action.payload;
+    case "arrow":
+      newState.arrowClicK = action.payload;
       break;
     case "sendForSupport":
       newState.sendFS = action.payload;
       break
-    case "intermedateButton":
-      newState.intermedateButton =action.payload;
+    case "intermedatebutton":
+      newState.IbuttoN =action.payload;
       break
     case "registerName":
       newState.register.name =action.payload;
@@ -120,7 +110,7 @@ const reducer = (state: typeof initialState, action: ActionType) => {
       newState.postLS =action.type;
       break;
     case 'submit':
-      newState.submit = action.payload;
+      newState.submitR= action.payload;
       break
     case "loginName":
       newState.login.name =action.payload;
@@ -140,17 +130,15 @@ const reducer = (state: typeof initialState, action: ActionType) => {
     case "loginPassword":
         newState.login.password =action.payload;
         break;
-    case "loginSubmit":
-      newState.loginSubmit =action.payload;
+    case "submitL":
+      newState.submitL =action.payload;
       break;
     case "LOGIN":
     case "CANNOTLOGIN":
     case "BEFORETRYINGLOGIN":
-      newState.loginCondition = action.type;
+      newState.loginLS = action.type;
       break;
-    case "loginFirst":
-      newState.loginFirst = action.payload;
-      break;
+    
         default:
       throw new Error("Unknown action type");
   }
@@ -179,7 +167,7 @@ export default function Root() {
     });
   }
   function languageChanger(GEO: string, JPN: string, UK: string) {
-    switch (state.whichLanguage) {
+    switch (state.languagE) {
       case 0:
         return GEO;
         break;

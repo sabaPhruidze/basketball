@@ -19,7 +19,7 @@ export default function Header() {
   const context = useContext(myContext);
   const { state, dispatching, screenWidth, languageChanger } =
     context;
-  const { navCollapse, whichLanguage } = state;
+  const { navCollapsE, languagE } = state;
   const location = useLocation();
   const pagenumber = [1, 2, 3, 4, 5, 6, 7, 8];
   const LEFT_LIST = [
@@ -104,7 +104,7 @@ export default function Header() {
     <>
       <header style={{height: 80}}>
         {screenWidth < 860 ? (
-          navCollapse ? (
+          navCollapsE ? (
             <div className={style.navBackground}>
               <div className={style.dFlexJCSB}>
                 <img
@@ -117,20 +117,20 @@ export default function Header() {
                 />
                 <img
                   src={
-                    whichLanguage === 0
+                    languagE === 0
                       ? GEO_ICON
-                      : whichLanguage === 1
+                      : languagE === 1
                       ? JPN_ICON
-                      : whichLanguage === 2
+                      : languagE === 2
                       ? UK_ICON
                       : ""
                   }
                   alt="language"
                   className={style.languageI}
                   onClick={() => {
-                    whichLanguage === 0
+                    languagE === 0
                       ? dispatching("JPN", 1)
-                      : whichLanguage === 1
+                      : languagE === 1
                       ? dispatching("UK", 2)
                       : dispatching("GEO", 0);
                   }}
@@ -203,20 +203,20 @@ export default function Header() {
           <nav className={location.pathname === "/" ? style.navNBK : style.navWBK}>
             <img
               src={
-                whichLanguage === 0
+                languagE === 0
                   ? GEO_ICON
-                  : whichLanguage === 1
+                  : languagE === 1
                   ? JPN_ICON
-                  : whichLanguage === 2
+                  : languagE === 2
                   ? UK_ICON
                   : ""
               }
               alt="language"
               className={style.language}
               onClick={() => {
-                whichLanguage === 0
+                languagE === 0
                   ? dispatching("JPN", 1)
-                  : whichLanguage === 1
+                  : languagE === 1
                   ? dispatching("UK", 2)
                   : dispatching("GEO", 0);
               }}

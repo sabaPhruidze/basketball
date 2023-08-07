@@ -11,13 +11,13 @@ export const questionsContext = createContext<any>("");
 export default function Questions() {
   const context = useContext(myContext);
   const {screenWidth,languageChanger, state,dispatching}= context;
-  const {arrowClick} = state
-  // const [arrowClick, setArrowClick] = useState<number | null>(null);
+  const {arrowClicK} = state
+  
   function showHideNumberChange(number: number | null) {
-    if (arrowClick === number) {
-      dispatching("arrowClick",null);
+    if (arrowClicK === number) {
+      dispatching("arrow",null);
     } else {
-      dispatching("arrowClick",number);
+      dispatching("arrow",number);
     }
   }
   const DATA: {
@@ -80,7 +80,7 @@ export default function Questions() {
           <div className={style.questionsContainer} style={{width: screenWidth < 660 ? "100%" :"calc(100% / 3 * 2 - 100px)", padding:screenWidth <659 ? "0" : "10px 0",
   margin: screenWidth < 660 ? "0 15px" : "0 25px"}}>
             {DATA.map((item) => (
-              <questionsContext.Provider value={{item,arrowClick,showHideNumberChange,arrow,screenWidth}} key={item.number}>
+              <questionsContext.Provider value={{item,arrowClicK,showHideNumberChange,arrow,screenWidth}} key={item.number}>
               <ChildAccordionCard  />
               </questionsContext.Provider>
             ))}
