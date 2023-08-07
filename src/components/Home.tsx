@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-
+import {useLayoutEffect} from "react";
 import style from "./home.module.css";
 
 import facebook from "../assets/icon/facebook.svg";
@@ -10,6 +10,7 @@ import mainVideoMobile from "../assets/video/mainVideomobile.mp4";
 import mainVideoForWeb from "../assets/video/mainVideoForWeb (2).mp4";
 import { useContext } from "react";
 import { myContext } from "./Root";
+
 
 export default function Home() {
   const context = useContext(myContext);
@@ -33,7 +34,7 @@ export default function Home() {
     },
   ];
   const navigation = useNavigate();
-
+  useLayoutEffect(() => dispatching('CANNOTLOGIN'),[]);
   return (
     <>
       <div className={style.orangeCover}></div>
