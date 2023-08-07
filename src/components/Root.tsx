@@ -38,6 +38,7 @@ interface InitialState {
   submit:boolean;
   loginSubmit:boolean;
   loginCondition:string;
+  loginFirst:string;
 }
 const initialState : InitialState  = {
   navCollapse: false,
@@ -66,6 +67,7 @@ const initialState : InitialState  = {
   submit:false,
   loginSubmit:false,
   loginCondition:'',
+  loginFirst:'',
 };
 
 type ActionType = {
@@ -145,6 +147,9 @@ const reducer = (state: typeof initialState, action: ActionType) => {
     case "CANNOTLOGIN":
     case "BEFORETRYINGLOGIN":
       newState.loginCondition = action.type;
+      break;
+    case "loginFirst":
+      newState.loginFirst = action.payload;
       break;
         default:
       throw new Error("Unknown action type");

@@ -177,8 +177,8 @@
     position: absolute;
     background-color: #ff7b00;
     color: white;
-    top: calc(50% - 100px);
-    left: calc(50% - 50px);
+    top: calc(50% - 50px);
+    left: calc(50% - 100px);
     z-index: 4;
     font-size: larger;
     padding: 0 10px;
