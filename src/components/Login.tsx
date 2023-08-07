@@ -6,7 +6,7 @@ import EXIT from '../assets/icon/EXIT.svg'
 export default function Login() {
   const context = useContext(myContext);
   const {state, languageChanger,dispatching} = context
-  const {login,loginSubmit,loginCondition,loginFirst} = state;
+  const {login,loginSubmit,loginCondition} = state;
   // const {name, lastname,nickname, birthday,email, password} = login;
   interface UserLogin { 
     name: string;
@@ -36,7 +36,6 @@ export default function Login() {
   ];
  const navigate = useNavigate();
   useEffect(() => {   
-   
       const users = JSON.parse(localStorage.getItem('user') || "[]") as UserLogin[];
       const user = users.find(u => u.email === login.email && u.password === login.password);
       if (user) {  
