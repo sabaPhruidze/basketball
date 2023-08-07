@@ -1,12 +1,23 @@
-import {useContext,useLayoutEffect} from 'react';
+import {useContext,useEffect} from 'react';
+import { useNavigate } from 'react-router-dom';
 import { myContext } from './Root';
 import style from './register.module.css'
+
+interface User { 
+  name: string;
+  lastname: string;
+  nickname: string;
+  birthday: string; 
+  email: string;
+  password: string;
+}
+
 export default function Register() {
   const context = useContext(myContext);
   const {languageChanger,state,dispatching} = context;
-  const {register,postLS,submit} = state;
+  const {register,submit} = state;
+  const navigate = useNavigate();
   
-
   const DATA = [
     {
       key:0,
@@ -56,50 +67,63 @@ export default function Register() {
       value:register.password || '',
       onChange:(e:any) => dispatching('registerPassword',e.target.value),
     },
-  ]
+  ];
+ 
 // for validation
-let name = '';
-useLayoutEffect(() => {
-   name =register.name && register.name.length > 3 ;
-  if(name) {
+let name =register.name && register.name.length > 3 ;
+let lastname = register.lastname.length >=3;
+let nickname = register.nickname.length >=3;
+
+let isGmail = register.email.endsWith('@gmail.com');
+let email = register.email.length > 10 && isGmail;
+let birthday = register.birthday.length > 0;
+
+let hasLetterAndNumber = /^(?=.*[a-zA-Z])(?=.*[0-9]).+$/.test(register.password);
+let password = register.password.length > 5 && hasLetterAndNumber;
+
+useEffect(() => {
+  if(submit && name && lastname && nickname && email && birthday && password) {
       dispatching('postSuccess');
-      console.log(postLS)
-    }else {
-      dispatching('postFailure');
-      console.log(postLS)
+      
+      // Retrieve existing users
+      const existingUsers = JSON.parse(localStorage.getItem('user') || "[]");
+      
+      // Add new user to existing users
+      existingUsers.push(register);
+      
+      // Save all users back to local storage
+      localStorage.setItem('user', JSON.stringify(existingUsers));
+      
+      dispatching('submit',false);
+      dispatchingFree();
+      navigate('/login');
+    } else {
+      dispatching('postFailure');  
     }
-},[submit])
-const lastname = register.lastname.length >=3;
-const nickname = register.nickname.length >=3;
-
-const isGmail = register.email.endsWith('@gmail.com');
-const email = register.email.length > 10 && isGmail;
-
-
-
-const minDate = new Date('1950-01-01'); 
-const maxDate = new Date('2020-12-31');
-const birthday = register.birthday.length > 0 && register.birthday >= minDate && register.birthday <= maxDate;
-
-const hasNumber = /\d/.test(register.password);
-const password = register.password > 5 && hasNumber;
+},[submit]);
 // for validation
 
-  const FormCheck = () => {
-    
-  }
-  return (
-    <>
-    <div className={style.background}></div>
-    <div className={style.wrapper}>
-     {DATA.map((data) => (
-    <div key={data.key} className={style.container}>
-      <label htmlFor={data.id}>{data.labelContext}</label>
-      <input type={data.type} name={data.id} id={data.id} value={data.value} onChange={data.onChange}/>
-    </div>
-     ))}
-     <button className={style.btnR} onClick={() => dispatching('submit',!submit)}>{languageChanger("გაგზავნა","送信する","Submit")}</button>
-    </div>
-    </>
-  );
+
+const dispatchingFree = () => {
+  dispatching('registerName','');
+      dispatching('registerLastname','');
+      dispatching('registerNickname','');
+      dispatching('registerEmail','');
+      dispatching('registerBirthday','');
+      dispatching('registerPassword','');
+}
+return (
+  <>
+  <div className={style.background}></div>
+  <div className={style.wrapper}>
+   {DATA.map((data) => (
+  <div key={data.key} className={style.container}>
+    <label htmlFor={data.id}>{data.labelContext}</label>
+    <input type={data.type} name={data.id} id={data.id} value={data.value} onChange={data.onChange}/>
+  </div>
+   ))}
+   <button className={style.btnR} onClick={() => dispatching('submit',!submit)}>{languageChanger("გაგზავნა","送信する","Submit")}</button>
+  </div>
+  </>
+);
 }
