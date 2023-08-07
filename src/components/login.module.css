@@ -1,3 +1,15 @@
+.background {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ffa600;
+    z-index: -1;
+}
+
 .containerForSupport {
     width: 100vw;
     height: 100vh;
@@ -19,6 +31,10 @@
     padding: 0 10px;
     border-radius: 20px;
     border: 5px solid whitesmoke;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .exitI {
@@ -34,4 +50,59 @@
 
 .exitI:hover {
     transform: scale(1.30);
+}
+
+.whole {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 400px;
+    height: 70px;
+    margin: 5px 0;
+}
+
+.container label {
+    font-size: 24px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    display: block;
+}
+
+.container input {
+    width: 100%;
+    border: 1px solid gold;
+    height: 40px;
+    outline: 0;
+    transition: 0.5s;
+    border-radius: 10px;
+    padding: 0 10px;
+}
+
+.container input:focus {
+    transform: scale(1.3);
+    border: 3px solid gold;
+}
+
+.btnR {
+    width: 120px;
+    height: 45px;
+    font-family: capramiso;
+    font-size: 22px;
+    background-color: #ffa600;
+    color: white;
+    outline: 0;
+    border: 1px solid white;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.5s;
+    margin-top: 30px;
+}
+
+.btnR:hover {
+    transform: scale(1.3);
 }

@@ -15,7 +15,16 @@ interface User {
   password: string;
 }
 // for Register
-
+// for login
+interface UserLogin { 
+  name: string;
+  lastname: string;
+  nickname: string;
+  birthday: string; 
+  email: string;
+  password: string;
+}
+// for login
 interface InitialState {
   navCollapse: boolean;
   whichLanguage: number;
@@ -24,8 +33,10 @@ interface InitialState {
   intermedateButton:boolean;
   register:User;
   registerLocalStorage:User[];
+  login:UserLogin;
   postLS:string;                   //post local storage
   submit:boolean;
+  loginSubmit:boolean;
 }
 const initialState : InitialState  = {
   navCollapse: false,
@@ -41,9 +52,18 @@ const initialState : InitialState  = {
     email: '',
     password:'',
   },
+  login: {
+  name: '',
+  lastname: '',
+  nickname: '',
+  birthday: '', 
+  email: '',
+  password: '',
+  },
   registerLocalStorage:[],
   postLS:'',
   submit:false,
+  loginSubmit:false,
 };
 
 type ActionType = {
@@ -92,11 +112,30 @@ const reducer = (state: typeof initialState, action: ActionType) => {
       break;
     case "postSuccess":
     case "postFailure":
+    case "postZero":
       newState.postLS =action.type;
       break;
     case 'submit':
       newState.submit = action.payload;
       break
+    case "loginName":
+      newState.login.name =action.payload;
+      break
+    case "loginLastname":
+      newState.login.lastname =action.payload;
+      break
+    case "loginNickname":
+      newState.login.nickname =action.payload;
+      break
+    case "loginEmail":
+      newState.login.email =action.payload;
+      break
+    case "loginBirthday":
+      newState.login.birthday =action.payload;
+      break
+      case "loginPassword":
+        newState.login.password =action.payload;
+        break;
     default:
       throw new Error("Unknown action type");
   }

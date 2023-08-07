@@ -2,20 +2,12 @@ import {useContext,useEffect} from 'react';
 import { useNavigate } from 'react-router-dom';
 import { myContext } from './Root';
 import style from './register.module.css'
-
-interface User { 
-  name: string;
-  lastname: string;
-  nickname: string;
-  birthday: string; 
-  email: string;
-  password: string;
-}
-
+import EXIT from '../assets/icon/EXIT.svg'
+import BGFORREGISTERICON from '../assets/img/BGFORREGISTER.jpg'
 export default function Register() {
   const context = useContext(myContext);
   const {languageChanger,state,dispatching} = context;
-  const {register,submit} = state;
+  const {register,submit,postLS} = state;
   const navigate = useNavigate();
   
   const DATA = [
@@ -116,13 +108,51 @@ return (
   <>
   <div className={style.background}></div>
   <div className={style.wrapper}>
+  {postLS === 'postFailure' ? (
+        <div className={style.containerForSupport}>
+          <div className={style.supportSuccess}>
+            <img src={BGFORREGISTERICON} alt="BGFORREGISTERICON" className={style.BGFORREGISTERICON}/>
+            <img src={EXIT} alt="exit" className={style.exitI} onClick={() => dispatching("postZero")}/>
+            <p>{languageChanger(<>
+              დარწმუნდით, რომ შესრულებულია შემდეგი პირობები გამონაკლისის გარეშე:
+
+სახელი, გვარი და მეტსახელი უნდა იყოს მინიმუმ სამი სიმბოლო.
+
+ელფოსტის მისამართი უნდა შეიცავდეს მინიმუმ 10 სიმბოლოს @gmail.com დომენამდე და უნდა გამოიყენოს @gmail.com გაფართოება.
+
+დაბადების თარიღი მითითებული უნდა იყოს სწორი ფორმატით.
+
+პაროლი უნდა შეიცავდეს მინიმუმ ხუთ სიმბოლოს, მათ შორის მინიმუმ ერთი ასო და ერთი ნომერი.
+            </>,<>
+            
+            次の条件が例外なく満たされていることを確認してください。
+
+名、姓、ニックネームは 3 文字以上である必要があります。
+
+電子メール アドレスには、@gmail.com ドメインの前に少なくとも 10 文字を含める必要があり、@gmail.com 拡張子を使用する必要があります。
+
+生年月日は有効な形式で指定する必要があります。
+
+パスワードには、少なくとも 1 つの文字と 1 つの数字を含む 5 文字以上を含める必要があります。
+            </>,<>Please ensure the following conditions are met without exception:
+
+First name, last name and nickname must be a minimum of three characters.
+
+Email address must contain at minimum 10 characters before the @gmail.com domain and must use the @gmail.com extension.
+
+Date of birth must be provided in a valid format.
+
+Password must contain a minimum of five characters, including at least one letter and one number.</>)}</p>
+          </div>
+      </div>
+      ) : null}
    {DATA.map((data) => (
-  <div key={data.key} className={style.container}>
-    <label htmlFor={data.id}>{data.labelContext}</label>
-    <input type={data.type} name={data.id} id={data.id} value={data.value} onChange={data.onChange}/>
-  </div>
-   ))}
-   <button className={style.btnR} onClick={() => dispatching('submit',!submit)}>{languageChanger("გაგზავნა","送信する","Submit")}</button>
+    <div key={data.key} className={style.container}>
+      <label htmlFor={data.id}>{data.labelContext}</label>
+      <input type={data.type} name={data.id} id={data.id} value={data.value} onChange={data.onChange}/>
+    </div>
+    ))}
+    <button className={style.btnR} onClick={() => dispatching('submit',!submit)}>{languageChanger("გაგზავნა","送信する","Submit")}</button>
   </div>
   </>
 );

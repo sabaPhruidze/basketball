@@ -1,6 +1,7 @@
 .background {
     position: absolute;
-    height: 100%;
+    height: 100vh;
+    width: 100vw;
     top: 0;
     left: 0;
     right: 0;
@@ -21,7 +22,6 @@
     width: 400px;
     height: 70px;
     margin: 5px 0;
-
 }
 
 .container label {
@@ -62,4 +62,60 @@
 
 .btnR:hover {
     transform: scale(1.3);
+}
+
+.containerForSupport {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.63);
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    left: 0;
+}
+
+.supportSuccess {
+    width: 400px;
+    height: 500px;
+    position: absolute;
+    background-color: #ff7b00;
+    color: white;
+    top: calc(50% - 250px);
+    left: calc(50% - 150px);
+    z-index: 4;
+    font-size: larger;
+    padding: 0 10px;
+    border-radius: 20px;
+    border: 5px solid whitesmoke;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: 900;
+}
+
+.exitI {
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(63deg) brightness(105%) contrast(107%);
+    transition: 0.5s;
+}
+
+.exitI:hover {
+    transform: scale(1.30);
+}
+
+.BGFORREGISTERICON {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -2;
+    border-radius: 15px;
 }
