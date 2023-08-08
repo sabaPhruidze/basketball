@@ -1,6 +1,7 @@
 import { useState, useEffect,useContext } from "react";
 import { myContext } from "./Root";
-import style from './practic.module.css'
+import style from './practic.module.css';
+import replayStyle from './replay.module.css';
 interface IframeData {
   number: number;
   names: string[];  
@@ -93,13 +94,13 @@ const Basic = () => {
   };
 
   return (
-    <div className={style.containerB}>
-      <div className={style.background}></div>
+    <div className={style.container}>
+    <div className={`${replayStyle.orangeCover} ${style.orangeCover}` }></div>
       <input 
         type="text"
         onChange={handleChange} 
         value={searchTerm}  
-        className={style.search}
+        className={screenWidth < 800 ? style.selectA : style.selectB }
         style={{width: screenWidth < 550 ? 350 : 500}}
       />    
     <div className={style.videoOutside}>

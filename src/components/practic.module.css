@@ -7,19 +7,20 @@
     height: 750px;
 }
 
+
 .orangeCover {
     background-color: #ffa600;
 }
 
 .selectA {
     width: 400px;
-    margin-bottom: 50px;
+    margin: 50px 0;
     border-radius: 20px;
 }
 
 .selectB {
     width: 700px;
-    margin-bottom: 50px;
+    margin: 50px 0;
     border-radius: 20px;
 }
 
@@ -62,18 +63,14 @@ iframe {
     align-items: center;
 }
 
-
-
 .btn {
     width: calc(50% - 80px);
     height: 45px;
     background-color: #ffa600;
 }
 
-
-
 /* basic */
-.containerB {
+.container {
     width: 100vw;
     height: 100vh;
     overflow-y: auto;
@@ -81,13 +78,6 @@ iframe {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #ffa600;
-}
-
-.search {
-    height: 50px;
-    font-family: capramiso;
-    margin-top: 30px;
 }
 
 .videoOutside {
@@ -115,11 +105,11 @@ iframe {
 }
 
 .searchIBTN {
-    width: 80px;
-    height: 48px;
+    width: 70px;
+    height: 42px;
     outline: 0;
     margin-left: 10px;
-    border-radius: 5px;
+    border-radius: 15px;
     border: 2px solid white;
 }
 
@@ -128,8 +118,5 @@ iframe {
     height: 30px;
     filter: invert(66%) sepia(68%) saturate(2173%) hue-rotate(358deg) brightness(104%) contrast(102%);
 }
-
-
-
 
 /* basic */

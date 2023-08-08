@@ -1,7 +1,8 @@
 import { useState, useEffect,useContext } from "react";
 import { myContext } from "./Root";
 import style from './practic.module.css';
-import SEARCH from "../assets/icon/search.svg"
+import SEARCH from "../assets/icon/search.svg";
+import replayStyle from './replay.module.css';
 interface IframeData {
   number: number;
   names: string[];  
@@ -95,14 +96,14 @@ const Intermedate = () => {
   };
 
   return (
-    <div className={style.containerB}>
-      <div className={style.background}></div>
+    <div className={style.container}>
+    <div className={`${replayStyle.orangeCover} ${style.orangeCover}` }></div>
       <div>
         <input 
           type="text"
           onChange={handleChange} 
           value={searchTerm}  
-          className={style.search}
+          className={screenWidth < 800 ? style.selectA : style.selectB }
           style={{width: screenWidth < 620 ? 300 : 500}}
         />    
         <button className={style.searchIBTN}>
