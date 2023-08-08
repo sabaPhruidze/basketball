@@ -1,7 +1,5 @@
-.wrapper {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
+.orangeCover {
+  background-color: #ffa600;
 }
 
 .background {
@@ -47,8 +45,8 @@
   object-position: center;
   border-radius: 50%;
   position: absolute;
-  z-index: 1;
-  top: 4px;
+  z-index: 2;
+  top: -70px;
   left: 35%;
   /* I used a math in order to make it center */
   object-fit: cover;
