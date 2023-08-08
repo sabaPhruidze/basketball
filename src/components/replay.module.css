@@ -9,8 +9,6 @@
     left: 0;
     width: 100%;
     height: 100%;
-    overflow: hidden;
-    z-index: -2;
     background-color: #ff840069;
     z-index: -1;
 }
@@ -47,6 +45,7 @@
     transform: scale(1.30);
 }
 
+/* mostly for warning */
 .BGFR {
     /* background for replay */
     width: 100vw;
@@ -78,3 +77,33 @@
 }
 
 /* mostly for warning */
+
+
+.wrapper {
+    position: relative;
+    width: 100vw;
+    height: calc(100vh - 160px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.dFlexRow {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.dFlexColumn {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.AICenter {
+    /* align items center */
+    align-items: center;
+}

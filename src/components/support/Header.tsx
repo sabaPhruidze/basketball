@@ -166,32 +166,7 @@ export default function Header() {
                 src={TOGGLE_ICON}
                 alt="TOGGLE_ICON"
                 className={style.toggle}
-                style={{
-                  filter:
-                  (screenWidth <= 690 &&
-                    (location.pathname === "/history" ||
-                      pagenumber.some((page) =>
-                        location.pathname.endsWith(`/history/${page}`)
-                      ))) || (screenWidth <= 860 && location.pathname === "/questions")
-                      ? "invert(62%) sepia(46%) saturate(1989%) hue-rotate(1deg) brightness(105%) contrast(105%)"
-                      : undefined,
-                  top:
-                    screenWidth <= 690 &&
-                    (location.pathname === "/history" ||
-                      pagenumber.some((page) =>
-                        location.pathname.endsWith(`/history/${page}`)
-                      ))
-                      ? 70
-                      : 50,
-                  right:
-                    screenWidth <= 690 &&
-                    (location.pathname === "/history" ||
-                      pagenumber.some((page) =>
-                        location.pathname.endsWith(`/history/${page}`)
-                      ))
-                      ? 40
-                      : 30,
-                }}
+                //style
                 onClick={() => {
                   dispatching("N_SHOW", true);
                 }}
@@ -248,3 +223,39 @@ export default function Header() {
     </>
   );
 }
+
+
+
+
+
+
+
+
+
+
+// style={{
+                //   filter:
+                //   (screenWidth <= 690 &&
+                //     (location.pathname === "/history" ||
+                //       pagenumber.some((page) =>
+                //         location.pathname.endsWith(`/history/${page}`)
+                //       ))) || (screenWidth <= 860 && location.pathname === "/questions")
+                //       ? "invert(62%) sepia(46%) saturate(1989%) hue-rotate(1deg) brightness(105%) contrast(105%)"
+                //       : undefined,
+                //   top:
+                //     screenWidth <= 690 &&
+                //     (location.pathname === "/history" ||
+                //       pagenumber.some((page) =>
+                //         location.pathname.endsWith(`/history/${page}`)
+                //       ))
+                //       ? 70
+                //       : 50,
+                //   right:
+                //     screenWidth <= 690 &&
+                //     (location.pathname === "/history" ||
+                //       pagenumber.some((page) =>
+                //         location.pathname.endsWith(`/history/${page}`)
+                //       ))
+                //       ? 40
+                //       : 30,
+                // }}

@@ -1,9 +1,4 @@
 @font-face {
-  font-family: NotoSansJP;
-  src: url(../assets/font/NotoSansJP-VariableFont_wght.ttf);
-}
-
-@font-face {
   font-family: Caprasimo;
   src: url(../assets/font/Caprasimo-Regular.ttf);
 }
@@ -13,20 +8,8 @@
   src: url(../assets/font/Roboto-Regular.ttf);
 }
 
-.dFlexRow {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: row;
-
-}
-
-.dFlexColumn {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.orangeCover {
+  background-color: #ffa600;
 }
 
 .dataImage {
@@ -38,34 +21,14 @@
 
 .dataName {
   text-align: center;
-  font-family: Caprasimo, Roboto, NotoSansJP, ;
+  font-family: Caprasimo;
   font-size: 25px;
-}
-
-.wrapper {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.background {
-  position: absolute;
-  height: 100%;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ffa600;
-  z-index: -1;
 }
 
 /* height of the header is 80px */
 .container {
   /* Adjust the value according to your needs */
-  height: 580px;
+  height: 600px;
   background-color: #fff;
   padding: 10px;
   border-radius: 20px;
@@ -77,6 +40,7 @@
   height: calc(100% - 200px);
 }
 
+/* I write this two variantes So i would have only one of them to write for historyInfo component where I use this two often */
 .HICommonVA {
   width: 380px;
   height: 290px;

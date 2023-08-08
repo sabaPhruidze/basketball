@@ -1,8 +1,11 @@
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { myContext } from "./Root";
+
 import style from "./history.module.css";
 import Pag from "./support/Pag";
+import replayStyle from './replay.module.css';
+
 import GEOM from "../assets/img/GEOM.jpg"
 import JPNM  from "../assets/img/JPNM.jpg"
 import USAM from "../assets/img/USA4.jpg"
@@ -28,19 +31,18 @@ export default function History() {
   ]
   return (
     <>
-      <div className={style.background}></div>
-      <div className={style.wrapper}>
+      <div className={`${replayStyle.orangeCover} ${style.orangeCover}`}></div>
+      <div className={replayStyle.wrapper}>
         <div
           className={style.container}
           style={{
-            margin: screenWidth <= 860 ? "50px auto" : "10px auto",
-            width:
-              screenWidth <= 690 ? "calc(100% - 30px)" : "calc(100% - 200px)",
+            margin: screenWidth <= 860 ? "10px auto" : "10px auto",
+            width:screenWidth <= 860 ? "calc(100% - 20px)" : "calc(100% - 200px)",
           }}
         >
-          <div className={style.dFlexRow}>
+          <div className={replayStyle.dFlexRow}>
             {data.map((data) => (
-                <div className={style.dFlexColumn} key={data.name}>
+                <div className={`${replayStyle.dFlexColumn} ${replayStyle.AICenter}`} key={data.name}>
                   <img src={data.img} alt="img" className={style.dataImage} onClick={() => {
                     data.img === GEOM ? navigation('/history/8') : data.img === USAM  ? navigation('/history/4') : data.img === JPNM ? navigation('/history/1') : ""
                   }}
