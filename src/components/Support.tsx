@@ -4,7 +4,9 @@ import { useRef, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { myContext } from "./Root";
 import Carousel from 'react-bootstrap/Carousel';
+
 import style from "./support.module.css";
+import replayStyle from "./replay.module.css";
 import BGFS from "../assets/img/BGFS.jpg";
 import SC1 from "../assets/img/SC1.jpg"
 import SC2 from "../assets/img/SC2.jpg"
@@ -79,7 +81,7 @@ export default function ContactForm() {
   return (
     <div>
       <img src={BGFS} alt="BGIMG" className={style.img} />
-      <div className={style.BGColor} />
+      <div className={replayStyle.orangeCover} />
       <div className={style.dFlex} style={{padding:screenWidth < 1260 ? "0 30px 0 30px" : "0 30px 0 120px",justifyContent: screenWidth < 870 ? "center" : "space-between"}}>
         <form onSubmit={handleSubmit} >
           <div>
