@@ -41,8 +41,8 @@ export default function History() {
           }}
         >
           <div className={replayStyle.dFlexRow}>
-            {data.map((data) => (
-                <div className={`${replayStyle.dFlexColumn} ${replayStyle.AICenter}`} key={data.name}>
+            {data.map((data,idx) => (
+                <div className={`${replayStyle.dFlexColumn} ${replayStyle.AICenter}`} key={idx}>
                   <img src={data.img} alt="img" className={style.dataImage} onClick={() => {
                     data.img === GEOM ? navigation('/history/8') : data.img === USAM  ? navigation('/history/4') : data.img === JPNM ? navigation('/history/1') : ""
                   }}

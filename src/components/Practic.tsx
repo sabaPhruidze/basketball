@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { myContext } from './Root';
 import Select from 'react-select';
 import style from "./practic.module.css";
+import replayStyle from './replay.module.css';
 
 
 
@@ -92,11 +93,10 @@ export default function Practic() {
     },
   ];
 
-  console.log(screenWidth);
-
-
   const [selectedOption, setSelectedOption] = useState<Option | null>(null);
   const forNameOptions = [...iframeData1, ...iframeData2];
+  
+  // this part is made buy claude 
   const nameOptions = forNameOptions.reduce<Option[]>(
     (options, data) => [
       ...options,
@@ -104,7 +104,7 @@ export default function Practic() {
     ],
     []
   );
-
+// this part is made buy claude 
   const filteredIframeData1 = selectedOption
     ? iframeData1.filter((data) =>
         data.names.some((name) =>
@@ -122,21 +122,21 @@ export default function Practic() {
     : iframeData2;
 
   return (
-    <div className={style.containerP}>
-      <div className={style.background}></div>
+    <div className={`${replayStyle.wrapper} ${style.wrapper}`}>
+      <div className={`${replayStyle.orangeCover} ${style.orangeCover}` }></div>
         <Select
           options={nameOptions}
           value={selectedOption}
           onChange={(option) => setSelectedOption(option)}
           closeMenuOnSelect={false}
-          className={style.selectP}
+          className={screenWidth < 800 ? style.selectA : style.selectB }
         />
         <div className={style.videoContainerP}>
           {filteredIframeData1.map((data) => (
             <div className={style.dFlexColumn} key={data.number}>
               <iframe
                 width="200"
-                height="180"
+                height="160"
                 src={data.src}
                 title={data.names[0]}
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -159,9 +159,9 @@ export default function Practic() {
           </div>
           ))}
       </div>
-      <div className={style.dFlexRowForButtonsP} >
-        <button className={style.btnP} onClick={() => {navigate('/practic/basic')}}>{languageChanger('დამწყებისთვის','初心者向け',"For beginners")}</button>
-        <button className={style.btnP} onClick={() => {navigate('/practic/intermedate')}}>{languageChanger('გამოცდილისთვის','経験者向け','For the experienced')}</button>
+      <div className={style.btnContainer} >
+        <button className={`${replayStyle.btn} ${style.btn}` } onClick={() => {navigate('/practic/basic')}}>{languageChanger('დამწყებისთვის','初心者向け',"For beginners")}</button>
+        <button className={`${replayStyle.btn} ${style.btn}` } onClick={() => {navigate('/practic/intermedate')}}>{languageChanger('გამოცდილისთვის','経験者向け','For the experienced')}</button>
       </div>
     </div>
   );
