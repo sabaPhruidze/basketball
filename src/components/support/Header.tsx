@@ -10,14 +10,13 @@ import QUESTION_ICON from "../../assets/icon/questions.svg";
 import SUPPORT_ICON from "../../assets/icon/support.svg";
 import LOGIN_ICON from "../../assets/icon/login.svg";
 import REGISTRATION_ICON from "../../assets/icon/register.svg";
-import EXIT_ICON from "../../assets/icon/EXIT.svg";
 import GEO_ICON from "../../assets/img/GEO.png";
 import JPN_ICON from "../../assets/img/JPN.png";
 import UK_ICON from "../../assets/img/UK.png";
 
 export default function Header() {
   const context = useContext(myContext);
-  const { state, dispatching, screenWidth, languageChanger } =
+  const { state, dispatching, screenWidth, languageChanger,EXIT } =
     context;
   const { navCollapsE, languagE } = state;
   const location = useLocation();
@@ -108,7 +107,7 @@ export default function Header() {
             <div className={style.navBackground}>
               <div className={style.dFlexJCSB}>
                 <img
-                  src={EXIT_ICON}
+                  src={EXIT}
                   alt="EXITICON"
                   className={`${style.exitI} ${style.filterW}`}
                   onClick={() => {

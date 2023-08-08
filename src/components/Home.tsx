@@ -1,15 +1,16 @@
 import { useNavigate } from "react-router-dom";
-import {useLayoutEffect} from "react";
+import {useLayoutEffect,useContext} from "react";
+import { myContext } from "./Root";
 import style from "./home.module.css";
-
+import replayStyle from "./replay.module.css"
 import FACEBOOK_I from "../assets/icon/facebook.svg";
 import INSTAGRAM_I from "../assets/icon/instagram.svg";
 import TWITTER_I from "../assets/icon/twitter.svg";
 
 import mainVideoMobile from "../assets/video/mainVideomobile.mp4";
 import mainVideoForWeb from "../assets/video/mainVideoForWeb (2).mp4";
-import { useContext } from "react";
-import { myContext } from "./Root";
+
+
 
 
 export default function Home() {
@@ -37,11 +38,11 @@ export default function Home() {
   useLayoutEffect(() => dispatching('CAN_NOT_LOGIN'),[]);
   return (
     <>
-      <div className={style.orangeCover}></div>
+      <div className={replayStyle.orangeCover}></div>
       {sendFS ? (
-        <div className={style.containerForSupport}>
-          <div className={style.supportSuccess}>
-            <img src={EXIT} alt="exit" className={style.exitI} onClick={() => dispatching("SEND_FOR_SUPPORT",false)}/>
+        <div className={replayStyle.BGFR}>
+          <div className={replayStyle.containerFR}>
+            <img src={EXIT} alt="exit" className={replayStyle.exitIcon} onClick={() => dispatching("SEND_FOR_SUPPORT",false)}/>
             <p>{languageChanger("გილოცავთ! თქვენი შეტყობინება წარმატებით გაიგზავნა","おめでとう！ メッセージは正常に送信されました","congratulations! Your message has been successfully sent ")}</p>
           </div>
       </div>
@@ -96,7 +97,7 @@ export default function Home() {
           </h3>
         </div>
         <button
-          className={`${style.btn} ${style.MainBTN}`}
+          className={`${replayStyle.btn} ${style.homeButton}`}
           style={{ marginTop: 10 }}
           onClick={() => {
             navigation("/history");

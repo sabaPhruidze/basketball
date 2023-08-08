@@ -2,11 +2,10 @@ import {useContext,useEffect} from 'react';
 import { useNavigate } from 'react-router-dom';
 import { myContext } from './Root';
 import style from './register.module.css'
-import EXIT from '../assets/icon/EXIT.svg'
 import BGFORREGISTERICON from '../assets/img/BGFORREGISTER.jpg'
 export default function Register() {
   const context = useContext(myContext);
-  const {languageChanger,state,dispatching} = context;
+  const {languageChanger,state,dispatching,EXIT} = context;
   const {register,submitR,postLS} = state;
   const navigate = useNavigate();
   

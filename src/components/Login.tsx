@@ -2,10 +2,10 @@ import { useContext,useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { myContext } from "./Root";
 import style from './login.module.css';
-import EXIT from '../assets/icon/EXIT.svg'
+
 export default function Login() {
   const context = useContext(myContext);
-  const {state, languageChanger,dispatching} = context
+  const {state, languageChanger,dispatching,EXIT} = context
   const {login,submitL,loginLS} = state;
   // const {name, lastname,nickname, birthday,email, password} = login;
   interface UserLogin { 
