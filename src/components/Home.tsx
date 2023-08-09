@@ -35,7 +35,7 @@ export default function Home() {
     },
   ];
   const navigation = useNavigate();
-  useLayoutEffect(() => dispatching('CAN_NOT_LOGIN'),[]);
+  // useLayoutEffect(() => dispatching('CAN_NOT_LOGIN'),[]);
   return (
     <>
       <div className={replayStyle.orangeCover}></div>

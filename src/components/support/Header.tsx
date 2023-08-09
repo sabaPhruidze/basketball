@@ -18,7 +18,8 @@ export default function Header() {
   const context = useContext(myContext);
   const { state, dispatching, screenWidth, languageChanger,EXIT } =
     context;
-  const { navCollapsE, languagE } = state;
+  const { navCollapsE, languagE,login,loginLS} = state;
+  const {nickname} = login;
   const location = useLocation();
   const pagenumber = [1, 2, 3, 4, 5, 6, 7, 8];
   const LEFT_LIST = [
@@ -45,16 +46,17 @@ export default function Header() {
   ];
   const RIGHT_LIST = [
     {
-      content: languageChanger("შესვლა", "ログイン", "Login"),
-      to: "/login",
+      content: loginLS ==="LOGIN" ? nickname : languageChanger("შესვლა", "ログイン", "Login"),
+      to:"/login",
     },
     {
-      content: languageChanger(
+      content: loginLS ==="LOGIN" ? languageChanger("გამოსვლა", "ログアウト", "Logout") :  languageChanger(
         "რეგისტრაცია",
         "登録", //とうろく
         "Register"
       ),
-      to: "/register",
+      to:loginLS ==="LOGIN" ? "/login" : "/register",
+      logic:() => {dispatching('BEFORE_TRYING_LOGIN')},
     },
   ];
   const COMMON_LIST = [
@@ -84,21 +86,22 @@ export default function Header() {
       icon: SUPPORT_ICON,
     },
     {
-      content: languageChanger("შესვლა", "ログイン", "Login"),
-      to: "/login",
+      content:loginLS ==="LOGIN" ? nickname : languageChanger("შესვლა", "ログイン", "Login"),
+      to:"/login",
       icon: LOGIN_ICON,
     },
     {
-      content: languageChanger(
+      content: loginLS ==="LOGIN" ? languageChanger("გამოსვლა", "ログアウト", "Logout") :  languageChanger(
         "რეგისტრაცია",
         "登録", //とうろく
         "Register"
       ),
-      to: "/register",
+      to:loginLS ==="LOGIN" ? "/login" : "/register",
       icon: REGISTRATION_ICON,
+      logic:() => {dispatching('BEFORE_TRYING_LOGIN')},
     },
   ];
-
+console.log(loginLS);
   return (
     <>
       <header style={{height: 80}}>
@@ -142,6 +145,7 @@ export default function Header() {
                       <div key={key} className={style.dFlexJCSB} >
                         <Link
                           to={data.to}
+                          onClick={loginLS ==="LOGIN" && data.content === languageChanger("გამოსვლა", "ログアウト", "Logout") ? data.logic : () => {''}}
                         >
                           <img
                             src={data.icon}
@@ -150,7 +154,7 @@ export default function Header() {
                           />
                         </Link>
                         <li>
-                          <Link to={data.to} className={style.menuContent}>
+                          <Link to={data.to} className={style.menuContent} onClick={loginLS ==="LOGIN" && data.content === languageChanger("გამოსვლა", "ログアウト", "Logout") ? data.logic : () => {''}}>
                             {data.content}
                           </Link>
                         </li>
@@ -210,7 +214,7 @@ export default function Header() {
               {RIGHT_LIST.map((data, key) => {
                 return (
                   <li key={key}>
-                    <Link to={data.to} className={style.menuContent}>
+                    <Link to={data.to} className={style.menuContent} onClick={loginLS ==="LOGIN" && data.content === languageChanger("გამოსვლა", "ログアウト", "Logout") ? data.logic : () => {''}}>
                       {data.content}
                     </Link>
                   </li>
@@ -223,39 +227,3 @@ export default function Header() {
     </>
   );
 }
-
-
-
-
-
-
-
-
-
-
-// style={{
-                //   filter:
-                //   (screenWidth <= 690 &&
-                //     (location.pathname === "/history" ||
-                //       pagenumber.some((page) =>
-                //         location.pathname.endsWith(`/history/${page}`)
-                //       ))) || (screenWidth <= 860 && location.pathname === "/questions")
-                //       ? "invert(62%) sepia(46%) saturate(1989%) hue-rotate(1deg) brightness(105%) contrast(105%)"
-                //       : undefined,
-                //   top:
-                //     screenWidth <= 690 &&
-                //     (location.pathname === "/history" ||
-                //       pagenumber.some((page) =>
-                //         location.pathname.endsWith(`/history/${page}`)
-                //       ))
-                //       ? 70
-                //       : 50,
-                //   right:
-                //     screenWidth <= 690 &&
-                //     (location.pathname === "/history" ||
-                //       pagenumber.some((page) =>
-                //         location.pathname.endsWith(`/history/${page}`)
-                //       ))
-                //       ? 40
-                //       : 30,
-                // }}

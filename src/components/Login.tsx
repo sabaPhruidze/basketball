@@ -1,4 +1,4 @@
-import { useContext,useEffect } from "react";
+import { useContext,useEffect} from "react";
 import { useNavigate } from "react-router-dom";
 import { myContext } from "./Root";
 import style from './login.module.css';
@@ -34,16 +34,15 @@ export default function Login() {
       onChange:(e:any) => dispatching('LOGIN_PASSWORD',e.target.value),
     },
   ];
+
+  const users = JSON.parse(localStorage.getItem('user') || "[]") as UserLogin[];
  const navigate = useNavigate();
   useEffect(() => {   
     if(submitL) {
-      const users = JSON.parse(localStorage.getItem('user') || "[]") as UserLogin[];
       const user = users.find(u => u.nickname === login.nickname && u.password === login.password);
       if (user) {  
-        dispatching('LOGIN');
+        dispatching("LOGIN");
         navigate('/');
-        dispatching('LOGIN_EMAIL','');
-        dispatching('LOGIN_PASSWORD','');
       } else {
         dispatching('CAN_NOT_LOGIN');
       }  
