@@ -19,11 +19,11 @@ export default function Login() {
   const DATA = [
     {
       key:0,
-      id:'email',
-      labelContext:languageChanger('ელ-ფოსტა',"メール",'Email'),
-      type:'email',
-      value:login.email || '',
-      onChange:(e:any) => dispatching('LOGIN_EMAIL',e.target.value),
+      id:'nickname',
+      labelContext:languageChanger('მეტსახელი',"異名",'nickname'),
+      type:'text',
+      value:login.nickname || '',
+      onChange:(e:any) => dispatching('LOGIN_NICKNAME',e.target.value),
     },
     {
       key:1,
@@ -36,8 +36,9 @@ export default function Login() {
   ];
  const navigate = useNavigate();
   useEffect(() => {   
+    if(submitL) {
       const users = JSON.parse(localStorage.getItem('user') || "[]") as UserLogin[];
-      const user = users.find(u => u.email === login.email && u.password === login.password);
+      const user = users.find(u => u.nickname === login.nickname && u.password === login.password);
       if (user) {  
         dispatching('LOGIN');
         navigate('/');
@@ -46,7 +47,8 @@ export default function Login() {
       } else {
         dispatching('CAN_NOT_LOGIN');
       }  
-
+    }
+    dispatching("SUBMIT_L",false);
   }, [submitL]);
   return (
     <>
@@ -66,7 +68,7 @@ export default function Login() {
         <input type={data.type} name={data.id} id={data.id} value={data.value} onChange={data.onChange}/>
       </div>
       ))}
-      <button className={style.btnR} onClick={() => dispatching("SUBMIT_L",!submitL)}>{languageChanger("შესვლა","ログイン","Log in")}</button>
+      <button className={style.btnR} onClick={() => dispatching("SUBMIT_L",true)}>{languageChanger("შესვლა","ログイン","Log in")}</button>
     </div> 
     </>
   );
